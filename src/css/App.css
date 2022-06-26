@@ -1,0 +1,63 @@
+.App {
+  text-align: center;  
+}
+
+.App-logo {
+  height: 15vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-input-container {
+  display: flex;
+  width: 80%;
+}
+
+.App-input {
+  resize: none;
+  height: 30px;
+  width: 100%;
+  font-family: 'Courier New';
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px 0px 0px 5px;
+  border-top: 3px #D7039F solid;
+  border-bottom: 3px #D7039F solid;
+  border-left: 3px #D7039F solid;
+  border-right: 0px;
+}
+
+.App-input-button {
+  font-family: 'Covered By Your Grace';
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #D7039F;
+  width: 150px;
+  border-radius: 0px 5px 5px 0px;
+  border-top: 3px #D7039F solid;
+  border-bottom: 3px #D7039F solid;
+  border-right: 3px #D7039F solid;
+  border-left: 0px;
+  cursor: pointer;
+}
+
+.App-footer {
+  font-size: 15px;
+  color: #D7039F;
+  font-family: 'Covered By Your Grace';
+  text-decoration: none;
+}
