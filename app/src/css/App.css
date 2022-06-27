@@ -1,0 +1,129 @@
+.App {
+  text-align: center;  
+}
+
+.App-logo {
+  height: 15vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.App-notify {
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+}
+
+.App-input {
+  background-color:black;
+  color: #00B0F0;
+  padding: 15px;
+  resize: none;
+  min-height: 250px;
+  max-height: 250px;
+  width: 100%;
+  font-family: 'Ubuntu Mono';
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  border-top: 3px #D7039F solid;
+  border-right: 3px #D7039F solid;
+  border-left: 3px #D7039F solid;
+  border-bottom: 3px #D7039F solid;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.App-input-button {
+  font-family: 'Ubuntu Condensed';
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #D7039F;
+  width: 10%;
+  border-radius: 5px; 
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.App-notify {
+  
+  margin-top: 25px;
+  border: 0px;
+  resize: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-size: 20px;
+  background-color: black;
+  color: #00B0F0;
+  font-family: 'Ubuntu Condensed';
+  text-decoration: none;
+  text-align: center;
+}
+
+.App-thinker {
+  margin-top: 30px;
+  height: 125px;
+}
+
+.thinking {
+  animation: spin infinite 1s;
+}
+
+.thinking-mouseover {
+  animation: turn 1 0.5s;
+  animation-fill-mode: forwards;  
+}
+
+.thinking-mouseleave {
+  animation: return 1 0.5s;
+}
+
+@keyframes return {
+  from {
+      transform:rotate(90deg);
+  }
+  to {
+      transform:rotate(0deg);
+  }
+}
+
+@keyframes turn {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(90deg);
+  }
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
