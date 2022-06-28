@@ -1,5 +1,11 @@
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;  
+  overflow: hidden;
 }
 
 .App-logo {
@@ -12,9 +18,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items:center;
   color: white;
 }
 
@@ -24,16 +28,12 @@
 
 .App-input-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 80%;
 }
 
-.App-notify {
-  display: flex; 
-  flex-direction: row;
-  align-items: center;
-  width: 50%;
+.App-input-subcontainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .App-input {
@@ -41,12 +41,8 @@
   color: #00B0F0;
   padding: 15px;
   resize: none;
-  min-height: 250px;
-  max-height: 250px;
   width: 100%;
   font-family: 'Ubuntu Mono';
-  font-size: 18px;
-  font-weight: bold;
   border-radius: 5px;
   border-top: 3px #D7039F solid;
   border-right: 3px #D7039F solid;
@@ -54,28 +50,20 @@
   border-bottom: 3px #D7039F solid;
   overflow-x: hidden;
   overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-right: -25px;
 }
 
-.App-input-button {
-  font-family: 'Ubuntu Condensed';
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #D7039F;
-  width: 10%;
-  border-radius: 5px; 
-  cursor: pointer;
-  padding: 10px;
-  margin-top: 30px;
+.App-input::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 .App-notify {
-  
-  margin-top: 25px;
   border: 0px;
   resize: none;
   overflow-y: hidden;
   overflow-x: hidden;
-  font-size: 20px;
   background-color: black;
   color: #00B0F0;
   font-family: 'Ubuntu Condensed';
@@ -83,8 +71,11 @@
   text-align: center;
 }
 
+.App-thinker-container {
+  padding: 5px;
+}
+
 .App-thinker {
-  margin-top: 30px;
   height: 125px;
 }
 
@@ -93,12 +84,12 @@
 }
 
 .thinking-mouseover {
-  animation: turn 1 0.5s;
+  animation: turn 1 0.2s;
   animation-fill-mode: forwards;  
 }
 
 .thinking-mouseleave {
-  animation: return 1 0.5s;
+  animation: return 1 0.2s;
 }
 
 @keyframes return {

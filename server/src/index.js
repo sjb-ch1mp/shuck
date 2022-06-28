@@ -1,15 +1,13 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
 const app = express();
 const port = 443;
-const build = path.join(__dirname, "..", "..", "app", "build");
 
+const path = require('path');
+const build = path.join(__dirname, "..", "..", "app", "build");
 app.use(express.static(build));
-app.use(bodyParser.json({ 
-    type: '*/*',
-    limit: '25mb'
-}));
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '35mb'}));
 
 //SSL
 const https = require('https');

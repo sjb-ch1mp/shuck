@@ -3,6 +3,7 @@ import thinker_thinking from './img/thinking.png';
 import thinker_hover from './img/thinking_hover.png';
 import thinker_still from './img/thinking_still.png';
 import './css/App.css';
+import './css/dynamic.css';
 import { useState } from "react";
 const base64encoder = require('base64-arraybuffer');
 
@@ -24,26 +25,43 @@ function App() {
 
   function dropHandler(e){
     e.preventDefault();
-
-    reset();
-
+    reset(true);
     let files = [];
+    let checkSize = 0;
     if(e.dataTransfer.items){
       for(let i in e.dataTransfer.items){
         if(e.dataTransfer.items[i].kind === 'file'){
           files.push(e.dataTransfer.items[i].getAsFile());
+          checkSize = checkSize + parseInt(files[files.length - 1].size);
+          if(checkSize >= 36700160){
+            document.getElementById('App-notify').value = 'Submission is too large. Maximum upload size is 35MB.';
+            return;  
+          }
         }
       }
       if(files.length > 0){
         setSubmissionType((files.length > 1) ? 'file_multiple' : 'file_single');
         setSubmittedFiles(files);
-        let fileList = [];
-        for(let i in files){
-          fileList.push(files[i].name);
-        }
-        document.getElementById('App-text-input').value = `Got ${(files.length > 1) ? `${files.length} files`: '1 file'}.\n\n${fileList.join("\n")}`;
+        reportCurrentFiles(files);
       }
     }
+  }
+
+  function getTotalSubmissionSize(files){
+    let totalSize = 0;
+    for(let i in files){
+      totalSize = totalSize + parseInt(files[i].size);
+    }
+    return totalSize;
+  }
+
+  function reportCurrentFiles(files){
+    let totalSize = getTotalSubmissionSize(files);
+    let fileList = [];
+    for(let i in files){
+      fileList.push(files[i].name);
+    }
+    document.getElementById('App-text-input').value = `Got ${(files.length > 1) ? `${files.length} files`: '1 file'}. Total size is ${totalSize} bytes.\n\n${fileList.join("\n")}`;
   }
 
   function encodeFile(file){
@@ -65,12 +83,38 @@ function App() {
     });
   }
 
-  function getURLs(e){
-    e.preventDefault();
+  function updateSubmission(){
+    if(/^url/.test(submissionType)){
+      let modifiedText = document.getElementById('App-text-input').value;
+      reset();
+      parseAndSaveURLs(modifiedText);
+    }else if(/^file/.test(submissionType)){
+      let fileList = document.getElementById('App-text-input').value.split(/\n/);
+      console.log(fileList);
+      let modifiedFiles = [];
+      for(let i in fileList){
+        if(fileList[i].trim().length > 0){
+          for(let j in submittedFiles){
+            if(submittedFiles[j].name === fileList[i].trim()){
+              modifiedFiles.push(submittedFiles[j]);
+            }
+          }
+        }
+      }
+      reset(true);
+      if(modifiedFiles.length > 0){
+        if(modifiedFiles.length === 1){
+          setSubmissionType('file_single');
+        }else{
+          setSubmissionType('file_single');
+        }
+        setSubmittedFiles(modifiedFiles);
+        reportCurrentFiles(modifiedFiles);
+      }
+    }
+  }
 
-    reset();
-
-    let raw = e.clipboardData.getData('text');
+  function parseAndSaveURLs(raw){
     //Regex adapted from: https://regexr.com/39nr7
     let urls = raw.match(/http(s)?:\/\/(www\.)?[a-zA-Z0-9@:%\._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+\.~#?&\/=]*)/g);
     let unique_urls = [];
@@ -88,6 +132,13 @@ function App() {
     }else{
       document.getElementById('App-text-input').value = `No valid URLs were found in the text!\n\n${raw}` ;
     }
+  }
+
+  function submitURLs(e){
+    e.preventDefault();
+    reset();
+    let raw = e.clipboardData.getData('text');
+    parseAndSaveURLs(raw);
   }
 
   function turnThinker(){
@@ -116,10 +167,10 @@ function App() {
   function getShuckin(){
     //Check if there's anything to submit
     if(submissionType == null){
-      document.getElementById('App-notify').value = 'Nothing to submit. Please enter some URLs or drop some files.';
+      document.getElementById('App-notify').value = 'Nothing to submit.';
       return;
-    }else if(submissionType === 'url_multiple' && submittedURLs.length > 10){
-      document.getElementById('App-notify').value = `${(submittedURLs.length > 100) ? `Come on, dude... ${submittedURLs.length} is waaay too many URLs. `: ""}Please submit only 10 URLs at a time.`;  
+    }else if(submissionType === 'url_multiple' && submittedURLs.length > 20){
+      document.getElementById('App-notify').value = `${(submittedURLs.length > 300) ? `Come on, dude... ${submittedURLs.length} is waaay too many URLs. `: ""}Please submit only 20 URLs at a time.`;  
       return;
     }
 
@@ -168,15 +219,19 @@ function App() {
   }
 
   return (
-    <div className="App" onDrop={dropHandler}>
-      <header className="App-header">
-        <a href="https://github.com/sjb-ch1mp/shuck/blob/master/README.md" target="_blank"><img src={logo} className="App-logo" alt="logo" /></a>
-          <div className="App-input-container" id="input-container">
-            <textarea onPaste={getURLs} id="App-text-input" className="App-input" placeholder="Shuck will extract URLs from text pasted here. You can also drop one or more files." />
-            <img id="App-thinker" src={thinker_still} onMouseOver={turnThinker} onMouseLeave={returnThinker} onMouseDown={getShuckin} className="App-thinker" />
-            <textarea id='App-notify' className="App-notify" disabled="true"></textarea>
+    <div className="App">
+      <div className={"App-header App-header-landing"}>
+          <div className={"App-input-container App-input-container-landing"} id="input-container">
+            <a href="https://github.com/sjb-ch1mp/shuck/blob/master/README.md" target="_blank"><img src={logo} className={"App-logo App-logo-landing"} alt="logo" /></a>
+            <div className={'App-input-subcontainer App-input-subcontainer-landing'}>
+              <textarea spellCheck="false" onDrop={dropHandler} onChange={updateSubmission} onPaste={submitURLs} id="App-text-input" className={"App-input App-input-landing"} placeholder="Shuck will extract URLs from text pasted here. You can also drop one or more files." />
+              <textarea id='App-notify' className={"App-notify App-notify-landing"} disabled="true"></textarea>
+            </div>
+            <div className={'App-thinker-container'}>
+              <img id="App-thinker" src={thinker_still} onMouseOver={turnThinker} onMouseLeave={returnThinker} onMouseDown={getShuckin} className={"App-thinker App-thinker-landing"} />
+            </div>
           </div>
-      </header>
+      </div>
     </div>
   );
 }

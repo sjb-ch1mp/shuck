@@ -1,0 +1,60 @@
+.App-logo-landing {
+    margin-bottom: 45px;
+}
+
+.App-logo-application {
+
+}
+
+.App-header-landing {
+    justify-content: center;
+}
+
+.App-header-application {
+    justify-content:flex-end;
+}
+
+.App-input-container-landing {
+    flex-direction: column;
+    width: 80%;
+}
+
+.App-input-container-application {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 95%;
+}
+
+.App-input-subcontainer-landing {
+    width: 100%;
+}
+
+.App-input-subcontainer-application {
+    width: 50%;
+}
+
+.App-input-landing {
+    font-size: 18px;  
+    min-height: 250px;
+    max-height: 250px;
+}
+
+.App-input-application {
+    font-size: 12px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.App-notify-landing {
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.App-notify-application {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.App-thinker-application {
+    
+}
