@@ -4,17 +4,22 @@ import thinker_hover from './img/thinking_hover.png';
 import thinker_still from './img/thinking_still.png';
 import './css/App.css';
 import { useState } from "react";
+const base64encoder = require('base64-arraybuffer');
 
 function App() {
 
   const [submissionType, setSubmissionType] = useState(null);
   const [submittedFiles, setSubmittedFiles] = useState([]);
   const [submittedURLs, setSubmittedURLs]   = useState([]);
+  const axios = require('axios').default;
 
-  function reset(){
+  function reset(full){
     setSubmissionType(null);
     setSubmittedFiles([]);
     setSubmittedURLs([]);
+    if(full){
+      document.getElementById('App-text-input').value = "";
+    }
   };
 
   function dropHandler(e){
@@ -39,6 +44,25 @@ function App() {
         document.getElementById('App-text-input').value = `Got ${(files.length > 1) ? `${files.length} files`: '1 file'}.\n\n${fileList.join("\n")}`;
       }
     }
+  }
+
+  function encodeFile(file){
+    return new Promise((resolve, reject) => {
+      let reader = new FileReader();
+      reader.onload = () => {
+        resolve({
+          'name':file.name,
+          'content':base64encoder.encode(reader.result)
+        });
+      };
+      reader.onerror = () => {
+        reject({
+          'name':file.name,
+          'error':reader.error
+        });
+      };
+      reader.readAsArrayBuffer(file);
+    });
   }
 
   function getURLs(e){
@@ -76,10 +100,13 @@ function App() {
     }
   }
 
-  function returnThinker(){
+  function returnThinker(force){
     document.getElementById('App-notify').value = '';
     let thinker = document.getElementById('App-thinker');
-    if(!thinker.classList.contains("thinking")){
+    if(force || !thinker.classList.contains("thinking")){
+      if(force){
+        thinker.classList.remove("thinking");
+      }
       document.getElementById('App-thinker').classList.remove("thinking-mouseover");
       thinker.src = thinker_still;
       document.getElementById('App-thinker').classList.add("thinking-mouseleave");
@@ -104,9 +131,40 @@ function App() {
       document.getElementById('App-thinker').classList.add("thinking");
     }
 
-    document.getElementById('App-text-input').value = `Sending ${
-      (/^file/.test(submissionType)) ? `${submittedFiles.length} files, the first of which is called ${submittedFiles[0].name} ` : 'a URL'
-    }`;
+    //Submit to server
+    if(/^url/.test(submissionType)){
+      axios.post(
+        '/api/url',
+        {
+          'urls':submittedURLs
+        }
+      ).then((resp) => {
+        returnThinker(true);
+        document.getElementById('App-text-input').value = `The following URLs were successfully submitted:\n\n${resp.data.urls.join("\n")}`;
+      }).catch((error) => {
+        console.log(error);
+        document.getElementById('App-notify').value = "Something went wrong. Please try again.";
+      });
+    }else{
+      let filesToEncode = [];
+      for(let i in submittedFiles){
+        filesToEncode.push(encodeFile(submittedFiles[i]));
+      }
+      Promise.all(filesToEncode).then((encodedFiles) => {
+        axios.post(
+          '/api/file',
+          {
+            'files':encodedFiles
+          }
+        ).then((resp) => {
+          returnThinker(true);
+          document.getElementById('App-text-input').value = `The following files were successfully submitted:\n\n${resp.data.names.join("\n")}`;
+        }).catch((error) => {
+          console.log(error);
+          document.getElementById('App-notify').value = "Something went wrong. Please try again.";
+        });
+      });
+    }
   }
 
   return (
@@ -122,7 +180,5 @@ function App() {
     </div>
   );
 }
-
-//<button onClick={getShuckin} className="App-input-button">Get shuckin!</button>
 
 export default App;
