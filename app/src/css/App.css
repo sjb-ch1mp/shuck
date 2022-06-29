@@ -1,65 +1,103 @@
-textarea {
+#App {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#App-workspace {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+  height: 80vh;
+}
+
+#App-workspace-files {
+  border: 2px #00B0F0 solid;
+  border-radius: 5px;
+  width: 15%;
+  height: 100%;
+}
+
+.App-workspace-divider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.divider {
+  height: 50px;
+}
+
+.scrollable-hidden-bar {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.App {
-  overflow: hidden;
+#App-workspace-file-summary {
+  border: 2px #00B0F0 solid;
+  border-radius: 5px;
+  height: 100%;
+  width: 25%;
 }
 
-.App-logo {
-  height: 15vmin;
+#App-workspace-results {
+  border: 2px #D7039F solid;
+  border-radius: 5px;
+  height: 100%;
+  width: 25%;
+}
+
+#App-workspace-tools {
+  border: 2px #D7039F solid;
+  border-radius: 5px;
+  height: 100%;
+  width: 15%;
+}
+
+#App-logo {
   pointer-events: none;
+  height: 15vmin;
 }
 
-.App-header {
+#App-header {
   background-color: black;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items:center;
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.App-input-container {
+#App-input-container {
   display: flex;
   align-items: center;
 }
 
-.App-input-subcontainer {
+#App-input-subcontainer {
   display: flex;
   flex-direction: column;
 }
 
-.App-input {
+#App-input {
+  overflow-y: scroll !important;
   background-color:black;
-  color: #00B0F0;
   padding: 15px;
   resize: none;
   width: 100%;
   font-family: 'Ubuntu Mono';
-  border-radius: 5px;
-  border-top: 3px #D7039F solid;
-  border-right: 3px #D7039F solid;
-  border-left: 3px #D7039F solid;
-  border-bottom: 3px #D7039F solid;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-right: -25px;
 }
 
-.App-input::-webkit-scrollbar { 
+#App-input::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
 }
 
-.App-notify {
+#App-notify {
   border: 0px;
   resize: none;
   overflow-y: hidden;
@@ -71,11 +109,19 @@ textarea {
   text-align: center;
 }
 
-.App-thinker-container {
+#App-logo-container {
+  display: flex;
+  justify-content: center;
   padding: 5px;
 }
 
-.App-thinker {
+#App-thinker-container {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+#App-thinker {
   height: 125px;
 }
 

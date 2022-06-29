@@ -14,12 +14,52 @@ function App() {
   const [submittedURLs, setSubmittedURLs]   = useState([]);
   const axios = require('axios').default;
 
+  function init(){
+    let allNodes = document.getElementById('App').childNodes;
+    switchInterface(allNodes, 'application');
+  }
+
+  function switchInterface(childNodes, switchTo){
+    for(let i in childNodes){
+
+      let id = childNodes[i].id;
+
+      if(/application/.test(switchTo)){
+        if(/^App-workspace/.test(childNodes[i].id)){
+          childNodes[i].classList.remove('hidden');
+        }
+      }else{
+        if(/^App-workspace/.test(childNodes[i].id)){
+          childNodes[i].classList.add('hidden');
+        }
+      }
+
+      for(let j in childNodes[i].classList){
+        if(/application/.test(switchTo)){
+          if(/-landing$/.test(childNodes[i].classList[j])){
+            childNodes[i].classList.remove(childNodes[i].classList[j]);
+            childNodes[i].classList.add(`${id}-application`);
+          }
+        }else{
+          if(/-application$/.test(childNodes[i].classList[j])){
+            childNodes[i].classList.remove(childNodes[i].classList[j]);
+            childNodes[i].classList.add(`${id}-landing`);
+          }
+        }
+      }
+
+      if(childNodes[i].hasChildNodes && childNodes[i].hasChildNodes()){
+        switchInterface(childNodes[i].childNodes, switchTo);
+      }
+    }
+  }
+
   function reset(full){
     setSubmissionType(null);
     setSubmittedFiles([]);
     setSubmittedURLs([]);
     if(full){
-      document.getElementById('App-text-input').value = "";
+      document.getElementById('App-input').value = "";
     }
   };
 
@@ -61,7 +101,7 @@ function App() {
     for(let i in files){
       fileList.push(files[i].name);
     }
-    document.getElementById('App-text-input').value = `Got ${(files.length > 1) ? `${files.length} files`: '1 file'}. Total size is ${totalSize} bytes.\n\n${fileList.join("\n")}`;
+    document.getElementById('App-input').value = `Got ${(files.length > 1) ? `${files.length} files`: '1 file'}. Total size is ${totalSize} bytes.\n\n${fileList.join("\n")}`;
   }
 
   function encodeFile(file){
@@ -85,11 +125,11 @@ function App() {
 
   function updateSubmission(){
     if(/^url/.test(submissionType)){
-      let modifiedText = document.getElementById('App-text-input').value;
+      let modifiedText = document.getElementById('App-input').value;
       reset();
       parseAndSaveURLs(modifiedText);
     }else if(/^file/.test(submissionType)){
-      let fileList = document.getElementById('App-text-input').value.split(/\n/);
+      let fileList = document.getElementById('App-input').value.split(/\n/);
       console.log(fileList);
       let modifiedFiles = [];
       for(let i in fileList){
@@ -128,9 +168,9 @@ function App() {
     if(unique_urls.length > 0){
       setSubmissionType((unique_urls.length > 1) ? 'url_multiple' : 'url_single');
       setSubmittedURLs(unique_urls);
-      document.getElementById('App-text-input').value = `Found ${unique_urls.length} valid URLs.\n\n${unique_urls.join("\n")}`;
+      document.getElementById('App-input').value = `Found ${unique_urls.length} valid URLs.\n\n${unique_urls.join("\n")}`;
     }else{
-      document.getElementById('App-text-input').value = `No valid URLs were found in the text!\n\n${raw}` ;
+      document.getElementById('App-input').value = `No valid URLs were found in the text!\n\n${raw}` ;
     }
   }
 
@@ -191,7 +231,8 @@ function App() {
         }
       ).then((resp) => {
         returnThinker(true);
-        document.getElementById('App-text-input').value = `The following URLs were successfully submitted:\n\n${resp.data.urls.join("\n")}`;
+        document.getElementById('App-input').value = `The following URLs were successfully submitted:\n\n${resp.data.urls.join("\n")}`;
+        init();
       }).catch((error) => {
         console.log(error);
         document.getElementById('App-notify').value = "Something went wrong. Please try again.";
@@ -209,7 +250,8 @@ function App() {
           }
         ).then((resp) => {
           returnThinker(true);
-          document.getElementById('App-text-input').value = `The following files were successfully submitted:\n\n${resp.data.names.join("\n")}`;
+          document.getElementById('App-input').value = `The following files were successfully submitted:\n\n${resp.data.names.join("\n")}`;
+          init();
         }).catch((error) => {
           console.log(error);
           document.getElementById('App-notify').value = "Something went wrong. Please try again.";
@@ -218,22 +260,59 @@ function App() {
     }
   }
 
+
   return (
-    <div className="App">
-      <div className={"App-header App-header-landing"}>
-          <div className={"App-input-container App-input-container-landing"} id="input-container">
-            <a href="https://github.com/sjb-ch1mp/shuck/blob/master/README.md" target="_blank"><img src={logo} className={"App-logo App-logo-landing"} alt="logo" /></a>
-            <div className={'App-input-subcontainer App-input-subcontainer-landing'}>
-              <textarea spellCheck="false" onDrop={dropHandler} onChange={updateSubmission} onPaste={submitURLs} id="App-text-input" className={"App-input App-input-landing"} placeholder="Shuck will extract URLs from text pasted here. You can also drop one or more files." />
-              <textarea id='App-notify' className={"App-notify App-notify-landing"} disabled="true"></textarea>
+    <div id='App' className={'App'}>
+      <Workspace>
+        <Sidebar>
+          <Banner/>
+          <Portal/>
+          <Notifier/>
+          <Thinker/>
+        </Sidebar>
+        <Submissions/>
+        <Toolbox/>
+        <Results/>
+      </Workspace>
+    </div>
+  );
+  /*
+  return (
+    <div id='App' className="App">
+      <div id='App-workspace' className={'App-workspace-landing hidden'}>
+        <div id='App-workspace-files' className={'scrollable-hidden-bar App-workspace-files-landing hidden'}>
+
+        </div>
+        <div id='App-workspace-divider-left' className={'App-workspace-divider hidden'}><img src={divider_left} className={'divider'}></img></div>
+        <div id='App-workspace-file-summary' className={'scrollable-hidden-bar App-workspace-file-summary-landing hidden'}>
+
+        </div>
+        <div id='App-workspace-divider-middle' className={'App-workspace-divider hidden'}><img src={divider_mid} className={'divider'}></img></div>
+        <div id='App-workspace-results' className={'scrollable-hidden-bar App-workspace-results-landing hidden'}>
+
+        </div>
+        <div id='App-workspace-divider-right' className={'App-workspace-divider hidden'}><img src={divider_right} className={'divider'}></img></div>
+        <div id='App-workspace-tools' className={'scrollable-hidden-bar App-workspace-tools-landing hidden'}>
+
+        </div>
+      </div>
+      <div id='App-header' className={"App-header-landing"}>
+          <div id='App-input-container' className={"App-input-container-landing"}>
+            <div id='App-logo-container' className={'App-logo-container-landing'}>
+              <a href="https://github.com/sjb-ch1mp/shuck/blob/master/README.md" target="_blank"><img id='App-logo' src={logo} className={"App-logo-applicatlandingion"} alt="shuck" /></a>
             </div>
-            <div className={'App-thinker-container'}>
-              <img id="App-thinker" src={thinker_still} onMouseOver={turnThinker} onMouseLeave={returnThinker} onMouseDown={getShuckin} className={"App-thinker App-thinker-landing"} />
+            <div id='App-input-subcontainer' className={'App-input-subcontainer-landing'}>
+              <textarea id="App-input" spellCheck="false" onDrop={dropHandler} onChange={updateSubmission} onPaste={submitURLs} className={"scrollable-hidden-bar App-input-landing"} placeholder="Shuck will extract URLs from text pasted here. You can also drop one or more files." />
+              <textarea id='App-notify' className={"App-notify-landing"} disabled="true"></textarea>
+            </div>
+            <div id='App-thinker-container' className={'App-thinker-container-landing'}>
+              <img id="App-thinker" src={thinker_still} onMouseOver={turnThinker} onMouseLeave={returnThinker} onMouseDown={getShuckin} className={"App-thinker-landing"} />
             </div>
           </div>
       </div>
     </div>
   );
+  */
 }
 
 export default App;
