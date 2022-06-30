@@ -5,20 +5,41 @@
 }
 
 .default-margins {
-    margin: 2vh;
+    margin: 0.5vh;
 }
 
 .terminal-font {
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
-    color: #00B0F0;
-    font-size: 12px;
+    color: transparent;
+    text-shadow: 0 0 1.6px #A0CC82;
+    font-size: 14px;
 }
 
-.ui-font {
-    font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif;
-    color: #00B0F0;
+.notifier-font {
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    color: transparent;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+}
+
+.info {
+    text-shadow: 0 0 1.6px #00B0F0;
+    cursor: pointer;
+}
+
+.error {
+    text-shadow: 0 0 1.6px red;
+    cursor: pointer;
+}
+
+.info-border {
+    border: 4px #00B0F0 double;
+}
+
+.error-border {
+    border: 4px red double;
 }
 
 .boxed-in {
@@ -27,12 +48,9 @@
     box-sizing: border-box;
 }
 
-.container-frame {
-    border-top: 5px;
-    border-right: 1px;
-    border-bottom: 5px;
-    border-left: 1px;
-    border-color: #D7039F;
+.container-frame{
+    border-top: 10px;
+    border-color: #A8FFFC;
     border-style: solid;
     border-radius: 5px;
 }
@@ -60,17 +78,25 @@
 }
 
 textarea {
+    background-color: transparent;
     border: 0px;   
     height: 100%;
     width: 100%;
     resize: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
 }
 
 img {
-    max-height: 80%;
-    max-width: 80%;
-    width: auto;
     height: auto;
+    width: 30%;
+    min-width: 15vh;
+    display: block;
+    cursor: pointer;
 }
 
 .Workspace {
@@ -79,12 +105,14 @@ img {
     flex-direction: row;
     justify-content: center;
     height: 100vh;
+    background-image: url("../../img/terminal_50p.png");
+    background-size: 100vw 100vh;
 }
 
 .Sidebar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     width: 50vh;
 }
 
@@ -93,12 +121,21 @@ img {
     width: 100%;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+    background-image: url("../../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .Notifier {
     width: 100%;
-    height: 10%;
+    height: 10vh;
     padding-top: 2vh;
+    padding: 10px;
+    cursor:pointer;
 }
 
 .Portal {
@@ -110,14 +147,12 @@ img {
     height: 25%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .Toolbox {
-    width: 40vh;
-}
-
-.Submissions {
     width: 40vh;
 }
 
@@ -126,15 +161,12 @@ img {
 }
 
 .Title {
-    background-color: #00B0F0;
-    border-radius: 0px 0px 2px 2px;
+    background-color: #A8FFFC;
+    border: 2px #A8FFFC solid;
+    border-radius: 0px 0px 1px 1px;
     color: black;
-    font-weight: bold;
-    font-family: 'Ubuntu Condensed';
+    font-weight:bolder;
+    font-size: 24px;
+    font-family: 'VT323';
     text-align: center;
 }
-
-
-
-
-

@@ -9,8 +9,8 @@ export class Results extends React.Component {
     render () {
         return <div className={'Results default-margins container-frame titled'}>
                     <ToolOptions/>
-                    <textarea className={'scrollable boxed-in'} disabled='true' />
-                    <Title title='Results'/>
+                    <textarea className={'scrollable boxed-in terminal-font'} spellCheck={ false }/>
+                    <Title title='RESULTS'/>
                 </div>;
     }
 }

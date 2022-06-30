@@ -209,7 +209,7 @@ function App() {
       document.getElementById('App-thinker').classList.add("thinking-mouseleave");
     }
   }
-
+ 
   function getShuckin(){
     //Check if there's anything to submit
     if(submissionType == null){
@@ -264,8 +264,8 @@ function App() {
         });
       });
     }
-  }
-  */
+  }*/
+  
 
   return (
     <Workspace/>

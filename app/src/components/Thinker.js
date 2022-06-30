@@ -15,32 +15,37 @@ export class Thinker extends React.Component {
         this.props = props;
         this.state = {
             'img':thinker,
-            'class':''
+            'animate':'thinker',
+            'thinking':false
         };
-        this.wakeUp = this.wakeUp.bind(this);
-        this.goBackToSleep = this.goBackToSleep.bind(this);
-        this.think = this.think.bind(this);
     }
+
+    /*
+    
+    
+        //If a submission is being made - start the thinker icon rotating
+        let thinker = document.getElementById('App-thinker');
+        if(!thinker.classList.contains("thinking")){
+          document.getElementById('App-thinker').classList.remove("thinking-mouseover");
+          thinker.src = thinker_thinking;
+          document.getElementById('App-thinker').classList.add("thinking");
+        }
+     */
 
     wakeUp() {
-        this.setState({
-            'img':thinker_mouseover,
-            'class':'thinker_mouseover'
-        });
+        if(!this.state.thinking){
+            this.setState({'img':thinker_mouseover,'animate':'thinker-mouseover'});
+        }
     }
 
-    goBackToSleep() {
-        this.setState({
-            'img':thinker,
-            'class':'thinker_mouseleave'
-        });
+    goBackToSleep(force) {
+        if(!force && !this.state.thinking){
+            this.setState({'img':thinker, 'animate':'thinker-mouseleave', 'thinking':false});
+        }   
     }
 
     think() {
-        this.setState({
-            'img':thinker_thinking,
-            'class':'thinker_thinking'
-        });
+        this.setState({'img':thinker_thinking, 'animate':'thinker-thinking', 'thinking':true});
     }
 
     render () {
@@ -48,10 +53,11 @@ export class Thinker extends React.Component {
         return <div className={'Thinker'}>
             <img 
                 id='thinker' 
-                src={ this.state.img } 
-                className={ this.state.class }
-                onMouseOver={ () => {this.wakeUp()}}
-                onMouseLeave={ () => {this.goBackToSleep()}}
+                src={ (this.props.waitingForSubmission) ? thinker_thinking : this.state.img } 
+                className={ (this.props.waitingForSubmission) ? 'thinker-thinking' : this.state.animate }
+                onMouseOver={ () => { (!this.props.waitingForSubmission) ? this.wakeUp() : this.think() }}
+                onMouseLeave={ () => { (!this.props.waitingForSubmission) ? this.goBackToSleep() : this.think() }}
+                onClick={ this.props.getShuckin }
             />
         </div>;
     }

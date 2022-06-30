@@ -7,13 +7,11 @@ import './style/components.css';
 import { Sidebar }      from "./Sidebar.js";
 import { Results }      from "./Results.js";
 import { Toolbox }      from "./Toolbox.js";
-import { Submissions }  from "./Submissions.js";
 
 export class Workspace extends React.Component{
     render(){
-        return <div className={'Workspace not-scrollable'}>
+        return <div className={'Workspace not-scrollable terminal'}>
             <Sidebar/>
-            <Submissions/>
             <Toolbox/>
             <Results/>
         </div>;

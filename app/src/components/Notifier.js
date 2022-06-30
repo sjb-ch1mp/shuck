@@ -4,12 +4,22 @@ import React from "react";
 import './style/components.css';
 
 export class Notifier extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.props = props;
+    }
+
     render () {
-        return <div className={'Notifier'}>
+        return <div id='notifier-container' className={ `boxed-in hidden` } onClick={ () => {this.props.toggleNotification(false, '', ''); } }>
                     <textarea 
-                        className={'not-scrollable ui-font boxed-in'}
-                        disabled='true'
+                        id='notifier'
+                        className={ `not-scrollable notifier-font boxed-in` }
+                        disabled={ true }
+                        defaultValue={ '' }
+                        spellCheck={ false }
                     />
                 </div>;
     }
+    //
 }
