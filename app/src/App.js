@@ -1,10 +1,15 @@
-import logo from './img/logo.png';
-import thinker_thinking from './img/thinking.png';
-import thinker_hover from './img/thinking_hover.png';
-import thinker_still from './img/thinking_still.png';
+//import logo from './img/logo.png';
+//import thinker_thinking from './img/thinking.png';
+//import thinker_hover from './img/thinking_hover.png';
+//import thinker_still from './img/thinking_still.png';
 import './css/App.css';
-import './css/dynamic.css';
+//import './css/dynamic.css';
+
 import { useState } from "react";
+
+//Components
+import { Workspace }    from "./components/Workspace.js";
+
 const base64encoder = require('base64-arraybuffer');
 
 function App() {
@@ -14,6 +19,7 @@ function App() {
   const [submittedURLs, setSubmittedURLs]   = useState([]);
   const axios = require('axios').default;
 
+  /*
   function init(){
     let allNodes = document.getElementById('App').childNodes;
     switchInterface(allNodes, 'application');
@@ -259,22 +265,10 @@ function App() {
       });
     }
   }
-
+  */
 
   return (
-    <div id='App' className={'App'}>
-      <Workspace>
-        <Sidebar>
-          <Banner/>
-          <Portal/>
-          <Notifier/>
-          <Thinker/>
-        </Sidebar>
-        <Submissions/>
-        <Toolbox/>
-        <Results/>
-      </Workspace>
-    </div>
+    <Workspace/>
   );
   /*
   return (

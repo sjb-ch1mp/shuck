@@ -1,0 +1,140 @@
+.hidden {
+    display: none !important;
+    height: 0px !important;
+    width: 0px !important;
+}
+
+.default-margins {
+    margin: 2vh;
+}
+
+.terminal-font {
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    color: #00B0F0;
+    font-size: 12px;
+}
+
+.ui-font {
+    font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif;
+    color: #00B0F0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.boxed-in {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container-frame {
+    border-top: 5px;
+    border-right: 1px;
+    border-bottom: 5px;
+    border-left: 1px;
+    border-color: #D7039F;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.titled {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hold-dimensions {
+    resize: none;
+}
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.not-scrollable {
+  overflow: hidden;
+  -moz-hidden-unscrollable: hidden;
+}
+
+textarea {
+    border: 0px;   
+    height: 100%;
+    width: 100%;
+    resize: none;
+}
+
+img {
+    max-height: 80%;
+    max-width: 80%;
+    width: auto;
+    height: auto;
+}
+
+.Workspace {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+}
+
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50vh;
+}
+
+.Banner {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Notifier {
+    width: 100%;
+    height: 10%;
+    padding-top: 2vh;
+}
+
+.Portal {
+    height: 50%;
+    width: 100%;
+}
+
+.Thinker {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Toolbox {
+    width: 40vh;
+}
+
+.Submissions {
+    width: 40vh;
+}
+
+.Results {
+    width: 100vh;
+}
+
+.Title {
+    background-color: #00B0F0;
+    border-radius: 0px 0px 2px 2px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Ubuntu Condensed';
+    text-align: center;
+}
+
+
+
+
+

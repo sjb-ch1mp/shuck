@@ -1,0 +1,39 @@
+.thinker-thinking {
+    animation: spin infinite 1s;
+}
+  
+.thinker-mouseover {
+    animation: turn 1 0.2s;
+    animation-fill-mode: forwards;
+}
+  
+.thinker-mouseleave {
+    animation: return 1 0.2s;
+}
+  
+@keyframes return {
+    from {
+        transform:rotate(90deg);
+    }
+    to {
+        transform:rotate(0deg);
+    }
+}
+  
+@keyframes turn {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(90deg);
+    }
+}
+  
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
