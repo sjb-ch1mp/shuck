@@ -20,18 +20,6 @@ export class Thinker extends React.Component {
         };
     }
 
-    /*
-    
-    
-        //If a submission is being made - start the thinker icon rotating
-        let thinker = document.getElementById('App-thinker');
-        if(!thinker.classList.contains("thinking")){
-          document.getElementById('App-thinker').classList.remove("thinking-mouseover");
-          thinker.src = thinker_thinking;
-          document.getElementById('App-thinker').classList.add("thinking");
-        }
-     */
-
     wakeUp() {
         if(!this.state.thinking){
             this.setState({'img':thinker_mouseover,'animate':'thinker-mouseover'});

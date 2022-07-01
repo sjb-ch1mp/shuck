@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import md5 from 'md5';
 import { encode } from 'base64-arraybuffer';
 
 //Style
@@ -17,13 +18,19 @@ export class Sidebar extends React.Component{
         this.props = props;
 
         this.state = {
-            'message':'',
-            'newSubmission':false,
+            'message':'=== Welcome to Shuck ===\n\n' + 
+                      'Shuck will take a list of URLs or a set of files and allow you to analyse them with a collection of open source static analysis tools.\n\n' + 
+                      'To submit URLs, paste them into this INPUT portal. Shuck will automatically parse any text entered into this portal and extract valid URLs for you.\n\n' + 
+                      'To submit files, simply drag and drop them into this INPUT portal.\n\n' + 
+                      'Please note that Shuck will only accept up to 20 URLs at a time, and up to 35MB worth of files.',
+            'submissionId':null,
             'submissionType':null,
             'submittedFiles':[],
             'submittedURLs':[],
+            'artefacts':[],
             'waitingForSubmission':false,
-            'artefactView':false
+            'artefactView':false,
+            'notify':{'active':false, 'message':'', 'type':''}
         };
 
         this.reset = this.reset.bind(this);
@@ -35,18 +42,17 @@ export class Sidebar extends React.Component{
         this.parseAndSaveURLs = this.parseAndSaveURLs.bind(this);
         this.getShuckin = this.getShuckin.bind(this);
         this.encodeFile = this.encodeFile.bind(this);
-        this.switchView = this.switchView.bind(this);
+        this.toggleView = this.toggleView.bind(this);
+        this.toggleNotification = this.toggleNotification.bind(this);
     }
 
     reset(full){
         this.setState({
             'submissionType':null,
             'submittedFiles':[],
-            'submittedURLs':[]
+            'submittedURLs':[],
+            'message':(full) ? '' : this.state.message
         });
-        if(full){
-            document.getElementById('portal').value = '';
-        }
     };   
     
     submitURLs(e){
@@ -72,11 +78,16 @@ export class Sidebar extends React.Component{
             this.setState({
                 'submissionType':(unique_urls.length > 1) ? 'url_multiple' : 'url_single',
                 'submittedURLs':unique_urls,
-                'newSubmission':true
+                'newSubmission':true,
+                'submissionId':md5(unique_urls.join(':').toUpperCase())
+            }, () => {console.log(`Submission ID (URLs): ${this.state.submissionId}`)}); //FIXME
+            this.setState({
+              'message': `Found ${unique_urls.length} valid URLs.\n\n${unique_urls.join("\n")}`
             });
-          document.getElementById('portal').value = `Found ${unique_urls.length} valid URLs.\n\n${unique_urls.join("\n")}`;
         }else{
-          document.getElementById('portal').value = `No valid URLs were found in the text!\n\n${raw}` ;
+          this.setState({
+            'message': `No valid URLs were found in the text!\n\n${raw}`
+          });
         }
     }
 
@@ -91,7 +102,7 @@ export class Sidebar extends React.Component{
               files.push(e.dataTransfer.items[i].getAsFile());
               checkSize = checkSize + parseInt(files[files.length - 1].size);
               if(checkSize >= 36700160){
-                this.toggleNotification(true, 'Submission is too large. Maximum upload size is 35MB.', 'error');
+                this.toggleNotification('Submission is too large. Maximum upload size is 35MB.', 'error');
                 return;  
               }
             }
@@ -114,7 +125,11 @@ export class Sidebar extends React.Component{
         for(let i in files){
             fileList.push(files[i].name);
         }
-        document.getElementById('portal').value = `Got ${(files.length > 1) ? `${files.length} files`: '1 file'}. Total size is ${totalSize} bytes.\n\n${fileList.join('\n')}`;
+        this.setState({
+          'message': `Got ${(files.length > 1) ? `${files.length} files`: '1 file'}. Total size is ${totalSize} bytes.\n\n${fileList.join('\n')}`,
+          'submissionId':md5(`${fileList.join(':').toUpperCase()}::${totalSize}`)
+        }, () => {console.log(`Submission ID (FILES): ${this.state.submissionId}`)}); //FIXME
+        
     }
 
     getTotalSubmissionSize(files){
@@ -125,126 +140,127 @@ export class Sidebar extends React.Component{
         return totalSize;
     }
 
-    toggleNotification(active, message, type){
-        let notifier_container = document.getElementById('notifier-container');
-        if(active){
-            notifier_container.classList.add(`${type}-border`);
-            notifier_container.classList.remove('hidden');
-        }else{
-            notifier_container.classList.remove('info-border');
-            notifier_container.classList.remove('error-border');
-            notifier_container.classList.add('hidden');
-        }
-
-        let notifier = document.getElementById('notifier');
-        if(active){
-            notifier.classList.add(type);
-            notifier.value = message;
-        }else{
-            notifier.value = '';
-            notifier.classList.remove('info');
-            notifier.classList.remove('error');
-        }
-    }
-
-    updateSubmission(){
-        this.toggleNotification();
-        if(/^url/.test(this.state.submissionType)){
-          let modifiedText = document.getElementById('portal').value;
-          this.reset();
-          this.parseAndSaveURLs(modifiedText);
-        }else if(/^file/.test(this.state.submissionType)){
-          let fileList = document.getElementById('portal').value.split(/\n/);
-          let modifiedFiles = [];
-          for(let i in fileList){
-            if(fileList[i].trim().length > 0){
-              for(let j in this.state.submittedFiles){
-                if(this.state.submittedFiles[j].name === fileList[i].trim()){
-                  modifiedFiles.push(this.state.submittedFiles[j]);
-                }
-              }
-            }
+    toggleNotification(message, type){
+      if(message){
+        this.setState({
+          'notify':{
+            'active':true,
+            'message':message,
+            'type':type
           }
-          this.reset(true);
-          if(modifiedFiles.length > 0){
-            if(modifiedFiles.length === 1){
-                this.setState({'submissionType':'file_single'});
-            }else{
-                this.setState({'submissionType':'file_multiple'});
-            }
-            this.setState({'submittedFiles':modifiedFiles});
-            this.reportCurrentFiles(modifiedFiles);
-          }
-        }
-    }
-
-    switchView(view){
-      if(view === 'artefact'){
-        this.setState({'artefactView':true});
+        });
       }else{
-        this.setState({'artefactView':false});
+        this.setState({
+          'notify':{ 
+            'active':false,
+            'message':'',
+            'type':''
+          }
+        });
       }
     }
 
+    updateSubmission(){
+      this.toggleNotification();
+      if(/^url/.test(this.state.submissionType)){
+        let modifiedText = document.getElementById('portal').value;
+        this.reset();
+        this.parseAndSaveURLs(modifiedText);
+      }else if(/^file/.test(this.state.submissionType)){
+        let fileList = document.getElementById('portal').value.split(/\n/);
+        let modifiedFiles = [];
+        for(let i in fileList){
+          if(fileList[i].trim().length > 0){
+            for(let j in this.state.submittedFiles){
+              if(this.state.submittedFiles[j].name === fileList[i].trim()){
+                modifiedFiles.push(this.state.submittedFiles[j]);
+              }
+            }
+          }
+        }
+        this.reset(true);
+        if(modifiedFiles.length > 0){
+          if(modifiedFiles.length === 1){
+              this.setState({'submissionType':'file_single'});
+          }else{
+              this.setState({'submissionType':'file_multiple'});
+          }
+          this.setState({'submittedFiles':modifiedFiles});
+          this.reportCurrentFiles(modifiedFiles);
+        }
+      }
+    }
+
+    toggleView(){
+      this.setState({
+        'artefactView':!this.state.artefactView
+      });
+      this.toggleNotification((this.state.artefactView) ? 'ARTEFACT MODE': 'SUBMIT MODE', 'info');
+    }
+
     getShuckin(){
-        if(this.state.artefactView){
-          this.switchView('submit');
-          return;
-        }else if(!this.state.artefactView && !this.state.newSubmission){
+      if(this.state.artefacts.length === 0 || this.state.submissionId !== this.state.artefacts.submissionId){
+        this.toggleView();
+        return;
+      }
+
+      //Check if there's anything to submit
+      if(this.state.submissionType == null){
+        this.toggleNotification('Nothing to submit.', 'error');
+        return;
+      }else if(this.state.submissionType === 'url_multiple' && this.state.submittedURLs.length > 20){
+        this.toggleNotification("Please submit only 20 URLs at a time.", 'error');  
+        return;
+      }
+
+      //Submit to server
+      this.setState({'waitingForSubmission':true});
+      if(/^url/.test(this.state.submissionType)){
+        axios.post(
+          '/api/url',
+          {
+            'submissionId':this.state.submissionId,
+            'urls':this.state.submittedURLs
+          }
+        ).then((resp) => {
+          this.toggleNotification('The URLs above were successfully submitted.', 'info');
+          this.setState({
+            'message': `${resp.data.urls.join("\n")}`
+          });
           this.switchView('artefact');
-          return;
+        }).catch((error) => {
+          console.log(error);
+          this.toggleNotification("Something went wrong. Please try again.", 'error');
+        }).finally(() => {
+          this.setState({'waitingForSubmission':false});
+        });
+      }else{
+        let filesToEncode = [];
+        for(let i in this.state.submittedFiles){
+          filesToEncode.push(this.encodeFile(this.state.submittedFiles[i]));
         }
-
-        //Check if there's anything to submit
-        if(this.state.submissionType == null){
-          this.toggleNotification(true, 'Nothing to submit.', 'error');
-          return;
-        }else if(this.state.submissionType === 'url_multiple' && this.state.submittedURLs.length > 20){
-          this.toggleNotification(true, "Please submit only 20 URLs at a time.", 'error');  
-          return;
-        }
-
-        //Submit to server
-        this.setState({'waitingForSubmission':true});
-        if(/^url/.test(this.state.submissionType)){
+        Promise.all(filesToEncode).then((encodedFiles) => {
           axios.post(
-            '/api/url',
+              '/api/file',
             {
-              'urls':this.state.submittedURLs
+              'submissionId':this.state.submissionId,
+              'files':encodedFiles
             }
           ).then((resp) => {
-            this.toggleNotification(true, 'The URLs above were successfully submitted.', 'info');
-            document.getElementById('portal').value = `${resp.data.urls.join("\n")}`;
-            this.switchView('artefact');
+            //FIXME: Set artefacts here
+              this.toggleNotification('The files above were successfully submitted.', 'info');
+              this.setState({
+                'message': `${resp.data.names.join("\n")}`
+              });
+              this.switchView('artefact');
           }).catch((error) => {
-            console.log(error);
-            this.toggleNotification(true, "Something went wrong. Please try again.", 'error');
+              console.log(error);
+              this.toggleNotification("Something went wrong. Please try again.", 'error');
           }).finally(() => {
-            this.setState({'waitingForSubmission':false, 'newSubmission':false});
+            this.setState({'waitingForSubmission':false});
           });
-        }else{
-          let filesToEncode = [];
-          for(let i in this.state.submittedFiles){
-            filesToEncode.push(this.encodeFile(this.state.submittedFiles[i]));
-          }
-          Promise.all(filesToEncode).then((encodedFiles) => {
-            axios.post(
-                '/api/file',
-              {
-                'files':encodedFiles
-              }
-            ).then((resp) => {
-                this.toggleNotification(true, 'The files above were successfully submitted.', 'info');
-                document.getElementById('portal').value = `${resp.data.names.join("\n")}`;
-                this.switchView('artefact');
-            }).catch((error) => {
-                console.log(error);
-                this.toggleNotification(true, "Something went wrong. Please try again.", 'error');
-            }).finally(() => {
-              this.setState({'waitingForSubmission':false, 'newSubmission':false});
-            });
-          });
-        }
+        });
+      }
     }
 
     encodeFile(file){
@@ -270,7 +286,15 @@ export class Sidebar extends React.Component{
     render(){
         return <div className={`Sidebar default-margins`}>
             <Banner/>
-            <Portal artefactView={ this.state.artefactView } submitURLs={ this.submitURLs } submitFiles={ this.submitFiles } toggleNotification={ this.toggleNotification } updateSubmission={ this.updateSubmission }/>
+            <Portal 
+              artefactView={ this.state.artefactView } 
+              submitURLs={ this.submitURLs } 
+              submitFiles={ this.submitFiles } 
+              updateSubmission={ this.updateSubmission } 
+              toggleNotification={ this.toggleNotification }
+              notify={ this.state.notify }
+              message={ this.state.message }
+              ></Portal>
             <Thinker getShuckin={ this.getShuckin } waitingForSubmission={ this.state.waitingForSubmission }/>
         </div>;
     }
