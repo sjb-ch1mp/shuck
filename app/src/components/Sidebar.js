@@ -18,10 +18,12 @@ export class Sidebar extends React.Component{
 
         this.state = {
             'message':'',
+            'newSubmission':false,
             'submissionType':null,
             'submittedFiles':[],
             'submittedURLs':[],
-            'waitingForSubmission':false
+            'waitingForSubmission':false,
+            'artefactView':false
         };
 
         this.reset = this.reset.bind(this);
@@ -55,7 +57,7 @@ export class Sidebar extends React.Component{
 
     parseAndSaveURLs(raw){
         //Regex adapted from: https://regexr.com/39nr7
-        let urls = raw.match(/http(s)?:\/\/(www\.)?[a-zA-Z0-9@:%\._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+\.~#?&\/=]*)/g);
+        let urls = raw.match(/(http(s)?:\/\/(www\.)?)?[a-zA-Z0-9@:%\._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+\.~#?&\/=]*)/g);
         let unique_urls = [];
         for(let i in urls){
           if(!(unique_urls.includes(urls[i]))){
@@ -68,7 +70,8 @@ export class Sidebar extends React.Component{
             this.reset(true);
             this.setState({
                 'submissionType':(unique_urls.length > 1) ? 'url_multiple' : 'url_single',
-                'submittedURLs':unique_urls
+                'submittedURLs':unique_urls,
+                'newSubmission':true
             });
           document.getElementById('portal').value = `Found ${unique_urls.length} valid URLs.\n\n${unique_urls.join("\n")}`;
         }else{
@@ -96,7 +99,8 @@ export class Sidebar extends React.Component{
             this.reset(true);
             this.setState({
                 'submissionType': (files.length > 1) ? 'file_multiple' : 'file_single',
-                'submittedFiles': files
+                'submittedFiles': files,
+                'newSubmission':true
             });
             this.reportCurrentFiles(files);
           }
@@ -173,7 +177,16 @@ export class Sidebar extends React.Component{
         }
     }
 
+    switchToSubmissionView(){
+      
+    }
+
     getShuckin(){
+        if(this.state.artefactView){
+          this.switchToSubmissionView();
+          return;
+        }
+
         //Check if there's anything to submit
         if(this.state.submissionType == null){
           this.toggleNotification(true, 'Nothing to submit.', 'error');
@@ -182,7 +195,7 @@ export class Sidebar extends React.Component{
           this.toggleNotification(true, "Please submit only 20 URLs at a time.", 'error');  
           return;
         }
-    
+
         //Submit to server
         this.setState({'waitingForSubmission':true});
         if(/^url/.test(this.state.submissionType)){
@@ -192,15 +205,14 @@ export class Sidebar extends React.Component{
               'urls':this.state.submittedURLs
             }
           ).then((resp) => {
-            this.setState({'waitingForSubmission':false});
             this.toggleNotification(true, 'The URLs above were successfully submitted.', 'info');
             document.getElementById('portal').value = `${resp.data.urls.join("\n")}`;
+            this.setState({'artefactView':true});
           }).catch((error) => {
-            this.setState({'waitingForSubmission':false});
             console.log(error);
             this.toggleNotification(true, "Something went wrong. Please try again.", 'error');
           }).finally(() => {
-            this.setState({'waitingForSubmission':false});
+            this.setState({'waitingForSubmission':false, 'newSubmission':false});
           });
         }else{
           let filesToEncode = [];
@@ -214,15 +226,14 @@ export class Sidebar extends React.Component{
                 'files':encodedFiles
               }
             ).then((resp) => {
-                this.setState({'waitingForSubmission':false});
                 this.toggleNotification(true, 'The files above were successfully submitted.', 'info');
                 document.getElementById('portal').value = `${resp.data.names.join("\n")}`;
+                this.setState({'artefactView':true});
             }).catch((error) => {
-                this.setState({'waitingForSubmission':false});
                 console.log(error);
                 this.toggleNotification(true, "Something went wrong. Please try again.", 'error');
             }).finally(() => {
-              this.setState({'waitingForSubmission':false});
+              this.setState({'waitingForSubmission':false, 'newSubmission':false});
             });
           });
         }

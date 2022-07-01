@@ -6,6 +6,7 @@ import './style/components.css';
 //Components
 import { Title } from "./Title";
 import { Notifier } from "./Notifier";
+import { ButtonContainer } from "./ButtonContainer";
 
 export class Portal extends React.Component {
 
@@ -24,6 +25,7 @@ export class Portal extends React.Component {
 
     render () {
         return <div className={'Portal container-frame titled boxed-in'}>
+                    <ButtonContainer className={ 'Artefacts hidden' } />
                     <textarea
                         id='portal'
                         className={`scrollable boxed-in terminal-font`} 
