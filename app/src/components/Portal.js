@@ -25,10 +25,10 @@ export class Portal extends React.Component {
 
     render () {
         return <div className={'Portal container-frame titled boxed-in'}>
-                    <ButtonContainer className={ 'Artefacts hidden' } />
+                    <ButtonContainer hidden={ `${ (this.props.artefactView) ? '' : 'hidden' }` } />
                     <textarea
                         id='portal'
-                        className={`scrollable boxed-in terminal-font`} 
+                        className={`scrollable boxed-in terminal-font ${(this.props.artefactView) ? 'hidden' : ''}`} 
                         spellCheck={ false }
                         onDrop={ e => { this.props.submitFiles(e); } }
                         defaultValue={ this.state.welcomeMessage }

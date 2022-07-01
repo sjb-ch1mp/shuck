@@ -170,3 +170,19 @@ img {
     font-family: 'VT323';
     text-align: center;
 }
+
+.Artefact {
+    border: 2px white solid;
+    border-radius: 2px;
+    color: white;
+}
+
+.ButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    border: 2px green solid;
+}

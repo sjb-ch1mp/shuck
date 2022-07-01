@@ -35,6 +35,7 @@ export class Sidebar extends React.Component{
         this.parseAndSaveURLs = this.parseAndSaveURLs.bind(this);
         this.getShuckin = this.getShuckin.bind(this);
         this.encodeFile = this.encodeFile.bind(this);
+        this.switchView = this.switchView.bind(this);
     }
 
     reset(full){
@@ -177,13 +178,20 @@ export class Sidebar extends React.Component{
         }
     }
 
-    switchToSubmissionView(){
-      
+    switchView(view){
+      if(view === 'artefact'){
+        this.setState({'artefactView':true});
+      }else{
+        this.setState({'artefactView':false});
+      }
     }
 
     getShuckin(){
         if(this.state.artefactView){
-          this.switchToSubmissionView();
+          this.switchView('submit');
+          return;
+        }else if(!this.state.artefactView && !this.state.newSubmission){
+          this.switchView('artefact');
           return;
         }
 
@@ -207,7 +215,7 @@ export class Sidebar extends React.Component{
           ).then((resp) => {
             this.toggleNotification(true, 'The URLs above were successfully submitted.', 'info');
             document.getElementById('portal').value = `${resp.data.urls.join("\n")}`;
-            this.setState({'artefactView':true});
+            this.switchView('artefact');
           }).catch((error) => {
             console.log(error);
             this.toggleNotification(true, "Something went wrong. Please try again.", 'error');
@@ -228,7 +236,7 @@ export class Sidebar extends React.Component{
             ).then((resp) => {
                 this.toggleNotification(true, 'The files above were successfully submitted.', 'info');
                 document.getElementById('portal').value = `${resp.data.names.join("\n")}`;
-                this.setState({'artefactView':true});
+                this.switchView('artefact');
             }).catch((error) => {
                 console.log(error);
                 this.toggleNotification(true, "Something went wrong. Please try again.", 'error');
@@ -262,7 +270,7 @@ export class Sidebar extends React.Component{
     render(){
         return <div className={`Sidebar default-margins`}>
             <Banner/>
-            <Portal submitURLs={ this.submitURLs } submitFiles={ this.submitFiles } toggleNotification={ this.toggleNotification } updateSubmission={ this.updateSubmission }/>
+            <Portal artefactView={ this.state.artefactView } submitURLs={ this.submitURLs } submitFiles={ this.submitFiles } toggleNotification={ this.toggleNotification } updateSubmission={ this.updateSubmission }/>
             <Thinker getShuckin={ this.getShuckin } waitingForSubmission={ this.state.waitingForSubmission }/>
         </div>;
     }
