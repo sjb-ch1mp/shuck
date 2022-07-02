@@ -27,7 +27,7 @@ export class Sidebar extends React.Component{
             'submissionType':null,
             'submittedFiles':[],
             'submittedURLs':[],
-            'artefacts':[],
+            'artefacts':{},
             'waitingForSubmission':false,
             'artefactView':false,
             'notify':{'active':false, 'message':'', 'type':''}
@@ -194,12 +194,11 @@ export class Sidebar extends React.Component{
     toggleView(){
       this.setState({
         'artefactView':!this.state.artefactView
-      });
-      this.toggleNotification((this.state.artefactView) ? 'ARTEFACT MODE': 'SUBMIT MODE', 'info');
+      }, () => {this.toggleNotification((this.state.artefactView) ? 'ARTEFACT MODE': 'SUBMIT MODE', 'info')});
     }
 
     getShuckin(){
-      if(this.state.artefacts.length === 0 || this.state.submissionId !== this.state.artefacts.submissionId){
+      if(this.state.artefacts.length > 0 && this.state.submissionId !== this.state.artefacts.submissionId){
         this.toggleView();
         return;
       }
@@ -223,11 +222,7 @@ export class Sidebar extends React.Component{
             'urls':this.state.submittedURLs
           }
         ).then((resp) => {
-          this.toggleNotification('The URLs above were successfully submitted.', 'info');
-          this.setState({
-            'message': `${resp.data.urls.join("\n")}`
-          });
-          this.switchView('artefact');
+            this.setState({'artefacts':resp.data}, () => {console.log(this.state.artefacts.enrichment_packages); this.toggleView()});
         }).catch((error) => {
           console.log(error);
           this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -247,12 +242,7 @@ export class Sidebar extends React.Component{
               'files':encodedFiles
             }
           ).then((resp) => {
-            //FIXME: Set artefacts here
-              this.toggleNotification('The files above were successfully submitted.', 'info');
-              this.setState({
-                'message': `${resp.data.names.join("\n")}`
-              });
-              this.switchView('artefact');
+            this.setState({'artefacts':resp.data}, () => {this.toggleView()});
           }).catch((error) => {
               console.log(error);
               this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -269,6 +259,7 @@ export class Sidebar extends React.Component{
             reader.onload = () => {
             resolve({
                 'name':file.name,
+                'size':file.size,
                 'content':encode(reader.result)
             });
             };
@@ -282,7 +273,6 @@ export class Sidebar extends React.Component{
         });
     }
 
-
     render(){
         return <div className={`Sidebar default-margins`}>
             <Banner/>
@@ -294,6 +284,7 @@ export class Sidebar extends React.Component{
               toggleNotification={ this.toggleNotification }
               notify={ this.state.notify }
               message={ this.state.message }
+              enrichment_packages={ this.state.artefacts.enrichment_packages }
               ></Portal>
             <Thinker getShuckin={ this.getShuckin } waitingForSubmission={ this.state.waitingForSubmission }/>
         </div>;

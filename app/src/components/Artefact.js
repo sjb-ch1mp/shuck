@@ -8,11 +8,10 @@ export default class Artefact extends React.Component {
     }
 
     render () {
+        console.log(`Calling render on artefact with id ${ this.props.id }`);
         return <div
                     className='Artefact'
-                >
-
-        </div>;
+                >{ this.props.id }</div>;
     }
 
 }

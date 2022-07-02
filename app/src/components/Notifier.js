@@ -15,7 +15,6 @@ export class Notifier extends React.Component {
                     <textarea 
                         id='notifier'
                         className={ `not-scrollable notifier-font boxed-in ${ this.props.notify.type }` }
-                        disabled={ true }
                         value={ this.props.notify.message }
                         spellCheck={ false }
                     />

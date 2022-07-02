@@ -172,12 +172,16 @@ img {
 }
 
 .Artefact {
-    border: 2px white solid;
+    border: 2px #9DC3E6 solid;
     border-radius: 2px;
-    color: white;
+    background-color: #9DC3E6;
+    padding: 5px; 
+    margin: 5px; 
+    color: black;
+    
 }
 
-.ButtonContainer {
+.ArtefactContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
