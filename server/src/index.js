@@ -12,11 +12,13 @@ app.use(bodyParser.json({limit: '35mb'}));
 //SSL
 const https = require('https');
 const fs = require('fs');
-const { url } = require('inspector');
 const options = {
     key: fs.readFileSync(path.join(__dirname, "..", "ssl", "key.pem")),
     cert: fs.readFileSync(path.join(__dirname, "..", "ssl", "cert.pem"))
 };
+
+//Utilities
+const url = require('url');
 
 //ROUTING
 app.get('/', (req, res) => {
@@ -24,15 +26,18 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/url', (req, res) => {
-
+    
     let enrichment_packages = [];
-    for(let i in req.body.urls){
+    for(let i=0; i<req.body.urls.length; i++){
+        let thisURL=new URL(req.body.urls[i]);
+
         enrichment_packages.push({
-            'id':req.body.urls[i],
+            'key':i + 1,
+            'id':thisURL.hostname,
             'type':'url',
             'enrichment_package':{}
         });
-    }
+    }   
 
     res.json({
         'submissionId':req.body.submissionId,
@@ -45,8 +50,9 @@ app.post('/api/url', (req, res) => {
 app.post('/api/file', (req, res) => {
 
     let enrichment_packages = [];
-    for(let i in req.body.files){
+    for(let i=0; i<req.body.files.length; i++){
         enrichment_packages.push({
+            'key':i + 1,
             'id':req.body.files[i].name,
             'type':'file',
             'enrichment_package':{

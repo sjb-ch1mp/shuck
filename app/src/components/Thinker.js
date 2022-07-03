@@ -15,25 +15,22 @@ export class Thinker extends React.Component {
         this.props = props;
         this.state = {
             'img':thinker,
-            'animate':'thinker',
-            'thinking':false
+            'animate':'thinker'
         };
     }
 
     wakeUp() {
-        if(!this.state.thinking){
-            this.setState({'img':thinker_mouseover,'animate':'thinker-mouseover'});
-        }
+        this.setState({'img':thinker_mouseover,'animate':'thinker-mouseover'});
     }
 
     goBackToSleep(force) {
         if(!force && !this.state.thinking){
-            this.setState({'img':thinker, 'animate':'thinker-mouseleave', 'thinking':false});
+            this.setState({'img':thinker, 'animate':'thinker-mouseleave'});
         }   
     }
 
     think() {
-        this.setState({'img':thinker_thinking, 'animate':'thinker-thinking', 'thinking':true});
+        this.setState({'img':thinker_thinking, 'animate':'thinker-thinking'});
     }
 
     render () {

@@ -13,9 +13,12 @@ export class ArtefactContainer extends React.Component {
     }
 
     renderArtefacts () {
-        console.log((this.props.enrichment_packages) ? this.props.enrichment_packages: '');
         if(this.props.enrichment_packages){
-            return this.props.enrichment_packages.map(({id, type, enrichment_package}) => <Artefact id={ id } type={ type } data={ enrichment_package }></Artefact>);
+            console.log(this.props.enrichment_packages);
+            return this.props.enrichment_packages.map(
+                function(artefact){
+                    return <Artefact index={ artefact.key } id={ artefact.id } type={ artefact.type } data={ artefact.enrichment_package }></Artefact>
+                });
         }
     }
 

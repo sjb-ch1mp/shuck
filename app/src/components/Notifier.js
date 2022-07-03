@@ -17,6 +17,7 @@ export class Notifier extends React.Component {
                         className={ `not-scrollable notifier-font boxed-in ${ this.props.notify.type }` }
                         value={ this.props.notify.message }
                         spellCheck={ false }
+                        readOnly={ true }
                     />
                 </div>;
     }

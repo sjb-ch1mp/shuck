@@ -16,7 +16,6 @@ export class Portal extends React.Component {
     }
 
     render () {
-        console.log(this.props.enrichment_packages);
         return <div className={'Portal container-frame titled boxed-in'}>
                     <ArtefactContainer hidden={ `${ (this.props.artefactView) ? '' : 'hidden' }` } enrichment_packages={ this.props.enrichment_packages }/>
                     <textarea
@@ -29,7 +28,7 @@ export class Portal extends React.Component {
                         onChange={ this.props.updateSubmission }
                     />
                     <Notifier notify={ this.props.notify } toggleNotification={ this.props.toggleNotification }/>
-                    <Title title='INPUT' />
+                    <Title title={ `${ (this.props.artefactView) ? 'ARTEFACTS' : 'INPUT' }` } />
                 </div>;
     }
 }

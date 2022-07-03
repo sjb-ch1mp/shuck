@@ -12,7 +12,7 @@
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
     color: transparent;
     text-shadow: 0 0 1.6px #A0CC82;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .notifier-font {
@@ -49,8 +49,11 @@
 }
 
 .container-frame{
-    border-top: 10px;
-    border-color: #A8FFFC;
+    border-top: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-color: #310A3F;
     border-style: solid;
     border-radius: 5px;
 }
@@ -72,6 +75,10 @@
   -ms-overflow-style: none;
 }
 
+.scrollable::-webkit-scrollbar {
+    display: none;
+}
+
 .not-scrollable {
   overflow: hidden;
   -moz-hidden-unscrollable: hidden;
@@ -85,6 +92,11 @@ textarea {
     resize: none;
     font-size: 16px;
     padding: 10px;
+}
+
+textarea:focus {
+    outline-width: 0;
+    outline: none;
 }
 
 textarea::-webkit-scrollbar {
@@ -161,24 +173,38 @@ img {
 }
 
 .Title {
-    background-color: #A8FFFC;
-    border: 2px #A8FFFC solid;
+    background-color: #310A3F; /*#A8FFFC;*/
+    border: 2px #310A3F/*#A8FFFC*/ solid;
     border-radius: 0px 0px 1px 1px;
-    color: black;
-    font-weight:bolder;
+    color: #FF7585;
     font-size: 24px;
     font-family: 'VT323';
     text-align: center;
 }
 
 .Artefact {
-    border: 2px #9DC3E6 solid;
-    border-radius: 2px;
-    background-color: #9DC3E6;
-    padding: 5px; 
-    margin: 5px; 
-    color: black;
-    
+    border: 1px #A0CC82 solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px !important;
+    text-align: center;
+    font-family: 'Ubuntu Mono';
+    color: #A0CC82;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.Artefact-selected {
+    border: 5px #A0CC82 double;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px !important;
+    text-align: center;
+    cursor: pointer;
+    background-color: #A0CC82;
+    text-shadow: 0 0 1.6px black !important;
 }
 
 .ArtefactContainer {
