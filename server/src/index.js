@@ -19,6 +19,7 @@ const options = {
 
 //Utilities
 const url = require('url');
+const md5 = require('md5');
 
 //ROUTING
 app.get('/', (req, res) => {
@@ -33,15 +34,18 @@ app.post('/api/url', (req, res) => {
 
         enrichment_packages.push({
             'key':i + 1,
-            'id':thisURL.hostname,
+            'id':md5(req.body.urls[i]),
+            'url':req.body.urls[i],
             'type':'url',
-            'enrichment_package':{}
+            'enrichment_package':{
+                'hostname':thisURL.hostname
+            }
         });
     }   
 
     res.json({
         'submissionId':req.body.submissionId,
-        'enrichment_packages':enrichment_packages
+        'artefacts':enrichment_packages
     });
 
     res.send();
@@ -53,17 +57,19 @@ app.post('/api/file', (req, res) => {
     for(let i=0; i<req.body.files.length; i++){
         enrichment_packages.push({
             'key':i + 1,
-            'id':req.body.files[i].name,
+            'id':md5(req.body.files[i].content),
+            'name':req.body.files[i].name,
             'type':'file',
             'enrichment_package':{
-                'size':req.body.files[i].size
+                'size':req.body.files[i].size,
+                'content':req.body.files[i].content
             }
         });
     }
 
     res.json({
         'submissionId':req.body.submissionId,
-        'enrichment_packages':enrichment_packages
+        'artefacts':enrichment_packages
     });
 
     res.send();

@@ -196,7 +196,7 @@ img {
 }
 
 .Artefact-selected {
-    border: 5px #A0CC82 double;
+    border: 1px #A0CC82 solid;
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
@@ -204,7 +204,8 @@ img {
     text-align: center;
     cursor: pointer;
     background-color: #A0CC82;
-    text-shadow: 0 0 1.6px black !important;
+    font-family: 'Ubuntu Mono';
+    color: black;
 }
 
 .ArtefactContainer {

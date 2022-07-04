@@ -17,7 +17,11 @@ export class Portal extends React.Component {
 
     render () {
         return <div className={'Portal container-frame titled boxed-in'}>
-                    <ArtefactContainer hidden={ `${ (this.props.artefactView) ? '' : 'hidden' }` } enrichment_packages={ this.props.enrichment_packages }/>
+                    <ArtefactContainer 
+                        hidden={ `${ (this.props.artefactView) ? '' : 'hidden' }` } 
+                        artefacts={ this.props.artefacts }
+                        toggleSelectedArtefact={ this.props.toggleSelectedArtefact }
+                    />
                     <textarea
                         id='portal'
                         className={`scrollable boxed-in terminal-font ${(this.props.artefactView) ? 'hidden' : ''}`} 

@@ -8,8 +8,7 @@ export default class Artefact extends React.Component {
     }
 
     render () {
-
-        return <div className='Artefact' onClick={ this.props.selectArtefact }>
+        return <div className= {`Artefact${(this.props.selected) ? '-selected': ''}`} onClick={ () => { this.props.highlightSelectedArtefact(this.props.index); this.props.toggleSelectedArtefact(this.props.index) } }>
                 { `${ this.props.index }: ${this.props.id} (${ this.props.type })` }
                 </div>;
     }

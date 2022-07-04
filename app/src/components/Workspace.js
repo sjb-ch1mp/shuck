@@ -18,12 +18,9 @@ export class Workspace extends React.Component{
         super(props);
         this.props = props;
 
+
         this.state = {
-            'message':'=== Welcome to Shuck ===\n\n' + 
-                      'Shuck will take a list of URLs or a set of files and allow you to analyse them with a collection of open source static analysis tools.\n\n' + 
-                      'To submit URLs, paste them into this INPUT portal. Shuck will automatically parse any text entered into this portal and extract valid URLs for you.\n\n' + 
-                      'To submit files, simply drag and drop them into this INPUT portal.\n\n' + 
-                      'Please note that Shuck will only accept up to 20 URLs at a time, and up to 35MB worth of files.',
+            'message':this.welcomeMessage(),
             'submissionId':null,
             'submissionType':null,
             'submittedFiles':[],
@@ -32,7 +29,7 @@ export class Workspace extends React.Component{
             'waitingForSubmission':false,
             'artefactView':false,
             'notify':{'active':false, 'message':'', 'type':''},
-            'selectedArtefact':''
+            'selectedArtefact':null
         };
 
         this.reset = this.reset.bind(this);
@@ -46,11 +43,33 @@ export class Workspace extends React.Component{
         this.encodeFile = this.encodeFile.bind(this);
         this.toggleView = this.toggleView.bind(this);
         this.toggleNotification = this.toggleNotification.bind(this);
-        this.selectArtefact = this.selectArtefact.bind(this);
+        this.toggleSelectedArtefact = this.toggleSelectedArtefact.bind(this);
+        this.welcomeMessage = this.welcomeMessage.bind(this);
     }
 
-    selectArtefact(id){
+    welcomeMessage(){
+      return '=== Welcome to Shuck ===\n\n' + 
+      'Shuck will take a list of URLs or a set of files and allow you to analyse them with a collection of open source static analysis tools.\n\n' + 
+      'To submit URLs, paste them into this INPUT portal. Shuck will automatically parse any text entered into this portal and extract valid URLs for you.\n\n' + 
+      'To submit files, simply drag and drop them into this INPUT portal.\n\n' + 
+      'Please note that Shuck will only accept up to 20 URLs at a time, and up to 35MB worth of files.';
+    }
 
+    toggleSelectedArtefact(key){
+      let clickedArtefact = null;
+      for(let i in this.state.artefacts.artefacts){
+        if(this.state.artefacts.artefacts[i].key === key){
+          clickedArtefact = this.state.artefacts.artefacts[i];
+        }
+      }
+
+      if(this.state.selectedArtefact && this.state.selectedArtefact.id === clickedArtefact.id){ 
+          this.setState({'selectedArtefact':null});
+      }else{
+        this.setState({
+          'selectedArtefact':clickedArtefact
+        }, () => { console.log(this.state.selectedArtefact) });
+      }
     }
 
     toggleView(){
@@ -220,6 +239,8 @@ export class Workspace extends React.Component{
 
       //Submit to server
       this.setState({'waitingForSubmission':true});
+
+      //Submit URLs
       if(/^url/.test(this.state.submissionType)){
         axios.post(
           '/api/url',
@@ -228,7 +249,8 @@ export class Workspace extends React.Component{
             'urls':this.state.submittedURLs
           }
         ).then((resp) => {
-            this.setState({'artefacts':resp.data}, () => {console.log(this.state.artefacts.enrichment_packages); this.toggleView()});
+          this.toggleNotification();
+          this.setState({'artefacts':resp.data, 'message':this.welcomeMessage()}, () => {console.log(this.state.artefacts.artefacts); this.toggleView()});
         }).catch((error) => {
           console.log(error);
           this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -236,6 +258,8 @@ export class Workspace extends React.Component{
           this.setState({'waitingForSubmission':false});
         });
       }else{
+      
+      //Submit Files
         let filesToEncode = [];
         for(let i in this.state.submittedFiles){
           filesToEncode.push(this.encodeFile(this.state.submittedFiles[i]));
@@ -248,7 +272,8 @@ export class Workspace extends React.Component{
               'files':encodedFiles
             }
           ).then((resp) => {
-            this.setState({'artefacts':resp.data}, () => {this.toggleView()});
+            this.toggleNotification();
+            this.setState({'artefacts':resp.data, 'message':this.welcomeMessage()}, () => {this.toggleView()});
           }).catch((error) => {
               console.log(error);
               this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -289,9 +314,10 @@ export class Workspace extends React.Component{
                 toggleNotification={ this.toggleNotification }
                 notify={ this.state.notify }
                 message={ this.state.message }
-                enrichment_packages={ this.state.artefacts.enrichment_packages }
+                artefacts={ this.state.artefacts.artefacts }
                 getShuckin={ this.getShuckin }
                 waitingForSubmission={ this.state.waitingForSubmission }
+                toggleSelectedArtefact={ this.toggleSelectedArtefact }
             />
             <Toolbox/>
             <Results/>
