@@ -29,7 +29,8 @@ export class Workspace extends React.Component{
             'waitingForSubmission':false,
             'artefactView':false,
             'notify':{'active':false, 'message':'', 'type':''},
-            'selectedArtefact':null
+            'selectedArtefact':null,
+            'selectedTool':null
         };
 
         this.reset = this.reset.bind(this);
@@ -45,6 +46,7 @@ export class Workspace extends React.Component{
         this.toggleNotification = this.toggleNotification.bind(this);
         this.toggleSelectedArtefact = this.toggleSelectedArtefact.bind(this);
         this.welcomeMessage = this.welcomeMessage.bind(this);
+        this.toggleSelectedTool = this.toggleSelectedTool.bind(this);
     }
 
     welcomeMessage(){
@@ -53,6 +55,21 @@ export class Workspace extends React.Component{
       'To submit URLs, paste them into this INPUT portal. Shuck will automatically parse any text entered into this portal and extract valid URLs for you.\n\n' + 
       'To submit files, simply drag and drop them into this INPUT portal.\n\n' + 
       'Please note that Shuck will only accept up to 20 URLs at a time, and up to 35MB worth of files.';
+    }
+
+    toggleSelectedTool(name){
+      let clickedTool = null;
+      for(let i in this.state.tools){
+        if(this.state.tools[i].name === name){
+          clickedTool = this.state.tools[i];
+        }
+      }
+
+      if(this.state.selectedTool && this.state.selectedTool.name === clickedTool.name){
+        this.setState({'selectedTool':null});
+      }else{
+        this.setState({'selectedTool':clickedTool});
+      }
     }
 
     toggleSelectedArtefact(key){
@@ -66,9 +83,7 @@ export class Workspace extends React.Component{
       if(this.state.selectedArtefact && this.state.selectedArtefact.id === clickedArtefact.id){ 
           this.setState({'selectedArtefact':null});
       }else{
-        this.setState({
-          'selectedArtefact':clickedArtefact
-        }, () => { console.log(this.state.selectedArtefact) });
+        this.setState({'selectedArtefact':clickedArtefact});
       }
     }
 
@@ -319,7 +334,9 @@ export class Workspace extends React.Component{
                 waitingForSubmission={ this.state.waitingForSubmission }
                 toggleSelectedArtefact={ this.toggleSelectedArtefact }
             />
-            <Toolbox/>
+            <Toolbox
+              toggleSelected={ this.toggleSelectedTool }
+            />
             <Results/>
         </div>;
     }

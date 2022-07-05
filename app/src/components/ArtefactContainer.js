@@ -1,7 +1,7 @@
 import React from "react";
 
 //Components
-import Artefact from "./Artefact";
+import Selectable from "./Selectable";
 
 export class ArtefactContainer extends React.Component {
 
@@ -18,24 +18,31 @@ export class ArtefactContainer extends React.Component {
     }
 
     highlightSelectedArtefact (key) {
+        console.log(`Selecting artefact ${key}`);
         this.setState({
             'selected':(this.state.selected === key) ? -1 : parseInt(key)
         });
+    }
+
+    prepareArtefactExtendedText(data){
+        console.log(data);
+        return 'TEST HEADING: Test Value';
     }
 
     renderArtefacts () {
         let artefacts = [];
         for(let i in this.props.artefacts){
             let artefact = this.props.artefacts[i];
+            let extendedText = this.prepareArtefactExtendedText(artefact);
             artefacts.push(
-                <Artefact 
-                    index={ artefact.key } 
-                    id={ artefact.id } 
-                    type={ artefact.type } 
-                    data={ artefact.enrichment_package } 
+                <Selectable 
+                    selectableKey={ artefact.key } 
+                    selectableTitle={ `${artefact.key}: ${artefact.id} (${artefact.type})` } 
+                    selectableData={ artefact } 
                     selected={ (this.state.selected === artefact.key) ? true : false }
-                    toggleSelectedArtefact={ this.props.toggleSelectedArtefact }
-                    highlightSelectedArtefact={ this.highlightSelectedArtefact }
+                    toggleSelected={ this.props.toggleSelectedArtefact }
+                    highlightSelected={ this.highlightSelectedArtefact }
+                    selectableExtended={ extendedText }
                 />
             );
         }

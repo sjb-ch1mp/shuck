@@ -6,9 +6,15 @@ import { Title } from "./Title";
 import { ToolContainer } from "./ToolContainer";
 
 export class Toolbox extends React.Component {
+    
+    constructor (props) {
+        super(props);
+        this.props = props;
+    }
+
     render () {
         return <div className='Toolbox default-margins container-frame titled'>
-            <ToolContainer/>
+            <ToolContainer toggleSelected={ this.toggleSelected }/>
             <Title title='TOOLBOX'/>
         </div>;
     }

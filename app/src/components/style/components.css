@@ -10,8 +10,8 @@
 
 .terminal-font {
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
-    color: transparent;
-    text-shadow: 0 0 1.6px #A0CC82;
+    color: #FF7585/*transparent*/;
+    /*text-shadow: 0 0 1.6px #A0CC82;*/
     font-size: 16px;
 }
 
@@ -70,14 +70,14 @@
 
 .scrollable {
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: scroll;/*
   scrollbar-width: none;
-  -ms-overflow-style: none;
+  -ms-overflow-style: none;*/
 }
-
+/*
 .scrollable::-webkit-scrollbar {
     display: none;
-}
+}*/
 
 .not-scrollable {
   overflow: hidden;
@@ -182,28 +182,28 @@ img {
     text-align: center;
 }
 
-.Artefact {
-    border: 1px #A0CC82 solid;
+.Selectable {
+    border: 1px #FF7585/*#A0CC82*/ solid;
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
     font-size: 18px !important;
     text-align: center;
     font-family: 'Ubuntu Mono';
-    color: #A0CC82;
+    color: #FF7585/*#A0CC82*/;
     cursor: pointer;
     background-color: transparent;
 }
 
-.Artefact-selected {
-    border: 1px #A0CC82 solid;
+.Selectable-selected {
+    border: 1px #FF7585/*#A0CC82*/ solid;
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
     font-size: 18px !important;
     text-align: center;
     cursor: pointer;
-    background-color: #A0CC82;
+    background-color: #FF7585/*#A0CC82*/;
     font-family: 'Ubuntu Mono';
     color: black;
 }
