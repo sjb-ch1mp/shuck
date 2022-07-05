@@ -20,10 +20,8 @@ export class ToolContainer extends React.Component {
     }
     
     highlightSelectedTool (key) {
-        console.log(key);
-        console.log(this.state.selected);
         this.setState({
-            'selected':(this.state.selected && this.state.selected === key) ? null : key
+            'selected':(this.state.selected === key) ? null : key
         });
     }
 

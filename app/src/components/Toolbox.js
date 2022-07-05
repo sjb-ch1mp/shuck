@@ -14,7 +14,7 @@ export class Toolbox extends React.Component {
 
     render () {
         return <div className='Toolbox default-margins container-frame titled'>
-            <ToolContainer toggleSelected={ this.toggleSelected }/>
+            <ToolContainer toggleSelected={ this.props.toggleSelected }/>
             <Title title='TOOLBOX'/>
         </div>;
     }

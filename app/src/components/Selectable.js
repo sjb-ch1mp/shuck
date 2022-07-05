@@ -8,7 +8,6 @@ export default class Selectable extends React.Component {
     }
 
     render () {
-        console.log(`Rendering selectable ${this.props.selectableTitle}`);
         return <div 
                     className= {`Selectable${(this.props.selected) ? '-selected': ''}`}     
                     onClick={ () => { this.props.highlightSelected(this.props.selectableKey); this.props.toggleSelected(this.props.selectableKey) } }

@@ -18,14 +18,12 @@ export class ArtefactContainer extends React.Component {
     }
 
     highlightSelectedArtefact (key) {
-        console.log(`Selecting artefact ${key}`);
         this.setState({
             'selected':(this.state.selected === key) ? -1 : parseInt(key)
         });
     }
 
     prepareArtefactExtendedText(data){
-        console.log(data);
         return 'TEST HEADING: Test Value';
     }
 

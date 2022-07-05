@@ -11,6 +11,7 @@ import './style/components.css';
 import { Sidebar }      from "./Sidebar.js";
 import { Results }      from "./Results.js";
 import { Toolbox }      from "./Toolbox.js";
+import Tools            from "./Tools";
 
 export class Workspace extends React.Component{
 
@@ -59,9 +60,10 @@ export class Workspace extends React.Component{
 
     toggleSelectedTool(name){
       let clickedTool = null;
-      for(let i in this.state.tools){
-        if(this.state.tools[i].name === name){
-          clickedTool = this.state.tools[i];
+      let tools = Tools();
+      for(let i in tools){
+        if(tools[i].name === name){
+          clickedTool = tools[i];
         }
       }
 
@@ -265,7 +267,7 @@ export class Workspace extends React.Component{
           }
         ).then((resp) => {
           this.toggleNotification();
-          this.setState({'artefacts':resp.data, 'message':this.welcomeMessage()}, () => {console.log(this.state.artefacts.artefacts); this.toggleView()});
+          this.setState({'artefacts':resp.data, 'message':this.welcomeMessage()}, () => {this.toggleView()});
         }).catch((error) => {
           console.log(error);
           this.toggleNotification("Something went wrong. Please try again.", 'error');
