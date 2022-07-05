@@ -20,6 +20,7 @@ const options = {
 //Utilities
 const url = require('url');
 const md5 = require('md5');
+const { join } = require('path');
 
 //ROUTING
 app.get('/', (req, res) => {
@@ -28,24 +29,22 @@ app.get('/', (req, res) => {
 
 app.post('/api/url', (req, res) => {
     
-    let enrichment_packages = [];
+    let artefacts = [];
     for(let i=0; i<req.body.urls.length; i++){
         let thisURL=new URL(req.body.urls[i]);
 
-        enrichment_packages.push({
-            'key':i + 1,
+        artefacts.push({
             'id':md5(req.body.urls[i]),
-            'url':req.body.urls[i],
+            'name':thisURL.hostname,
+            'data':req.body.urls[i],
             'type':'url',
-            'enrichment_package':{
-                'hostname':thisURL.hostname
-            }
+            'enrichment':{}
         });
     }   
 
     res.json({
-        'submissionId':req.body.submissionId,
-        'artefacts':enrichment_packages
+        'submission_id':req.body.submission_id,
+        'artefacts':artefacts
     });
 
     res.send();
@@ -53,23 +52,20 @@ app.post('/api/url', (req, res) => {
 
 app.post('/api/file', (req, res) => {
 
-    let enrichment_packages = [];
+    let artefacts = [];
     for(let i=0; i<req.body.files.length; i++){
-        enrichment_packages.push({
-            'key':i + 1,
+        artefacts.push({
             'id':md5(req.body.files[i].content),
             'name':req.body.files[i].name,
+            'data':req.body.files[i].content,
             'type':'file',
-            'enrichment_package':{
-                'size':req.body.files[i].size,
-                'content':req.body.files[i].content
-            }
+            'enrichment':{'size':req.body.files[i].size}
         });
     }
 
     res.json({
-        'submissionId':req.body.submissionId,
-        'artefacts':enrichment_packages
+        'submission_id':req.body.submission_id,
+        'artefacts':artefacts
     });
 
     res.send();

@@ -21,6 +21,8 @@ export class Portal extends React.Component {
                         hidden={ `${ (this.props.artefactView) ? '' : 'hidden' }` } 
                         artefacts={ this.props.artefacts }
                         toggleSelectedArtefact={ this.props.toggleSelectedArtefact }
+                        submitFiles={ this.props.submitFiles }
+                        submitURLs={ this.props.submitURLs }
                     />
                     <textarea
                         id='portal'

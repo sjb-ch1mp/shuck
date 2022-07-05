@@ -8,9 +8,15 @@
     margin: 0.5vh;
 }
 
+.scheme-font {
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    color: #FF7585;
+    font-size: 16px;
+}
+
 .terminal-font {
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
-    color: #FF7585/*transparent*/;
+    color: #A0CC82;/*transparent;
     /*text-shadow: 0 0 1.6px #A0CC82;*/
     font-size: 16px;
 }
@@ -74,10 +80,25 @@
   scrollbar-width: none;
   -ms-overflow-style: none;*/
 }
-/*
-.scrollable::-webkit-scrollbar {
-    display: none;
-}*/
+
+::-webkit-scrollbar {
+    width: 10px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #FF7585;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #C80554;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 0px 2px 0px 0px;
+}
 
 .not-scrollable {
   overflow: hidden;
@@ -97,10 +118,6 @@ textarea {
 textarea:focus {
     outline-width: 0;
     outline: none;
-}
-
-textarea::-webkit-scrollbar {
-    display: none;
 }
 
 img {
@@ -195,6 +212,11 @@ img {
     background-color: transparent;
 }
 
+.Selectable:hover {
+    border-color: #C80554;
+    color: #C80554/*#A0CC82*/;
+}
+
 .Selectable-selected {
     border: 1px #FF7585/*#A0CC82*/ solid;
     border-radius: 5px;
@@ -208,7 +230,11 @@ img {
     color: black;
 }
 
-.ArtefactContainer {
+.Selectable-selected:hover {
+    color: #C80554;
+}
+
+.SelectableContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

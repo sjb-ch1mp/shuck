@@ -10,16 +10,16 @@ export class ArtefactContainer extends React.Component {
         this.props = props;
 
         this.state = {
-            'selected':-1
+            'selected':null
         };
 
         this.renderArtefacts = this.renderArtefacts.bind(this);
         this.highlightSelectedArtefact = this.highlightSelectedArtefact.bind(this);
     }
 
-    highlightSelectedArtefact (key) {
+    highlightSelectedArtefact (id) {
         this.setState({
-            'selected':(this.state.selected === key) ? -1 : parseInt(key)
+            'selected':(this.state.selected === id) ? null : id
         });
     }
 
@@ -34,10 +34,10 @@ export class ArtefactContainer extends React.Component {
             let extendedText = this.prepareArtefactExtendedText(artefact);
             artefacts.push(
                 <Selectable 
-                    selectableKey={ artefact.key } 
-                    selectableTitle={ `${artefact.key}: ${artefact.id} (${artefact.type})` } 
-                    selectableData={ artefact } 
-                    selected={ (this.state.selected === artefact.key) ? true : false }
+                    selectableKey={ artefact.id } 
+                    selectableTitle={ `[${artefact.type.toUpperCase()}] ${artefact.name}` } 
+                    selectableData={ artefact.enrichment } 
+                    selected={ (this.state.selected === artefact.id) ? true : false }
                     toggleSelected={ this.props.toggleSelectedArtefact }
                     highlightSelected={ this.highlightSelectedArtefact }
                     selectableExtended={ extendedText }
@@ -48,6 +48,10 @@ export class ArtefactContainer extends React.Component {
     }
 
     render () {
-        return <div className={ `ArtefactContainer boxed-in scrollable ${ this.props.hidden }` } >{ this.renderArtefacts() }</div>;
+        return <div 
+                    className={ `SelectableContainer boxed-in scrollable ${ this.props.hidden }` } 
+                    onDrop={ (e) => this.props.submitFiles(e) }
+                    onPaste={ (e) => this.props.submitURLs(e) }
+                >{ this.renderArtefacts() }</div>;
     }
 }

@@ -26,9 +26,7 @@ export class ToolContainer extends React.Component {
     }
 
     prepareToolExtendedText(tool){
-        return `Author: ${tool.attribution.author}\n` +
-                `Website: ${tool.attribution.website}\n` + 
-                `File Types: ${tool.file_types.join(', ')}`;
+        return `File Types: ${tool.file_types.join(', ')}`;
     }
 
     renderTools () {
@@ -53,6 +51,6 @@ export class ToolContainer extends React.Component {
     }
 
     render () {
-        return <div className={ `ToolContainer boxed-in scrollable` }>{ this.renderTools() }</div>;
+        return <div className={ `SelectableContainer boxed-in scrollable` }>{ this.renderTools() }</div>;
     }
 }

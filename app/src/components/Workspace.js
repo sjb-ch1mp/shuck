@@ -26,7 +26,7 @@ export class Workspace extends React.Component{
             'submissionType':null,
             'submittedFiles':[],
             'submittedURLs':[],
-            'artefacts':{},
+            'artefactPackage':{'submission_ids':[],'artefacts':[]},
             'waitingForSubmission':false,
             'artefactView':false,
             'notify':{'active':false, 'message':'', 'type':''},
@@ -48,6 +48,7 @@ export class Workspace extends React.Component{
         this.toggleSelectedArtefact = this.toggleSelectedArtefact.bind(this);
         this.welcomeMessage = this.welcomeMessage.bind(this);
         this.toggleSelectedTool = this.toggleSelectedTool.bind(this);
+        this.updateArtefactPackage = this.updateArtefactPackage.bind(this);
     }
 
     welcomeMessage(){
@@ -67,25 +68,26 @@ export class Workspace extends React.Component{
         }
       }
 
-      if(this.state.selectedTool && this.state.selectedTool.name === clickedTool.name){
+      if(this.state.selectedTool && this.state.selectedTool === clickedTool.name){
         this.setState({'selectedTool':null});
       }else{
-        this.setState({'selectedTool':clickedTool});
+        this.setState({'selectedTool':clickedTool.name});
       }
     }
 
-    toggleSelectedArtefact(key){
+    toggleSelectedArtefact(id){
       let clickedArtefact = null;
-      for(let i in this.state.artefacts.artefacts){
-        if(this.state.artefacts.artefacts[i].key === key){
-          clickedArtefact = this.state.artefacts.artefacts[i];
+      let artefacts = this.state.artefactPackage.artefacts;
+      for(let i in artefacts){
+        if(artefacts[i].id === id){
+          clickedArtefact = artefacts[i];
         }
       }
 
-      if(this.state.selectedArtefact && this.state.selectedArtefact.id === clickedArtefact.id){ 
-          this.setState({'selectedArtefact':null});
+      if(this.state.selectedArtefact && this.state.selectedArtefact === clickedArtefact.id){ 
+        this.setState({'selectedArtefact':null});
       }else{
-        this.setState({'selectedArtefact':clickedArtefact});
+        this.setState({'selectedArtefact':clickedArtefact.id});
       }
     }
 
@@ -97,6 +99,7 @@ export class Workspace extends React.Component{
 
     reset(full){
         this.setState({
+            'submissionId':null,
             'submissionType':null,
             'submittedFiles':[],
             'submittedURLs':[],
@@ -108,6 +111,11 @@ export class Workspace extends React.Component{
         e.preventDefault();
         this.toggleNotification();
         let raw = e.clipboardData.getData('text');
+
+        if(this.state.artefactView){
+          this.toggleView();
+        }
+
         this.parseAndSaveURLs(raw);
     }
 
@@ -123,25 +131,27 @@ export class Workspace extends React.Component{
         unique_urls.sort();
     
         if(unique_urls.length > 0){
-            this.reset(true);
-            this.setState({
-                'submissionType':(unique_urls.length > 1) ? 'url_multiple' : 'url_single',
-                'submittedURLs':unique_urls,
-                'newSubmission':true,
-                'submissionId':md5(unique_urls.join(':').toUpperCase())
-            });
-            this.setState({'message':`${unique_urls.join("\n")}`});
-            this.toggleNotification(`Found ${unique_urls.length} valid URLs.`, 'info');
-        }else{
+          this.reset(true);
           this.setState({
-            'message': `No valid URLs were found in the text!\n\n${raw}`
+              'submissionType':(unique_urls.length > 1) ? 'url_multiple' : 'url_single',
+              'submittedURLs':unique_urls,
+              'submissionId':md5(unique_urls.join(':').toUpperCase())
           });
+          this.setState({'message':`${unique_urls.join("\n")}`});
+          this.toggleNotification(`Found ${unique_urls.length} valid URLs.`, 'info');
+        }else{
+          this.toggleNotification('No valid URLs were found.', 'error');
+          this.setState({'message': raw });
         }
     }
 
     submitFiles(e){
         e.preventDefault();
         this.toggleNotification();
+        if(this.state.artefactView){
+          this.toggleView();
+        }
+
         let files = [];
         let checkSize = 0;
         if(e.dataTransfer.items){
@@ -159,8 +169,7 @@ export class Workspace extends React.Component{
             this.reset(true);
             this.setState({
                 'submissionType': (files.length > 1) ? 'file_multiple' : 'file_single',
-                'submittedFiles': files,
-                'newSubmission':true
+                'submittedFiles': files
             });
             this.reportCurrentFiles(files);
           }
@@ -239,8 +248,33 @@ export class Workspace extends React.Component{
       }
     }
 
+    updateArtefactPackage(newArtefacts){
+      let artefactPackage = this.state.artefactPackage;
+      let previouslySubmittedIds = artefactPackage.artefacts.map((artefact) => {
+        return artefact.id;
+      });
+      
+      let duplicates = 0;
+      for(let i in newArtefacts.artefacts){
+        if(!previouslySubmittedIds.includes(newArtefacts.artefacts[i].id)){
+          artefactPackage.artefacts.push(newArtefacts.artefacts[i]);
+        }else{
+          duplicates = duplicates + 1;
+        }
+      }
+      artefactPackage.submission_ids.push(newArtefacts.submission_id);
+
+      if(duplicates > 0){
+        this.toggleNotification(`${(duplicates > 1) ? `${duplicates} duplicate artefacts were `: '1 duplicate artefact was '}ignored.`, 'info');
+      }
+
+      return artefactPackage;
+    }
+
     getShuckin(){
-      if(this.state.artefacts.length > 0 && this.state.submissionId !== this.state.artefacts.submissionId){
+
+      //Toggle view if portal is in artefact mode, or if it's in input mode and there's no pending submissions
+      if(this.state.artefactView || !this.state.submissionId){
         this.toggleView();
         return;
       }
@@ -250,7 +284,13 @@ export class Workspace extends React.Component{
         this.toggleNotification('Nothing to submit.', 'error');
         return;
       }else if(this.state.submissionType === 'url_multiple' && this.state.submittedURLs.length > 20){
-        this.toggleNotification("Please submit only 20 URLs at a time.", 'error');  
+        this.toggleNotification("Please submit only 20 URLs at a time.", 'error');
+        return;
+      }
+
+      //Check if these artefacts have already been submitted
+      if(this.state.artefactPackage.submission_ids.includes(this.state.submissionId)){
+        this.toggleNotification(`These ${(/^url/.test(this.state.submissionType)) ? 'URLs' : 'files' } have already been submitted.`, 'error');
         return;
       }
 
@@ -262,12 +302,17 @@ export class Workspace extends React.Component{
         axios.post(
           '/api/url',
           {
-            'submissionId':this.state.submissionId,
+            'submission_id':this.state.submissionId,
             'urls':this.state.submittedURLs
           }
         ).then((resp) => {
           this.toggleNotification();
-          this.setState({'artefacts':resp.data, 'message':this.welcomeMessage()}, () => {this.toggleView()});
+
+          //Add all new artefacts to the artefact package
+          let updatedArtefactPackage = this.updateArtefactPackage(resp.data);
+
+          //And save it
+          this.setState({'artefactPackage':updatedArtefactPackage}, () => {this.reset(true); this.toggleView()});
         }).catch((error) => {
           console.log(error);
           this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -276,7 +321,7 @@ export class Workspace extends React.Component{
         });
       }else{
       
-      //Submit Files
+        //Submit Files
         let filesToEncode = [];
         for(let i in this.state.submittedFiles){
           filesToEncode.push(this.encodeFile(this.state.submittedFiles[i]));
@@ -285,12 +330,17 @@ export class Workspace extends React.Component{
           axios.post(
               '/api/file',
             {
-              'submissionId':this.state.submissionId,
+              'submission_id':this.state.submissionId,
               'files':encodedFiles
             }
           ).then((resp) => {
             this.toggleNotification();
-            this.setState({'artefacts':resp.data, 'message':this.welcomeMessage()}, () => {this.toggleView()});
+
+            //Add all new artefacts to the artefact package
+            let updatedArtefactPackage = this.updateArtefactPackage(resp.data);
+
+            //And save it
+            this.setState({'artefactPackage':updatedArtefactPackage}, () => {this.reset(true); this.toggleView()});
           }).catch((error) => {
               console.log(error);
               this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -303,21 +353,21 @@ export class Workspace extends React.Component{
 
     encodeFile(file){
         return new Promise((resolve, reject) => {
-            let reader = new FileReader();
-            reader.onload = () => {
+          let reader = new FileReader();
+          reader.onload = () => {
             resolve({
                 'name':file.name,
                 'size':file.size,
                 'content':encode(reader.result)
             });
-            };
-            reader.onerror = () => {
+          };
+          reader.onerror = () => {
             reject({
                 'name':file.name,
                 'error':reader.error
             });
-            };
-            reader.readAsArrayBuffer(file);
+          };
+          reader.readAsArrayBuffer(file);
         });
     }
 
@@ -331,7 +381,7 @@ export class Workspace extends React.Component{
                 toggleNotification={ this.toggleNotification }
                 notify={ this.state.notify }
                 message={ this.state.message }
-                artefacts={ this.state.artefacts.artefacts }
+                artefacts={ this.state.artefactPackage.artefacts }
                 getShuckin={ this.getShuckin }
                 waitingForSubmission={ this.state.waitingForSubmission }
                 toggleSelectedArtefact={ this.toggleSelectedArtefact }
