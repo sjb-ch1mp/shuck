@@ -13,8 +13,8 @@ export class Results extends React.Component {
 
     render () {
         return <div className={'Results default-margins container-frame titled'}>
-                <textarea className={'scrollable boxed-in terminal-font'} spellCheck={ false }/>   
                 <Title title='RESULTS'/>
+                <textarea className={'scrollable boxed-in terminal-font'} spellCheck={ false }/>   
                 </div>;
     }
 }

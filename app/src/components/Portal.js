@@ -17,6 +17,7 @@ export class Portal extends React.Component {
 
     render () {
         return <div className={'Portal container-frame titled boxed-in'}>
+                    <Title title={ `${ (this.props.artefactView) ? 'ARTEFACTS' : 'INPUT' }` } />
                     <ArtefactContainer 
                         hidden={ `${ (this.props.artefactView) ? '' : 'hidden' }` } 
                         artefacts={ this.props.artefacts }
@@ -24,17 +25,18 @@ export class Portal extends React.Component {
                         submitFiles={ this.props.submitFiles }
                         submitURLs={ this.props.submitURLs }
                     />
-                    <textarea
-                        id='portal'
-                        className={`scrollable boxed-in terminal-font ${(this.props.artefactView) ? 'hidden' : ''}`} 
-                        spellCheck={ false }
-                        onDrop={ e => { this.props.submitFiles(e); } }
-                        value={ this.props.message }
-                        onPaste={ e => { this.props.submitURLs(e); } }
-                        onChange={ this.props.updateSubmission }
-                    />
-                    <Notifier notify={ this.props.notify } toggleNotification={ this.props.toggleNotification }/>
-                    <Title title={ `${ (this.props.artefactView) ? 'ARTEFACTS' : 'INPUT' }` } />
+                    <div className={'PortalInner'}>
+                        <textarea
+                            id='portal'
+                            className={`scrollable boxed-in terminal-font ${(this.props.artefactView) ? 'hidden' : ''}`} 
+                            spellCheck={ false }
+                            onDrop={ e => { this.props.submitFiles(e); } }
+                            value={ this.props.message }
+                            onPaste={ e => { this.props.submitURLs(e); } }
+                            onChange={ this.props.updateSubmission }
+                        />
+                        <Notifier notify={ this.props.notify } toggleNotification={ this.props.toggleNotification }/>
+                    </div>
                 </div>;
     }
 }

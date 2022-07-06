@@ -31,7 +31,7 @@
 }
 
 .rotated {
-    writing-mode:sideways-lr;
+    writing-mode:vertical-lr;
 }
 
 .info {
@@ -59,18 +59,15 @@
 }
 
 .container-frame{
-    border-top: 2px;
-    border-left: 2px;
-    border-right: 2px;
-    border-bottom: 2px;
-    border-color: #310A3F;
+    border: 2px;
+    border-color: #00B0F0;
     border-style: solid;
     border-radius: 5px;
 }
 
 .titled {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -193,9 +190,9 @@ img {
     width: 100vh;
 }
 
-.ToolboxInner {
+.PortalInner {
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:space-evenly;
     height: 100%;
     width: 100%;
@@ -204,12 +201,17 @@ img {
 .Title {
     background-color: #310A3F; /*#A8FFFC;*/
     border: 2px #310A3F/*#A8FFFC*/ solid;
-    border-radius: 0px 0px 1px 1px;
+    border-radius: 5px 0px 0px 5px;
     color: #FF7585;
     font-size: 24px;
     font-family: 'VT323';
     text-align: center;
-    text-orientation: sideways;
+    writing-mode:vertical-lr;
+}
+
+.SubTitle {
+    background-color: #310A3F !important;
+    border: 5px #310A3F solid !important;
 }
 
 .Selectable {
@@ -258,8 +260,8 @@ img {
 
 .ToolOptions {
     display:flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction:column;
+    justify-content:center;
     border: 2px #310A3F solid;
     border-radius: 2px 0px 0px 0px;
     background-color: #310A3F;
@@ -267,7 +269,7 @@ img {
     padding-left: 2px;
     padding-right: 2px;
     padding-bottom: 25px;
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 
@@ -279,13 +281,14 @@ img {
     color: #00B0F0;
     font-family: 'Ubuntu Mono';
     font-size: 16px;
+    font-weight: bold;
     text-align: center;
     cursor: pointer;
 }
 
 .ToolOption:hover {
-    border-color: #C80554;
-    color: #C80554/*#A0CC82*/;
+    border-color: #81DEFF;
+    color: #81DEFF/*#A0CC82*/;
 }
 
 .ToolOption-selected {
@@ -299,14 +302,18 @@ img {
     font-size: 16px;
     text-align: center;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .ToolOption-selected:hover {
-    border-color: #C80554;
-    color: #C80554/*#A0CC82*/;
+    border-color: #00698E;
+    color: #00698E/*#A0CC82*/;
 }
 
 .ToolOptionValue {
     background-color: white;
     width: 100%;
+    font-family: 'Ubuntu Mono';
+    font-size: 16px;
+    font-weight: bold;
 }
