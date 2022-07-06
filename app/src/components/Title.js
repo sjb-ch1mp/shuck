@@ -7,6 +7,6 @@ export class Title extends React.Component {
     }
 
     render () {
-        return <div className={'Title'}>{ this.props.title }</div>
+        return <div className={`Title boxed-in ${(this.props.rotated) ? 'rotated': ''}`}>{ this.props.title }</div>
     }
 }

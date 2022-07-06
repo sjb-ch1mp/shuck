@@ -4,6 +4,7 @@ import React from "react";
 import './style/components.css';
 import { Title } from "./Title";
 import { ToolContainer } from "./ToolContainer";
+import { ToolOptions } from './ToolOptions';
 
 export class Toolbox extends React.Component {
     
@@ -13,9 +14,12 @@ export class Toolbox extends React.Component {
     }
 
     render () {
-        return <div className='Toolbox default-margins container-frame titled'>
-            <ToolContainer toggleSelected={ this.props.toggleSelected }/>
-            <Title title='TOOLBOX'/>
-        </div>;
+        return <div className='Toolbox default-margins container-frame titled boxed-in'>
+                    <div className={'ToolboxInner boxed-in'}>
+                        <Title rotated={ true } title='TOOLBOX'/>
+                        <ToolContainer toggleSelected={ this.props.toggleSelected } tools={ this.props.tools }/>
+                        <ToolOptions toolOptions={ this.props.toolOptions } updateSelectedToolOption={ this.props.updateSelectedToolOption }/>
+                    </div>
+                </div>;
     }
 }

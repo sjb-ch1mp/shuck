@@ -1,7 +1,6 @@
 import React from "react";
 
 //Components
-import Tools from "./Tools";
 import Selectable from "./Selectable";
 
 export class ToolContainer extends React.Component {
@@ -30,20 +29,18 @@ export class ToolContainer extends React.Component {
     }
 
     renderTools () {
-        let tools = Tools();
+        let tools = this.props.tools;
         let renderedTools = [];
         for(let i in tools){
             let tool = tools[i];
-            let extendedText = this.prepareToolExtendedText(tool);
             renderedTools.push(
                 <Selectable 
                     selectableKey={ tool.name } 
                     selectableTitle={ tool.name } 
-                    selectableData={ tool } 
                     selected={ (this.state.selected === tool.name) ? true : false }
                     toggleSelected={ this.props.toggleSelected }
                     highlightSelected={ this.highlightSelectedTool }
-                    selectableExtended={ extendedText }
+                    selectableExtended={ this.prepareToolExtendedText(tool) }
                 />
             );
         }

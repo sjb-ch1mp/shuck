@@ -36,7 +36,6 @@ export class ArtefactContainer extends React.Component {
                 <Selectable 
                     selectableKey={ artefact.id } 
                     selectableTitle={ `[${artefact.type.toUpperCase()}] ${artefact.name}` } 
-                    selectableData={ artefact.enrichment } 
                     selected={ (this.state.selected === artefact.id) ? true : false }
                     toggleSelected={ this.props.toggleSelectedArtefact }
                     highlightSelected={ this.highlightSelectedArtefact }

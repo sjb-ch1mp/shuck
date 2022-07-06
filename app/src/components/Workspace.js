@@ -31,7 +31,8 @@ export class Workspace extends React.Component{
             'artefactView':false,
             'notify':{'active':false, 'message':'', 'type':''},
             'selectedArtefact':null,
-            'selectedTool':null
+            'selectedTool':null,
+            'tools':Tools()
         };
 
         this.reset = this.reset.bind(this);
@@ -49,6 +50,9 @@ export class Workspace extends React.Component{
         this.welcomeMessage = this.welcomeMessage.bind(this);
         this.toggleSelectedTool = this.toggleSelectedTool.bind(this);
         this.updateArtefactPackage = this.updateArtefactPackage.bind(this);
+        this.getToolByName = this.getToolByName.bind(this);
+        this.getArtefactById = this.getArtefactById.bind(this);
+        this.updateSelectedToolOption = this.updateSelectedToolOption.bind(this);
     }
 
     welcomeMessage(){
@@ -59,14 +63,48 @@ export class Workspace extends React.Component{
       'Please note that Shuck will only accept up to 20 URLs at a time, and up to 35MB worth of files.';
     }
 
-    toggleSelectedTool(name){
-      let clickedTool = null;
-      let tools = Tools();
-      for(let i in tools){
-        if(tools[i].name === name){
-          clickedTool = tools[i];
+    updateSelectedToolOption(flag, changeType, value) {
+      let tool = this.getToolByName(this.state.selectedTool);
+
+      for(let i in tool.tool_options){
+        if(tool.tool_options[i].flag === flag){
+          if(changeType === 'toggle'){
+            tool.tool_options[i].selected = !tool.tool_options[i].selected;
+            console.log(`Option ${flag} is now ${(tool.tool_options[i].selected) ? 'selected':'not selected'}`);
+          }else if(changeType === 'change_value'){
+            tool.tool_options[i].value = value;
+            console.log(`Adding value ${value} to tool ${this.state.selectedTool}`);
+          }
         }
       }
+
+      this.updateTool(tool);
+    }
+
+    updateTool(tool){
+      let tools = this.state.tools;
+      let toolIdx = -1;
+      for(let i=0; i<tools.length; i++){
+        if(tool.name === tools[i].name){
+          toolIdx = i;
+          break;
+        }
+      }
+      tools[toolIdx] = tool;
+      this.setState({'tools':tools});
+    }
+
+    getToolByName(name){
+      for(let i in this.state.tools){
+        if(this.state.tools[i].name === name){
+          return this.state.tools[i];
+        }
+      }
+      return null;
+    }
+
+    toggleSelectedTool(name){
+      let clickedTool = this.getToolByName(name);
 
       if(this.state.selectedTool && this.state.selectedTool === clickedTool.name){
         this.setState({'selectedTool':null});
@@ -75,14 +113,17 @@ export class Workspace extends React.Component{
       }
     }
 
-    toggleSelectedArtefact(id){
-      let clickedArtefact = null;
-      let artefacts = this.state.artefactPackage.artefacts;
-      for(let i in artefacts){
-        if(artefacts[i].id === id){
-          clickedArtefact = artefacts[i];
+    getArtefactById(id){
+      for(let i in this.state.artefactPackage.artefacts){
+        if(this.state.artefactPackage.artefacts[i].id === id){
+          return this.state.artefactPackage.artefacts[i];
         }
       }
+      return null;
+    }
+
+    toggleSelectedArtefact(id){
+      let clickedArtefact = this.getArtefactById(id);
 
       if(this.state.selectedArtefact && this.state.selectedArtefact === clickedArtefact.id){ 
         this.setState({'selectedArtefact':null});
@@ -388,6 +429,9 @@ export class Workspace extends React.Component{
             />
             <Toolbox
               toggleSelected={ this.toggleSelectedTool }
+              tools={ this.state.tools }
+              toolOptions={ (this.state.selectedTool) ? this.getToolByName(this.state.selectedTool).tool_options : [] } 
+              updateSelectedToolOption={ this.updateSelectedToolOption }
             />
             <Results/>
         </div>;
