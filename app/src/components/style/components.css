@@ -221,6 +221,7 @@ img {
     margin: 5px;
     font-size: 18px !important;
     text-align: center;
+    font-weight: bold;
     font-family: 'Ubuntu Mono';
     color: #FF7585/*#A0CC82*/;
     cursor: pointer;
@@ -237,6 +238,7 @@ img {
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
+    font-weight: bold;
     font-size: 18px !important;
     text-align: center;
     cursor: pointer;

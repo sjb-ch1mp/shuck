@@ -40,7 +40,7 @@ export class ToolOptions extends React.Component {
     }
 
     render () {
-        return <div className={`ToolOptions SubTitle boxed-in scrollable titled ${(this.props.toolOptions.length > 0) ? '': 'hidden'}`}>
+        return <div className={`ToolOptions boxed-in scrollable titled ${(this.props.toolOptions.length > 0) ? '': 'hidden'}`}>
                 { this.renderOptions() }
                 </div>;
     }

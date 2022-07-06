@@ -28,7 +28,7 @@ export class Sidebar extends React.Component{
               message={ this.props.message }
               artefacts={ this.props.artefacts }
               toggleSelectedArtefact={ this.props.toggleSelectedArtefact }
-              ></Portal>
+              />
             <Thinker getShuckin={ this.props.getShuckin } waitingForSubmission={ this.props.waitingForSubmission }/>
         </div>;
     }
