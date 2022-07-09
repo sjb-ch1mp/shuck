@@ -32,7 +32,8 @@ export class Workspace extends React.Component{
             'notify':{'active':false, 'message':'', 'type':''},
             'selectedArtefact':null,
             'selectedTool':null,
-            'tools':Tools()
+            'tools':Tools(),
+            'results':[]
         };
 
         this.reset = this.reset.bind(this);
@@ -53,6 +54,7 @@ export class Workspace extends React.Component{
         this.getToolByName = this.getToolByName.bind(this);
         this.getArtefactById = this.getArtefactById.bind(this);
         this.updateSelectedToolOption = this.updateSelectedToolOption.bind(this);
+        this.shuckIt = this.shuckIt.bind(this);
     }
 
     welcomeMessage(){
@@ -70,10 +72,8 @@ export class Workspace extends React.Component{
         if(tool.tool_options[i].flag === flag){
           if(changeType === 'toggle'){
             tool.tool_options[i].selected = !tool.tool_options[i].selected;
-            console.log(`Option ${flag} is now ${(tool.tool_options[i].selected) ? 'selected':'not selected'}`);
           }else if(changeType === 'change_value'){
             tool.tool_options[i].value = value;
-            console.log(`Adding value ${value} to tool ${this.state.selectedTool}`);
           }
         }
       }
@@ -299,6 +299,12 @@ export class Workspace extends React.Component{
       for(let i in newArtefacts.artefacts){
         if(!previouslySubmittedIds.includes(newArtefacts.artefacts[i].id)){
           artefactPackage.artefacts.push(newArtefacts.artefacts[i]);
+
+          //Need to remap previouslySubmittedIds each time in case the user submitted multiple files that are the same
+          previouslySubmittedIds = artefactPackage.artefacts.map((artefact) => {
+            return artefact.id;
+          });
+
         }else{
           duplicates = duplicates + 1;
         }
@@ -313,6 +319,12 @@ export class Workspace extends React.Component{
     }
 
     getShuckin(){
+
+      //Check if a tool and an artefact is selected. If so - shuck it.
+      if(this.state.selectedArtefact && this.state.selectedTool){
+        this.shuckIt();
+        return;
+      }
 
       //Toggle view if portal is in artefact mode, or if it's in input mode and there's no pending submissions
       if(this.state.artefactView || !this.state.submissionId){
@@ -412,6 +424,39 @@ export class Workspace extends React.Component{
         });
     }
 
+    shuckIt(){
+      let data = {
+        'artefact':this.getArtefactById(this.state.selectedArtefact),
+        'tool':this.getToolByName(this.state.selectedTool)
+      };
+
+      this.setState({'waitingForSubmission':true});
+      axios.post(
+        '/api/shuck', data
+      ).then((response) => {
+        let results = this.state.results;
+
+        //Keep only the last 50 results as a navigable history for the analyst
+        if(results.length === 50){
+          results.shift();
+        }
+
+        results.push({
+          'timestamp':Date.now(),
+          'tool':response.data.tool,
+          'artefact':response.data.artefact,
+          'result':response.data.result
+        });
+
+        this.setState({'results':results}, () => {console.log(results)});        
+      }).catch((error) => {
+        console.log(error);
+        this.toggleNotification("Something went wrong. Please try again.", 'error');
+      }).finally(() => {
+        this.setState({'waitingForSubmission':false});
+      });
+    }
+
     render(){
         return <div className={'Workspace not-scrollable terminal'}>
             <Sidebar
@@ -433,7 +478,9 @@ export class Workspace extends React.Component{
               toolOptions={ (this.state.selectedTool) ? this.getToolByName(this.state.selectedTool).tool_options : [] } 
               updateSelectedToolOption={ this.updateSelectedToolOption }
             />
-            <Results/>
+            <Results
+              results={ this.state.results }
+            />
         </div>;
     }
 }

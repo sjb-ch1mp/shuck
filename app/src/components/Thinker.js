@@ -42,7 +42,7 @@ export class Thinker extends React.Component {
                 className={ (this.props.waitingForSubmission) ? 'thinker-thinking' : this.state.animate }
                 onMouseOver={ () => { (!this.props.waitingForSubmission) ? this.wakeUp() : this.think() }}
                 onMouseLeave={ () => { (!this.props.waitingForSubmission) ? this.goBackToSleep() : this.think() }}
-                onClick={ this.props.getShuckin }
+                onClick={ () => {(!this.props.waitingForSubmission) ? this.props.getShuckin() : this.think()} }
             />
         </div>;
     }

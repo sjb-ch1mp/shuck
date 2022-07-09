@@ -1,3 +1,4 @@
+//Core
 const express = require('express');
 const app = express();
 const port = 443;
@@ -20,55 +21,70 @@ const options = {
 //Utilities
 const url = require('url');
 const md5 = require('md5');
-const { join } = require('path');
 
 //ROUTING
-app.get('/', (req, res) => {
-    res.sendFile(build);
+app.get('/', (request, response) => {
+    response.sendFile(build);
 });
 
-app.post('/api/url', (req, res) => {
+app.post('/api/url', (request, response) => {
     
     let artefacts = [];
-    for(let i=0; i<req.body.urls.length; i++){
-        let thisURL=new URL(req.body.urls[i]);
+    for(let i=0; i<request.body.urls.length; i++){
+        let thisURL=new URL(request.body.urls[i]);
 
         artefacts.push({
-            'id':md5(req.body.urls[i]),
+            'id':md5(request.body.urls[i]),
             'name':thisURL.hostname,
-            'data':req.body.urls[i],
+            'data':request.body.urls[i],
             'type':'url',
             'enrichment':{}
         });
     }   
 
-    res.json({
-        'submission_id':req.body.submission_id,
+    response.json({
+        'submission_id':request.body.submission_id,
         'artefacts':artefacts
     });
 
-    res.send();
+    response.send();
 });
 
-app.post('/api/file', (req, res) => {
+app.post('/api/file', (request, response) => {
 
     let artefacts = [];
-    for(let i=0; i<req.body.files.length; i++){
+    for(let i=0; i<request.body.files.length; i++){
         artefacts.push({
-            'id':md5(req.body.files[i].content),
-            'name':req.body.files[i].name,
-            'data':req.body.files[i].content,
+            'id':md5(request.body.files[i].content),
+            'name':request.body.files[i].name,
+            'data':request.body.files[i].content,
             'type':'file',
-            'enrichment':{'size':req.body.files[i].size}
+            'enrichment':{'size':request.body.files[i].size}
         });
     }
 
-    res.json({
-        'submission_id':req.body.submission_id,
+    response.json({
+        'submission_id':request.body.submission_id,
         'artefacts':artefacts
     });
 
-    res.send();
+    response.send();
+});
+
+app.post('/api/shuck', (request, response) => {
+
+    let tool = request.body.tool;
+    let artefact = request.body.artefact;
+
+    console.log(`Running ${tool.name} on ${artefact.type} ${artefact.name}`);
+
+    response.json({
+        'tool':tool.name,
+        'artefact':artefact.id,
+        'result':`Tool: ${tool.name}\nArtefact: ${artefact.name} (${artefact.type})\nResults: Success!`
+    });
+
+    response.send();
 });
 
 //START 

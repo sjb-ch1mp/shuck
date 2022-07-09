@@ -11,21 +11,21 @@
 .scheme-font {
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
     color: #FF7585;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .terminal-font {
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
     color: #A0CC82;/*transparent;
-    /*text-shadow: 0 0 1.6px #A0CC82;*/
-    font-size: 16px;
+    text-shadow: 0 0 1.5px #A0CC82;*/
+    font-size: 18px;
 }
 
 .notifier-font {
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
-    color: transparent;
+    /*color: transparent;*/
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     padding: 10px;
 }
@@ -35,12 +35,14 @@
 }
 
 .info {
-    text-shadow: 0 0 1.6px #00B0F0;
+    color: #00B0F0;
+    /*text-shadow: 0 0 1.5px #00B0F0;*/
     cursor: pointer;
 }
 
 .error {
-    text-shadow: 0 0 1.6px red;
+    color: red;
+    /*text-shadow: 0 0 1.5px red;*/
     cursor: pointer;
 }
 
