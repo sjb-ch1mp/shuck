@@ -1,0 +1,2114 @@
+HTTP/1.1 200 OK
+Date: Sat, 09 Jul 2022 05:01:05 GMT
+Server: Apache
+Last-Modified: Sat, 09 Jul 2022 04:57:30 GMT
+ETag: "1ea33-5e35827fa1be8"
+Accept-Ranges: bytes
+Content-Length: 125491
+Vary: Accept-Encoding
+Referrer-Policy: no-referrer-when-downgrade
+Pragma: public
+Cache-Control: max-age=3600, public
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8" lang="en-CA"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><html lang="en-CA"><!--<![endif]-->
+<html><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>Big Movies, Small Prices | Film.Ca Cinemas in Oakville, ON</title>
+	<!--
+			<link rel="icon" href="https://secure.film.ca/wp-content/uploads/2015/01/favicon1.png" type="image/x-icon">
+		<link rel="shortcut icon" href="https://secure.film.ca/wp-content/uploads/2015/01/favicon1.png">
+		-->
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://film.ca/xmlrpc.php">
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<script>window._wca = window._wca || [];</script>
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Film.Ca - Big Movies, Small Prices - An Independent Movie Theatre, locally owned and operated, nestled in the heart of Oakville, Ontario" />
+	<link rel="canonical" href="https://film.ca/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Big Movies, Small Prices | Film.Ca Cinemas in Oakville, ON" />
+	<meta property="og:description" content="Film.Ca - Big Movies, Small Prices - An Independent Movie Theatre, locally owned and operated, nestled in the heart of Oakville, Ontario" />
+	<meta property="og:url" content="https://film.ca/" />
+	<meta property="og:site_name" content="Film.Ca Cinemas in Oakville, ON" />
+	<meta property="article:publisher" content="https://www.facebook.com/Film.Ca" />
+	<meta property="article:modified_time" content="2016-07-19T12:12:41+00:00" />
+	<meta property="og:image" content="https://film.ca/wp-content/uploads/2020/10/Logo-1.png" />
+	<meta property="og:image:width" content="225" />
+	<meta property="og:image:height" content="225" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@FilmCaCinemas" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://film.ca/#website","url":"https://film.ca/","name":"Film.Ca Cinemas in Oakville, ON","description":"Big Movies, Small Prices","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://film.ca/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-CA"},{"@type":"WebPage","@id":"https://film.ca/#webpage","url":"https://film.ca/","name":"Big Movies, Small Prices | Film.Ca Cinemas in Oakville, ON","isPartOf":{"@id":"https://film.ca/#website"},"datePublished":"2015-01-29T23:02:28+00:00","dateModified":"2016-07-19T12:12:41+00:00","description":"Film.Ca - Big Movies, Small Prices - An Independent Movie Theatre, locally owned and operated, nestled in the heart of Oakville, Ontario","breadcrumb":{"@id":"https://film.ca/#breadcrumb"},"inLanguage":"en-CA","potentialAction":[{"@type":"ReadAction","target":["https://film.ca/"]}]},{"@type":"BreadcrumbList","@id":"https://film.ca/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel="alternate" type="application/rss+xml" title="Film.Ca Cinemas in Oakville, ON &raquo; Feed" href="https://film.ca/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Film.Ca Cinemas in Oakville, ON &raquo; Comments Feed" href="https://film.ca/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Film.Ca Cinemas in Oakville, ON &raquo; Front Page Comments Feed" href="https://film.ca/front-page/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/film.ca\/wp-includes\/js\/wp-emoji-release.min.js?ver=d5409906268a4be6fab15ddfe09dcdcf"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='ec-showtimes-css'  href='https://film.ca/wp-content/plugins/ec-showtimes/ec-showtimes.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://film.ca/wp-content/plugins/brands-for-woocommerce/berocket/assets/css/font-awesome.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='berocket_product_brand_style-css'  href='https://film.ca/wp-content/plugins/brands-for-woocommerce/css/frontend.css?ver=3.7.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='formidable-css'  href='https://film.ca/wp-content/plugins/formidable/css/formidableforms.css?ver=628425' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://film.ca/wp-includes/css/dist/block-library/style.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wp-components-css'  href='https://film.ca/wp-includes/css/dist/components/style.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-editor-css'  href='https://film.ca/wp-includes/css/dist/block-editor/style.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-nux-css'  href='https://film.ca/wp-includes/css/dist/nux/style.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-reusable-blocks-css'  href='https://film.ca/wp-includes/css/dist/reusable-blocks/style.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-editor-css'  href='https://film.ca/wp-includes/css/dist/editor/style.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='eedee-woo-product-slider-style-css-css'  href='https://film.ca/wp-content/plugins/woo-product-slider-block/dist/blocks.style.build.css?ver=1608239675' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelement-css'  href='https://film.ca/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='https://film.ca/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-vendors-style-css'  href='https://film.ca/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=7.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css'  href='https://film.ca/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=7.6.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='slc-login-captcha-style-css'  href='https://film.ca/wp-content/plugins/simple-login-captcha/styles/login.css?ver=1.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wdgk_front_style-css'  href='https://film.ca/wp-content/plugins/woo-donations/assets/css/wdgk_front_style.css?ver=2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='https://film.ca/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=6.6.1' type='text/css' media='all' />
+<style id='woocommerce-layout-inline-css' type='text/css'>
+
+	.infinite-scroll .woocommerce-pagination {
+		display: none;
+	}
+</style>
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://film.ca/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=6.6.1' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='https://film.ca/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=6.6.1' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='moviescope-common-css'  href='https://film.ca/wp-content/themes/moviescope/css/common.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='moviescope-grids-css'  href='https://film.ca/wp-content/themes/moviescope/css/grid.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='moviescope-styles-css'  href='https://film.ca/wp-content/themes/moviescope/style.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='moviescope-responsive-css'  href='https://film.ca/wp-content/themes/moviescope/css/style-responsive.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='moviescope-ptsans-font-css'  href='//fonts.googleapis.com/css?family=PT+Sans%3A400%2C700%2C400italic%2C700italic&#038;ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='options_typography_Lato-css'  href='//fonts.googleapis.com/css?family=Lato' type='text/css' media='all' />
+<link rel='stylesheet' id='options_typography_Abel-css'  href='//fonts.googleapis.com/css?family=Abel' type='text/css' media='all' />
+<link rel='stylesheet' id='options_typography_Open+Sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans' type='text/css' media='all' />
+<link rel='stylesheet' id='options_typography_Anton-css'  href='//fonts.googleapis.com/css?family=Anton' type='text/css' media='all' />
+<link rel='stylesheet' id='post-ratings-css'  href='https://film.ca/wp-content/themes/moviescope/rating/post-ratings.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://film.ca/wp-content/plugins/jetpack/css/jetpack.css?ver=11.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://film.ca/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/ec-showtimes/ec-showtimes.js?ver=d5409906268a4be6fab15ddfe09dcdcf' id='ec-showtimes-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woo-donations/assets/js/wdgk_front_script.js?ver=2.6' id='wdgk_donation_script-js'></script>
+<script defer type='text/javascript' src='https://stats.wp.com/s-202227.js' id='woocommerce-analytics-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/jquery-ui.js?ver=1.8.20' id='jquery-ui-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/modernizr.js?ver=2.6.1' id='modernizr-js'></script>
+<link rel="https://api.w.org/" href="https://film.ca/wp-json/" /><link rel="alternate" type="application/json" href="https://film.ca/wp-json/wp/v2/pages/119" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://film.ca/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://film.ca/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://film.ca/' />
+<link rel="alternate" type="application/json+oembed" href="https://film.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffilm.ca%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://film.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffilm.ca%2F&#038;format=xml" />
+<style></style><meta name="generator" content="Site Kit by Google 1.77.0" />    <style type="text/css">
+        You can write your custom CSS here.        .lsp_main_slider {
+            background-color: #FFFFFF;
+            width: 200px;
+            height: 200px;
+            padding: 8px;
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .lsp_slider_controls {
+            position: relative;
+            top: 50%;
+            margin-top: -20px;
+        }
+
+        .lsp_next_btn {
+            background: url(https://film.ca/wp-content/plugins/logo-slider/ls_arrows/lsp_arrow5_next.png) no-repeat center;
+            float: right;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            text-indent: -9000px;
+            cursor: pointer;
+        }
+
+        .lsp_prev_btn {
+            background: url(https://film.ca/wp-content/plugins/logo-slider/ls_arrows/lsp_arrow5_prev.png) no-repeat center;
+            float: float;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            text-indent: -9000px;
+            cursor: pointer;
+        }
+
+        .lsp_slider_img {
+            height: auto;
+            margin-top: -100px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 6%;
+         text-align: center;
+         width: 110px;
+/*            margin-left: -*//*px;*/
+        }
+
+        #logo-slider {
+            height: auto;
+            margin-top: -100px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 6%;
+         text-align: center;
+        width: 110px;
+            /* margin-left: -*//*px;*/
+        }
+
+        .lsp_img_div {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Visibilties */
+        .visible_phone {
+            visibility: hidden;
+            display: none;
+        }
+
+        .visible_desktop {
+            visibility: visible;
+        }
+
+        /* ============================= */
+        /* ! Layout for phone version   */
+        /* ============================= */
+
+        /*Rsponsive layout 1024*/
+        @media screen and (min-width: 801px) and (max-width: 1024px) {
+
+            .visible_phone {
+                visibility: visible;
+                display: inherit;
+            }
+
+            .visible_desktop {
+                visibility: hidden;
+                display: none;
+            }
+
+            .lsp_main_slider {
+                background-color: #FFFFFF;
+                height: 200px;
+                padding: 8px;
+                position: relative;
+                width: 100%;
+                margin-bottom: 24px;
+            }
+
+            .lsp_slider_img {
+            height: auto;
+            margin-left: -334px;
+            margin-top: -65px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 668px;
+             text-align: center;
+                        }
+
+            #logo-slider {
+                height: auto;
+                margin-left: -334px;
+                margin-top: -65px;
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 668px;
+             text-align: center;
+                        }
+
+        }
+
+        /*Rsponsive layout 768*/
+        @media screen and (min-width: 641px) and (max-width: 800px) {
+
+            .visible_phone {
+                visibility: visible;
+                display: inherit;
+            }
+
+            .visible_desktop {
+                visibility: hidden;
+                display: none;
+            }
+
+            .lsp_main_slider {
+                background-color: #FFFFFF;
+                height: 200px;
+                padding: 8px;
+                position: relative;
+                width: 100%;
+                margin-bottom: 24px;
+            }
+
+            .lsp_slider_img {
+            height: auto;
+            margin-left: -256px;
+            margin-top: -65px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 512px;
+             text-align: center;
+                        }
+
+            #logo-slider {
+                height: auto;
+                margin-left: -256px;
+                margin-top: -65px;
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 512px;
+             text-align: center;
+                        }
+
+        }
+
+        /*Rsponsive layout 640*/
+        @media screen and (min-width: 481px) and (max-width: 640px) {
+
+            .visible_phone {
+                visibility: visible;
+                display: inherit;
+            }
+
+            .visible_desktop {
+                visibility: hidden;
+                display: none;
+            }
+
+            .lsp_main_slider {
+                background-color: #FFFFFF;
+                height: 200px;
+                padding: 8px;
+                position: relative;
+                width: 100%;
+                margin-bottom: 24px;
+            }
+
+            .lsp_slider_img {
+                height: auto;
+                margin-left: -176px;
+                margin-top: -65px;
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 346px;
+             text-align: center;
+                        }
+
+            #logo-slider {
+                height: auto;
+                margin-left: -176px;
+                margin-top: -65px;
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 346px;
+             text-align: center;
+                        }
+
+        }
+
+        /*Rsponsive layout 480*/
+        @media screen and (min-width: 320px) and (max-width: 480px) {
+            .visible_phone {
+                visibility: visible;
+                display: inherit;
+            }
+
+            .visible_desktop {
+                visibility: hidden;
+                display: none;
+            }
+
+            .lsp_main_slider {
+                background-color: #FFFFFF;
+                height: 200px;
+                padding: 8px;
+                position: relative;
+                width: 100%;
+                margin-bottom: 24px;
+            }
+
+            .lsp_slider_img {
+                height: auto;
+                margin-left: -91px;
+                margin-top: -65px;
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 185px;
+            text-align: center;
+                        }
+
+            #logo-slider {
+                height: auto;
+                margin-left: -91px;
+                margin-top: -65px;
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 185px;
+             text-align: center;
+                        }
+
+        }
+    </style>
+	<script>  var el_i13_login_captcha=null; var el_i13_register_captcha=null; </script>	<style>
+		.wdgk_donation_content a.button.wdgk_add_donation { background-color: #8d5f8c !important; } .wdgk_donation_content a.button.wdgk_add_donation { color: #FFFFFF !important; }	</style>
+
+<script type="text/javascript">document.documentElement.className += " js";</script>
+
+        <script type="text/javascript">
+            var jQueryMigrateHelperHasSentDowngrade = false;
+
+			window.onerror = function( msg, url, line, col, error ) {
+				// Break out early, do not processing if a downgrade reqeust was already sent.
+				if ( jQueryMigrateHelperHasSentDowngrade ) {
+					return true;
+                }
+
+				var xhr = new XMLHttpRequest();
+				var nonce = '09059ea4e9';
+				var jQueryFunctions = [
+					'andSelf',
+					'browser',
+					'live',
+					'boxModel',
+					'support.boxModel',
+					'size',
+					'swap',
+					'clean',
+					'sub',
+                ];
+				var match_pattern = /\)\.(.+?) is not a function/;
+                var erroredFunction = msg.match( match_pattern );
+
+                // If there was no matching functions, do not try to downgrade.
+                if ( typeof erroredFunction !== 'object' || typeof erroredFunction[1] === "undefined" || -1 === jQueryFunctions.indexOf( erroredFunction[1] ) ) {
+                    return true;
+                }
+
+                // Set that we've now attempted a downgrade request.
+                jQueryMigrateHelperHasSentDowngrade = true;
+
+				xhr.open( 'POST', 'https://film.ca/wp-admin/admin-ajax.php' );
+				xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+				xhr.onload = function () {
+					var response,
+                        reload = false;
+
+					if ( 200 === xhr.status ) {
+                        try {
+                        	response = JSON.parse( xhr.response );
+
+                        	reload = response.data.reload;
+                        } catch ( e ) {
+                        	reload = false;
+                        }
+                    }
+
+					// Automatically reload the page if a deprecation caused an automatic downgrade, ensure visitors get the best possible experience.
+					if ( reload ) {
+						location.reload();
+                    }
+				};
+
+				xhr.send( encodeURI( 'action=jquery-migrate-downgrade-version&_wpnonce=' + nonce ) );
+
+				// Suppress error alerts in older browsers
+				return true;
+			}
+        </script>
+
+		<style>img#wpstats{display:none}</style>
+		<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+
+<!-- Google AdSense snippet added by Site Kit -->
+<script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7126235028145064" crossorigin="anonymous" type="text/javascript"></script>
+
+<!-- End Google AdSense snippet added by Site Kit -->
+<link rel="icon" href="https://film.ca/wp-content/uploads/2020/08/cropped-Logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://film.ca/wp-content/uploads/2020/08/cropped-Logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://film.ca/wp-content/uploads/2020/08/cropped-Logo-180x180.png" />
+<meta name="msapplication-TileImage" content="https://film.ca/wp-content/uploads/2020/08/cropped-Logo-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	padding-bottom: 5px;
+}
+
+/*YOUR EVENTS/OUR EVENTS/KIDS IMAGE OVERLAY*/
+.container {
+  position: relative;
+  width: 100%;
+  background-color: black;
+}
+
+.container .event-icons, .container .kids-icons {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.container .centered{display: none;}
+
+.container:hover .centered {
+	display: block;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.5em;
+  text-shadow: 2px 2px 2px #000;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.container:hover .event-icons, .container:hover .kids-icons{
+opacity: 40%;}
+
+@media screen and (min-width:996px){.event-titles{display:none;}
+}
+
+
+/*STORE*/
+/*buttons*/
+.button .wrap{ background-image:none!important;}
+
+#-button{ display:none;}
+
+.woocommerce-message{ border-top-color: #b394b2;}
+
+/*checkout form*/
+.col-1, .col-2{ width: 100%!important;}
+
+label{ width: 100%; }
+
+#customer_newsletter_opt_in, .woocommerce-input-wrapper label.radio{width:100px; }
+
+.select2-container.select2-container--default, .woocommerce-shipping-fields{display: none; }
+
+/*payment box*/
+#order_review_heading{margin-top:30px;}
+
+.woocommerce-checkout #payment div.form-row{ padding:0;}
+
+.wc_payment_method.payment_method_stripe{list-style:none;}
+
+.woocommerce-checkout #payment div.payment_box{ position: static; 
+background-color: transparent;
+margin-top: 30px;}
+		</style>
+			
+	<style>
+		body {background-image:url(https://secure.film.ca/wp-content/uploads/2015/02/stars.jpg); background-repeat:no-repeat; background-position:top center; background-attachment:fixed; background-color:#000; font: normal 14px/18px Lato; color: #3c3c3c;}
+h1{font: bold 30px/18px Open Sans; color: #682566;}
+h2{font: bold 22px/22px Open Sans; color: #682566;}
+h3{font: bold 20px/18px Open Sans; color: #682566;}
+h4{font: bold 18px/18px Open Sans; color: #682566;}
+h5{font: bold 15px/18px Open Sans; color: #682566;}
+h6{font: bold 14px/18px Open Sans; color: #682566;}
+.sf-menu > li{font: normal 17px/55px Abel; color: #3c3c3c;}
+.sf-menu > li li{font: normal 15px/16px Abel; color: #3c3c3c;}
+#footer a{font: normal 12px/12px Lato; color: #121212;}
+#content table td { vertical-align: middle; }
+
+.ui-selectmenu { border: 1px solid #333333 !important; }
+
+.ui-selectmenu-menu-dropdown { background-color: #eeeeee !important; }
+
+h1 { line-height: 1.1; }
+
+.ec-showtimes-film-showtimes tr td a, .ec-showtimes-theatre-page-film-showtimes tr td a, p.ec-showtimes-film-pagelink a {
+padding: 2px 4px;
+background-color: #682566;
+color: #ffffff;
+text-decoration: none;
+margin-top:3px !important;
+display: inline-block;
+border-radius: 3px;
+transition: .5s all ease;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+font-family: Lato, Arial, sans-serif !important;
+font-size: 14px !important;
+}
+.ec-showtimes-film-showtimes tr td a:hover, .ec-showtimes-theatre-page-film-showtimes tr td a:hover, p.ec-showtimes-film-pagelink a:hover {
+background-color: #ffc600;
+color: #000000;
+}
+p.ec-showtimes-film-pagelink {
+margin-top:6px;
+}
+
+h1.title {
+background: #ffc600;
+line-height: 27px;
+padding: 12px 11px;
+margin-bottom: 24px;
+display:inline-block;
+font-family: 'Open Sans';
+text-transform: uppercase;
+transform: skew(-6deg,0);
+-webkit-transform: skew(-6deg,0);
+-ms-transform: skew(-6deg,0);
+}
+
+#superfish_menu li a { text-transform: uppercase; }
+
+.featured-film-wrapper {
+margin: 20px 0;
+box-shadow: 2px 2px 6px rgba(0,0,0,.5);
+background: #ffffff;
+display:block;
+float:left;
+width:100%;
+}
+
+.ec-showtimes-theatre-page-film-info th, table.ec-showtimes-film_info th, #imdbinfo th { 
+background: #682566 !important;
+line-height: 1.2em !important;
+font-size: 1.6em !important;
+color: #FFFFFF !important;
+padding: 9px !important;
+border-radius: 0px !important;
+font-family: Abel, Arial, sans-serif !important;
+text-transform: uppercase !important;
+text-align: left !important;
+border: none !important;
+}
+
+#imdbinfo, #imdbinfo th { border: none !important; }
+
+.ec-showtimes-film-showtimes, .ec-showtimes-film-showtimes tr, .ec-showtimes-film-showtimes tr td {
+border:none !important;
+background-image: none !important;
+}
+
+.ec-showtimes-film-showtimes tr:nth-child(odd) { background: #eeeeee !important; }
+
+.ec-showtimes-film-showtimes tr:nth-child(even) { background: #ffffff !important; }
+
+.featured-film-wrapper .ec-showtimes-theatre-short-name { display: none; }
+
+table.ec-showtimes-film-showtimes, table.ec-showtimes-theatre-page-film-showtimes {
+font-family:Abel, Lato, Arial, sans-serif !important;
+font-size: 16px !important;
+line-height: normal !important;
+}
+
+@media only screen and ( max-width: 480px ) {
+  #imdbimg { width: 110px; height: auto; padding-right:10px; }
+  #imdbimg img { max-width: 95%; max-height: 95%; border: none; }
+  #content table td { padding: 12px 2px 10px !important; }
+}
+
+.ec-showtimes-theatre-page-film { border: none !important; width: 100% !important; box-shadow: 2px 2px 6px rgba(0,0,0,.5) !important; margin:0 0 10px 0 !important; }
+
+table.ec-showtimes-theatre-page-film-showtimes, table.ec-showtimes-theatre-page-film-showtimes tr, table.ec-showtimes-theatre-page-film-showtimes tr td, .ec-showtimes-theatre-page-film-info, .ec-showtimes-theatre-page-film-info tr, .ec-showtimes-theatre-page-film-info tr td { border: none !important; background-image:none !important; }
+
+td.meta-container h2 {
+font-family: Abel, Arial, sans-serif;
+font-size: 32px;
+line-height:32px !important;
+}
+
+.ec-showtimes-theatre-page-film-info, .ec-showtimes-theatre-page-film-showtimes { background-color: #ffc600; margin-bottom:0 !important; }
+
+td.poster-container, td.meta-container {  vertical-align: middle !important; }
+
+@media only screen and ( max-width: 480px ) {
+  td.poster-container, td.meta-container {  vertical-align: top !important; }
+}
+
+.ec-showtimes-theatre-page-film {
+border-top: none;
+padding-bottom: 10px;
+background: #ffc600;
+}
+
+div#main_menu.container_12 { background: #682566; }
+
+#main_menu nav, #superfish_menu li.current-menu-item, #superfish_menu li.sfHover, #superfish_menu li.current-menu-item .corner, #superfish_menu li.sfHover .corner, #superfish_menu li a, #superfish_menu li, #superfish_menu li .corner, #superfish_menu .last .corner_last { background-image: none !important; }
+
+#superfish_menu li a { text-shadow: none !important; color: #ffffff !important; transition: .5s all ease; -webkit-transition: .5s all ease; -moz-transition: .5s all ease; }
+
+#superfish_menu li a:hover { background-color: rgba(255,255,255,.4) !important; color: #682566 !important; }
+
+#superfish_menu li.current-menu-item a, #superfish_menu li.sfHover a { background: #ffc600 !important; text-shadow: none; color: #682566 !important; }
+
+#superfish_menu li.current-menu-item a:hover, #superfish_menu li.sfHover a:hover { background: #682566 !important; text-shadow: none; color: #ffc600 !important; }
+
+#sidebar label { width: auto !important; margin-top: 9px !important; }
+
+#sidebar .widget_sf_widget_constantcontact input[type="submit"] { margin-top:15px !important; }
+
+#sidebar .widget_sf_widget_constantcontact input[type="submit"]:hover { cursor: pointer !important; }
+
+#movie_reviews .title { line-height: 20px !important; color: #682566 !important; display:block; margin-bottom: 3px !important; }
+
+.news_item ul.details { display: none; }
+
+#superfish_menu li { padding-left: 0 !important; }
+
+#superfish_menu li .corner { padding-right: 0 !important; }
+
+#superfish_menu li a { border-right: 4px solid #ffc600; }
+
+a { color: #682566; }
+
+.news_item a.title {
+color: #682566;
+line-height: 1.1;
+display: block;
+margin-bottom:6px;
+}
+
+body { background-size: cover !important; padding: 20px 0; }
+
+#block_tweets #twitterFeed a { color: #682566; }
+
+#sidebar .content a:hover, #sidebar .details .title a:hover, #sidebar .selected .title a { color: #ffc600 !important; }
+
+.trailer-added { display: none; }
+
+#slider_nav li h4 {
+font-size: 14px;
+font-weight: bold;
+font-family: 'Open Sans Condensed', Arial, sans-serif;
+color: #ffffff;
+margin-bottom: 5px;
+}
+
+#slider_nav li { height: 80px !important; }
+
+#main_tabs .ui-tabs-nav li.ui-state-active, #block_inTheaters, #block_comingSoon, #block_newOnDVD { background: #682566 !important; border-color: #993696 !important; }
+
+#main_tabs .ui-tabs .ui-tabs-nav { background: #993696 !important; }
+
+.widget_sf_widget_constantcontact h3.block_title { background: #682566 !important; }
+
+div#footer-widgets {
+padding: 20px;
+background-color: rgba(0,0,0,.7);
+font-size: 16px;
+line-height: normal;
+}
+
+@media only screen and (max-width: 767px ) {
+   .one_third {
+   max-width:320px;
+    display:block;
+    margin: 30px auto !important;
+    float:none !important;
+    width: 100%;
+  }
+}
+
+#footer-widgets, #footer-widgets h2.title { color: #ffffff !important; }
+
+#footer-widgets h2.title { margin-bottom: 12px; font-family: Abel, Arial, sans-serif !important; text-transform: uppercase; }
+
+#footer-widgets a { color: #ffc600 !important; transition: .5s all ease; -moz-transition: .5s all ease; -webkit-transition: .5s all ease; text-decoration: none !important; }
+
+#footer-widgets a:hover { color: #ffffff !important; }
+
+.stickybutton {
+width:auto;
+height:auto;
+padding:9px 18px;
+position:fixed;
+top:25%;
+text-align:center;
+right:-48px;
+z-index:99999;
+font-weight:bold;
+background-color:#ffc600;
+-webkit-border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
+/* Rotate div */
+transform:rotate(90deg);
+-ms-transform:rotate(90deg); /* IE 9 */
+-webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
+transition: .5s all ease;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+}
+.stickybutton a {
+	color:#000000 !important;
+        font-family: Lato, Arial, sans-serif;
+	transition: all 0.5s ease;
+        font-size: 18px;
+        text-decoration: none;
+}
+
+.stickybutton:hover { background-color: #862566 !important; }
+
+.stickybutton a:hover {
+	color:#ffffff !important;
+}
+#footer-widgets li {
+list-style-type: disc;
+list-style-position: outside;
+margin-bottom: 9px;
+}
+#footer-widgets ul {
+padding-left: 18px;
+}
+@media only screen and  (max-width:767px ) and (min-width:480px ) {
+  #header .grid_4:last-child { top: -20 !important; }
+}
+ul.mg-wpsi { float:right; }
+
+.mg-wpsi li {
+float: right  !important;
+margin: 0px 4px !important;
+}
+
+.mg-wpsi a i {
+transition: .5s all ease;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+}
+div.news.grid_8.alpha.omega {
+width: auto !important;
+padding: 20px !important;
+background-color: #ffc600;
+margin: 10px 0;
+box-shadow: 2px 2px 6px rgba(0,0,0,.5);
+}
+.ui-tabs-nav li a {
+font-family: Abel, sans-serif;
+font-size:19px;
+text-transform: uppercase;
+text-decoration:none;
+}
+@media only screen and ( max-width: 767px ) {
+  #main_tabs .ui-tabs-nav li a {
+    line-height: 14px !important;
+    font-size: 16px;
+  }
+  #main_tabs .ui-tabs-nav li {
+    padding-top: 4px;
+    height: 54px;
+  }
+  .flex-viewport { width: 100%; }
+}
+@media only screen and ( max-width: 480px ) {
+    .ui-tabs .ui-tabs-nav, #main_tabs .ui-tabs-nav li { height: 74px; }
+}
+
+#slider_nav li {
+background: url(https://film.ca/wp-content/uploads/2015/02/main_slider_item2.png) 0 0 no-repeat;
+}
+#footer { background: #682566 !important; color: #ffffff; }
+#footer a { color: #ffc600; }
+#footer #footer-menu a {
+font-size: 15px !important;
+line-height: 18px !important;
+transition: .5s all ease;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+font-family: Abel, 'Arial Narrow', sans-serif !important;
+font-weight: 300 !important;
+}
+#footer #footer-menu a:hover { color: #ffffff !important; text-decoration: none !important; }
+#block_footer_menu li {
+border-color: #ffffff;
+padding-bottom: 4px;
+}
+#footer #block_social_footer.block { clear:none !important; }
+div#block_copyright.block.clearfix { padding: 0 10px 10px 10px; }
+#footer li a:hover { text-decoration: none !important; }
+#footer .mg-wpsi a:hover i { color: #ffffff !important; }
+#footer-widgets div.frm_description, #footer-widgets label.frm_primary_label { color: #777777; }
+
+#sidebar .widget_text h3.block_title { background: #682566 !important; }
+
+#sidebar .block_title { font-family: 'Open Sans', sans-serif !important; }
+
+#footer-widgets img.attachment-294x185 { border-radius: 12px; }
+
+#sidebar .title a { font-family: 'Open Sans Condensed', Arial, sans-serif; }
+
+@media only screen and ( max-width: 767px ) and ( min-width: 480px ) {
+#block_trailers li:nth-child(3n + 1) { margin-left: 0px; }
+}
+
+.featured-film-wrapper table.ec-showtimes-film_info { border:none !important; }
+
+.featured-film-wrapper table.ec-showtimes-film_info, .featured-film-wrapper p.ec-showtimes-film-description, p.ec-showtimes-theatre-page-film-description { margin-bottom:0 !important; }
+
+.responsive-menu-items .current-menu-item, .responsive-menu-items .current-menu-item .corner_last, .responsive-menu-items .current-menu-item .corner, .responsive-menu-items .current-menu-item a { background-image:none !important; text-shadow: none !important; }
+
+.responsive-menu-items .current-menu-item a { color: #ffffff !important; }
+
+.resp-menu-hidden li a { background: #682566 !important; text-shadow:none !important; color: #ffffff !important; transition: .5s all ease; -webkit-transition: .5s all ease; -moz-transition: .5s all ease; }
+
+.resp-menu-hidden li a:hover { background: #ffc600 !important; color: #682566 !important; }
+
+.resp-menu-hidden li.current-menu-item a { color: #ffc600 !important; }
+
+.resp-menu-hidden li.current-menu-item a:hover { color: #682566 !important; }
+
+@media only screen and ( min-width: 768px ) {
+  #block-search-form {
+ padding-top: 70px !important; 
+ padding-bottom:20px !important;
+ }
+}
+
+ul.flex-direction-nav {
+width:50px;
+display:inline-block;
+vertical-align:middle;
+}
+
+.tabs_slide_nav {
+position: relative;
+right: 0px;
+top: -6px;
+width: auto;
+text-align: center;
+font-family: Abel, sans-serif;
+}
+.tabs_slide_nav span { display:inline-block; color: #ffffff; margin-right: 9px; }
+
+@media only screen and ( max-width: 479px ) {
+  .tabs_slide_nav span { display:block; margin:0; }
+}
+
+#sidebar .block_grey_white .block_title {
+background:#682566;
+color: #ffffff;
+}
+.frm_checkbox label { width: auto !important; }
+.with_frm_style .frm_radio label, .with_frm_style .frm_checkbox label { display: block !important; float:none !important; width:auto !important; }
+
+#content #box_office table { background: #682566 !important; color: #ffffff; border: none; border-radius: 0px; padding:10px !important; }
+
+td.tbo-head {
+background: #000000;
+color: #ffffff;
+font-size: 19px;
+font-weight: bold;
+}
+
+#sf_widget_constantcontact_2_form { border: 1px solid #cccccc; padding: 10px; }
+
+#sf_widget_constantcontact-2 input { width: 95% !important; }
+
+#sidebar .widget_sf_widget_constantcontact input[type="submit"] {
+margin: 15px auto 10px auto  !important; 
+width: auto !important;
+float: none;
+display:block;
+background-color:#682566;
+color: #ffffff;
+font-size: 18px;
+padding: 4px 8px;
+height: auto !important;
+transition: .5s all ease;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+}
+
+#sidebar .widget_sf_widget_constantcontact input[type="submit"]:hover {
+background-color: #ffc600 !important;
+color: #000000 !important;
+}
+
+.mojocopyra { pointer-events: none !important; }
+
+#superfish_menu .sub-menu li { padding: 20px !important; background: #682566 !important; border: none !important; }
+
+#superfish_menu .sub-menu li a { color: #ffffff !important; background: none !important; border:none !important; font-size:17px !important; }
+
+@media only screen and ( max-width: 995px ) and (min-width: 768px ) {
+  #superfish_menu li a { padding: 0 13px !important; }
+}
+#header {
+background: url(https://film.ca/wp-content/uploads/2015/02/film-ca-banner-web.jpg) !important;
+-webkit-border-top-left-radius: 0px;
+-webkit-border-top-right-radius: 0px;
+-moz-border-radius-topleft: 0px;
+-moz-border-radius-topright: 0px;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+padding: 29px 0 6px 0;
+overflow: hidden;
+background-repeat: no-repeat !important;
+background-position: left top;
+background-size: 996px 187px;
+}
+div#logo.logo { visibility: hidden; }
+
+@media only screen and ( max-width: 767px ) {
+  #header .grid_4:last-child {
+    position: absolute;
+    right: 0px;
+    top: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  #header { padding: 29px 0; }
+}
+
+#block_footer_menu li {
+padding: 0 5px 0 0px;
+margin-left: 5px !important;
+line-height:1.5 !important;
+}
+#content article.node.content ul {
+list-style: disc outside none;
+padding-left: 20px;
+margin-bottom:20px;
+}
+#content article.node.content ul li {
+margin-bottom: 10px;
+}
+#footer-widgets .one_third div { margin-bottom: 20px; }
+
+#superfish_menu li a { padding: 0 24px !important; }
+
+#superfish_menu li.last a { border:none !important; padding: 0 26px !important; }
+
+span.corner_last { margin:0 !important; padding:0 !important; }
+
+@media only screen and ( max-width: 995px ) and ( min-width: 768px ) {
+  #superfish_menu li a {
+    font-size: 14px !important;
+    padding: 0 16px !important;
+  }
+  #superfish_menu li.last a { border:none !important; padding: 0 15px !important; }
+  #superfish_menu li { background: #682566 !important; }
+  #superfish_menu li.menu-item-386 a { padding: 0 21px !important; }
+}
+#content #box_office td { padding: 15px 5px; }
+
+span.rate { display:none; }
+
+strong { font-weight: 900 !important; }
+
+div#container.container_12.clearfix, #content, .node.type-news { overflow: visible !important; }
+
+h2 a {
+color: #682566 !important;
+transition: .5s all ease;
+-webkit-transition: .5s all ease;
+-moz-transition: .5s all ease;
+}
+h2 a:hover { color: #ffc600 !important; }
+
+aside#widget_sp_image-4.widget.block.widget_sp_image { text-align: center; }
+aside#widget_sp_image-4.widget.block.widget_sp_image h3.block_title { display: none; }
+.widget_search h3.block_title { background: #682566 !important; color: #ffffff !important; }
+.widget_search input#s {
+width: 229px;
+border-top: 1px solid #cccccc;
+border-left: 1px solid #cccccc;
+border-bottom: 1px solid #cccccc;
+}
+.widget_search #searchform { border: 1px solid #cccccc !important; background: #ffffff !important; }
+.widget_search input#searchsubmit {
+border-top: 1px solid #cccccc;
+border-right: 1px solid #cccccc;
+border-bottom: 1px solid #cccccc;
+height: 34px !important;
+}
+#sidebar .searchform label { margin-top: 0px !important; }
+
+@media only screen and ( max-width: 995px ) {
+  .widget_search input#s { width: 152px !important; }
+}
+
+@media only screen and ( max-width: 479px ) {
+.with_frm_style input[type="text"], .with_frm_style input[type="password"], .with_frm_style input[type="email"], .with_frm_style input[type="number"], .with_frm_style input[type="url"], .with_frm_style input[type="tel"], .with_frm_style select, .with_frm_style textarea, .frm_form_fields_style, .with_frm_style .frm_scroll_box .frm_opt_container, .frm_form_fields_active_style, .frm_form_fields_error_style, .with_frm_style .chosen-container-multi .chosen-choices, .with_frm_style .chosen-container-single .chosen-single, .with_frm_style .frm_radio label, .with_frm_style .frm_checkbox label, label.frm_primary_label { width: 90% important; max-width: 90% !important; }
+  .widget_search input#s { width: 218px !important; }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+td.tbo-head nobr { white-space: normal !important }
+}
+
+.single-post .entry-content figure.wrap_me { display: none; }
+
+@media only screen and (min-width: 480px) and (max-width: 767px ) {
+  td.mojo_copyright { width: 440px !important; }
+}
+
+#sidebar .widget_reallysimpletwitterwidget .block_title { background: #682566 !important; margin: -10px -10px 0 -10px !important; }
+#sidebar .widget_reallysimpletwitterwidget li { margin:0px 0 10px 0 !important; }
+aside#reallysimpletwitterwidget-2.widget.block.widget_reallysimpletwitterwidget { padding: 10px; border: 1px solid #cccccc; }
+span.twitter-timestamp { display: block; font-style: italic; }
+ul.really_simple_twitter_widget { padding-top:10px !important; }
+iframe#twitter-widget-0.twitter-follow-button { display: block; margin-left:auto; }
+.page-id-639 .content a img { max-width:150px; height:auto; display:inline-block; vertical-align:middle; margin: 10px; }
+span.ui-selectmenu-status { font-size: 17px !important; }
+a.scroll_to_top:hover .icon_24 { background-position: -116px 0px; }
+@media only screen and (max-width:480px) {
+  #block-search-form { padding-top: 135px !important; }
+}
+#block-search-form .form-type-textfield input { width: 180px; }
+ul#superfish_menu {
+margin:0;
+width:100%;
+padding:0;
+}
+.metaslider-802 .flex-direction-nav .flex-next {background-position: 100% 0; right: -36px; }
+.metaslider-802 .flex-direction-nav .flex-prev {left: -36px;}
+.metaslider-802 .flexslider:hover .flex-next {opacity: 0.8; right: -36px !important;}
+.metaslider-802 .flexslider:hover .flex-prev {opacity: 0.8; left: -36px !important;}
+
+@media only screen and (max-width: 995px) and (min-width:769px) {
+  div#logo-slider-wraper {
+    width:130px !important;
+    height: 100px !important;
+  }
+  ul.logo-slider.cycle-slideshow, #logo-slider {
+    height:100px !important;
+  }
+  #logo-slider-wraper .slide, li.slide.cycle-slide {
+    width: 130px !important;
+  }
+  #logo-slider-wraper .slider-controls {
+    top: 24px !important;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width:481px) {
+    div#logo-slider-wraper {
+      text-align:center;
+      margin: 0 auto !important;
+      position:relative;
+       width:300px !important;
+       left:0 !important;
+       height: 200px !important;
+    }
+    #logo-slider {
+       background:#FFFFFF;
+       height: 200px;
+       list-style: none outside none;
+       margin: 0 auto;
+       overflow: hidden;
+       padding: 0;
+       position: relative;
+       width: 300px !important;
+       left:0px;
+    }
+    .slider-controls {
+      top:80px !important;
+    }
+}
+@media only screen and (max-width:480px) {
+  div#logo-slider-wraper {
+    position:relative;
+     width:180px !important;
+     left:40px !important;
+  }
+}
+#block-search-form .form-type-textfield input { background-color:#682566; }
+#block-search-form .form-type-textfield input.form-text { color: #ffffff !important; }
+.ec-showtimes-film_info {
+border-top: none;
+padding-bottom: 10px;
+background: #ffc600;
+border: none !important;
+width: 100% !important;
+box-shadow: 2px 2px 6px rgba(0,0,0,.5) !important;
+margin: 0 0 0px 0 !important;
+}
+.single-trailer article.node {
+overflow: visible;
+}
+.single-trailer div.show_carousel, .single-trailer div#carousel.flexslider.photo-thumbs, .single-trailer .sorry { display:none; }
+.page table.ec-showtimes-film-showtimes, .single-trailer table.ec-showtimes-film-showtimes {
+border-top: none;
+padding-bottom: 10px;
+background: #ffc600;
+border: none !important;
+width: 100% !important;
+box-shadow: 2px 2px 6px rgba(0,0,0,.5) !important;
+margin: 0 0 10px 0 !important;
+}
+.page h2.ec-showtimes-theatre-short-name, .single-trailer h2.ec-showtimes-theatre-short-name {
+display: none;
+}
+.page .ec-showtimes-film-showtimes tr:nth-child(odd), .page .ec-showtimes-film-showtimes tr:nth-child(even), .single-trailer .ec-showtimes-film-showtimes tr:nth-child(odd), .single-trailer .ec-showtimes-film-showtimes tr:nth-child(even) {
+background: transparent !important;
+}
+.single-trailer div#slider.flexslider { display: none; }
+
+.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
+line-height:1.2;
+}
+@media only screen and (max-width:979px) {
+  .tabs_slide_nav {
+    position: relative;
+    right: 0px;
+    top: 0px;
+    width: auto;
+    text-align: center;
+    font-family: Abel, sans-serif;
+    margin-bottom: 6px;
+  }
+  .tabs_slide_nav span {
+    display: inline-block;
+    color: #ffffff;
+    margin-right: 9px;
+  }
+  ul.flex-direction-nav {
+    width:50px;
+    display:inline-block;
+    vertical-align:middle;
+  }
+}
+@media only screen and (max-width:480px) {
+  .ui-tabs .ui-tabs-nav li {
+    width:75px;
+  }
+}
+@media only screen and (max-width:995px) and (min-width:768px) {
+  #block_inTheaters img, #block_comingSoon img, #block_newOnDVD img {
+    width:125px !important;
+  }
+}
+@media only screen and (max-width:767px) {
+  #block_inTheaters img, #block_comingSoon img, #block_newOnDVD img {
+    width:115px !important;
+  }
+}
+.ctct-custom-form {
+min-width: 280px !important;
+}
+.ctct-custom-form label {
+display: block;
+margin-bottom: 2px !important;
+line-height: 1;
+width: 100% !important;
+font-size: 12px;
+}
+.ctct-custom-form p {
+margin-bottom: 12px !important;
+}
+.spu-box p {
+margin-bottom: 9px !important;
+}
+.ctct-custom-form {
+padding: 7px 15px 3px 15px !important;
+}
+.spu-shortcode {
+float: none !important;
+line-height: normal !important;
+display: inline-block !important;
+margin: 10px 10px 0 10px !important;
+}
+.ctct-custom-form .ctct-button {
+background-color: #862566 !important;
+}
+.ctct-custom-form .ctct-button:hover {
+opacity: .75 !important;
+}	</style>
+
+	
+	<!-- Mobile icon/bookmark stuff -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#682666">
+	<meta name="apple-mobile-web-app-title" content="Film.ca Cinemas">
+	<meta name="application-name" content="Film.ca Cinemas">
+	<meta name="theme-color" content="#682666">
+
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3308893-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Hotjar Tracking Code for https://film.ca -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:594948,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+	<meta name="google-site-verification" content="hxCmoO63WIb2j8Gk-dirLHbkkq48-qzf3TN48pcFLvE" />
+</head>
+<div class="stickybutton"><a target="_blank" href="https://film.ca/show-times-by-date/">Buy Tickets</a></div>
+
+<body class="home page-template page-template-page-templates page-template-front-page page-template-page-templatesfront-page-php page page-id-119 wp-custom-logo theme-moviescope woocommerce-no-js full-width template-front-page">
+
+<div id='woobox-root'></div>
+<script>(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//woobox.com/js/plugins/woo.js";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'woobox-sdk'));</script>
+
+	<div class="content-wrapper container_12">
+		<header id="header" class="clearfix">
+			<div class="grid_4">
+				<div class="logo" id="logo">
+											<div class="img-logo">
+															<a href="https://film.ca/">
+									<img src="https://secure.film.ca/wp-content/uploads/2015/01/filmCa_Cinemas_logo_colour.png" alt="Film.Ca Cinemas in Oakville, ON" title="Big Movies, Small Prices">
+								</a>
+													</div>
+										<div class="site-description">Big Movies, Small Prices</div>
+				</div> <!-- /logo-->
+			</div>
+			
+				<div class="grid_4 search-form">
+					
+				</div>
+			
+			<div class="grid_4" style="float:right;">
+				<div id="block_user" class="block clearfix" style="display:none;">
+					<ul>
+												<li class="last"><a rel="nofollow" href="https://film.ca/wp-login.php">Log in</a></li>
+					</ul>
+				</div>
+				<div><style>.mg-wpsi{ list-style: none !important; min-height:10px; } .mg-wpsi li{ float: left !important; margin: 0px 5px !important; } .mg-wpsi li a{ text-decoration: none; } .mg-wpsi a i { color:#ffc600; font-size:27px !important; } .mg-wpsi a:hover i { color:#682566 }</style><ul class="mg-wpsi"><li><a href="https://www.facebook.com/Film.Ca" target="_blank"><i class="mgicon-facebook3"></i></a></li><li><a href="https://twitter.com/@filmcacinemas" target="_blank"><i class="mgicon-twitter3"></i></a></li><li><a href="http://instagram.com/filmca" target="_blank"><i class="mgicon-instagram"></i></a></li><li><a href="https://plus.google.com/100531886290707557686/about" target="_blank"><i class="mgicon-googleplus4"></i></a></li><li><a href="https://www.pinterest.com/filmca/" target="_blank"><i class="mgicon-pinterest2"></i></a></li><li><a href="https://www.youtube.com/channel/UCrnfZeMChpQdAyTW3F-usbw" target="_blank"><i class="mgicon-youtube"></i></a></li></ul></div>
+				
+								
+								<div class="search-form" style="float:right;">
+				<div id="block-search-form" class="block clearfix">
+						<form method="get" id="searchform" action="https://film.ca/">
+							<div class="form-type-textfield">
+								<input type="text" name="s" class="form-text" maxlength="128" size="15" placeholder="Search movies, actors, etc."/>
+							</div>
+							<div class="form-actions">
+								<input type="submit" class="submit form-submit" value=""/>
+							</div>
+						</form>
+					</div>
+				</div>
+							</div>
+		</header>
+		<div id="main_menu" class="container_12">
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<ul id="superfish_menu" class="grid_12 sf-menu"><li id="menu-item-396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-119 current_page_item menu-item-396"><a href="https://film.ca/" aria-current="page">Home</a></li>
+<li id="menu-item-7655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7655"><a href="/show-times-by-date/">Showtimes</a>
+<ul class="sub-menu">
+	<li id="menu-item-13822" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13822"><a href="/show-times-by-date/">Showtimes</a></li>
+	<li id="menu-item-13443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13443"><a href="https://film.ca/welcomehome/">Re-Opening</a></li>
+</ul>
+</li>
+<li id="menu-item-9919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9919"><a href="https://film.ca/store/">Shop</a>
+<ul class="sub-menu">
+	<li id="menu-item-12472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12472"><a href="https://film.ca/shop/">Order Takeout</a></li>
+	<li id="menu-item-6454" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6454"><a href="https://film.ca/filmcard/">Gift Cards</a></li>
+	<li id="menu-item-9226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9226"><a href="https://film.ca/thank-you-for-buying-a-seat/">Thank you for Buying a Seat</a></li>
+</ul>
+</li>
+<li id="menu-item-9051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9051"><a href="https://film.ca/our-events/">Our Events</a></li>
+<li id="menu-item-9052" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9052"><a href="https://film.ca/your-events/">Your Events</a></li>
+<li id="menu-item-2144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2144"><a href="https://film.ca/kids/">Kids</a></li>
+<li id="menu-item-780" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-780"><a href="#">Get Involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-453" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-453"><a href="https://film.ca/advertising">Advertise</a></li>
+	<li id="menu-item-781" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-781"><a href="https://film.ca/employment/">Employment</a></li>
+	<li id="menu-item-11778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11778"><a href="https://film.ca/cinema-app/">Mobile App</a></li>
+	<li id="menu-item-9009" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9009"><a href="https://film.ca/zoom-backgrounds/">Zoom Backgrounds</a></li>
+	<li id="menu-item-975" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-975"><a href="https://film.ca/cineview/">Cineview</a></li>
+</ul>
+</li>
+<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="https://film.ca/contact-us/">Contact Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-14547" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14547"><a href="https://film.ca/contact-us/">Contact Us</a></li>
+</ul>
+</li>
+</ul>				<div class="responsive-menu-items"></div>
+			</nav><!-- #site-navigation -->
+		</div>
+		<div id="container" class="container_12 clearfix">
+						<div id="content" class="grid_8">
+				<article class="node">
+											
+						<div class="main_slider">
+							<div id="slider_nav" class="flexslider">
+								<ul class="slides">
+																			<li>
+											<h4>TRUNK SALE</h4>
+											<p>Register as a vendor or come to... <a href="https://film.ca/trunk" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>COMING DISTRACTIONS FREE</h4>
+											<p>All episodes of our workplace comedy are... <a href="https://www.youtube.com/playlist?list=PLnYqX3FGlX3By4s7QrfmCnuLRLnG0TSXo" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>INTO THE JEFFY-VERSE COMMERCIAL</h4>
+											<p>We’ve entered the JEFFY-VERSE! Which is the... <a href="https://www.youtube.com/watch?v=RCyDKLIyOZc" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>FILM.CA IS BACK FOR SCREENINGS!</h4>
+											<p>Please read our safety policies... <a href="https://film.ca/welcomehome/" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>DOWNLOAD OUR APP</h4>
+											<p>Movie-going made easy!... <a href="https://qrco.de/filmcaapp" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+											<p>For email newsletters you can trust... <a href="https://visitor.r20.constantcontact.com/manage/optin?v=0016ynqZbqgszFCzP2Ghh4z-xKJjcS3ocDyARikyw2w2UbBSuyckLX5TMJu1eGCApFWvmAeIcUGQ2JVr7mtrPDqqZA3t6v50AimNTEShc1OE9tvnahha28OBcP_gys5xAOJInY064LmK4u_AtwtQY1IDg" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>ZUZU&#8217;S POPCORN AVAILABLE NATIONWIDE</h4>
+											<p>Want an order? Pop to it!... <a href="https://zuzuspopcorn.ca/" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>SHOP FILM.CA</h4>
+											<p>Shop Small, Support Local... <a href="https://film.ca/shop/" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>BUY A SEAT</h4>
+											<p>Support the cinema through a plaque purchase... <a href="https://film.ca/product/buyaseat/" class="main_slider_arrow"></a></p>
+										</li>
+																			<li>
+											<h4>BUY A FILM CARD</h4>
+											<p>Buy now, use later!... <a href="https://www.film.ca/filmcard" class="main_slider_arrow"></a></p>
+										</li>
+																										</ul>
+							</div>
+	
+							<div id="main_slider" class="wrap_me flexslider">
+								<ul class="slides">
+																			<li>
+																						<a href="https://film.ca/trunk"><img src="https://film.ca/wp-content/uploads/2022/06/trunk-sale-summer-dates-1-634x380.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://www.youtube.com/playlist?list=PLnYqX3FGlX3By4s7QrfmCnuLRLnG0TSXo"><img src="https://film.ca/wp-content/uploads/2021/05/cd-slider-01-634x380.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://www.youtube.com/watch?v=RCyDKLIyOZc"><img src="https://film.ca/wp-content/uploads/2022/03/freezeframe-03-1-634x380.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://film.ca/welcomehome/"><img src="https://film.ca/wp-content/uploads/2021/07/Slider-6.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://qrco.de/filmcaapp"><img src="https://film.ca/wp-content/uploads/2021/03/App.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://visitor.r20.constantcontact.com/manage/optin?v=0016ynqZbqgszFCzP2Ghh4z-xKJjcS3ocDyARikyw2w2UbBSuyckLX5TMJu1eGCApFWvmAeIcUGQ2JVr7mtrPDqqZA3t6v50AimNTEShc1OE9tvnahha28OBcP_gys5xAOJInY064LmK4u_AtwtQY1IDg"><img src="https://film.ca/wp-content/uploads/2020/07/Cinemail-Slider-2.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://zuzuspopcorn.ca/"><img src="https://film.ca/wp-content/uploads/2021/06/Zuzus-Popcorn-online.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://film.ca/shop/"><img src="https://film.ca/wp-content/uploads/2021/03/Online-Store.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://film.ca/product/buyaseat/"><img src="https://film.ca/wp-content/uploads/2021/02/Buy-a-Seat-1.png" alt="slide"></a>
+										</li>
+																			<li>
+																						<a href="https://www.film.ca/filmcard"><img src="https://film.ca/wp-content/uploads/2020/10/Gift-Card_open.png" alt="slide"></a>
+										</li>
+																	</ul>
+							</div>
+						</div>
+					
+											<div id="main_tabs">
+							<div class="tabs">
+								<ul>
+									<li>
+										<a href="#block_inTheaters">Now Playing</a>
+									</li>
+									<li>
+										<a href="#block_comingSoon">Coming Soon</a>
+									</li>
+									<li>
+										<a href="#block_newOnDVD">Last Call</a>
+									</li>
+								</ul>
+								<!-- inTheaters block -->
+								<aside id="block_inTheaters" class="content">
+									<div class="tabs_slide_nav"><span>Click to view more films </span></div>
+									<div class="flexslider tabs_slider no-slide">
+										<ul class="slides">
+																							<li>
+													<a href="https://film.ca/trailer/thor-love-and-thunder/">
+																												<img src="https://film.ca/wp-content/uploads/2022/05/thor4-123x179.jpg" alt="Photo" class="wrap_me" >
+													</a>
+													<h4 class="title"><a href="https://film.ca/trailer/thor-love-and-thunder/">Thor Love and Thunder</a></h4>
+												</li>
+																							<li>
+													<a href="https://film.ca/trailer/minions-rise-of-gru/">
+																												<img src="https://film.ca/wp-content/uploads/2022/05/minions-123x179.jpg" alt="Photo" class="wrap_me" >
+													</a>
+													<h4 class="title"><a href="https://film.ca/trailer/minions-rise-of-gru/">Minions The Rise of Gru</a></h4>
+												</li>
+																							<li>
+													<a href="https://film.ca/trailer/elvis/">
+																												<img src="https://film.ca/wp-content/uploads/2022/05/elvis-123x179.jpg" alt="Photo" class="wrap_me" >
+													</a>
+													<h4 class="title"><a href="https://film.ca/trailer/elvis/">Elvis</a></h4>
+												</li>
+																							<li>
+													<a href="https://film.ca/trailer/top-gun-maverick/">
+																												<img src="https://film.ca/wp-content/uploads/2021/07/topgun2-123x179.jpg" alt="Photo" class="wrap_me" >
+													</a>
+													<h4 class="title"><a href="https://film.ca/trailer/top-gun-maverick/">Top Gun Maverick</a></h4>
+												</li>
+																					</ul>
+									</div>
+								</aside>
+								<!-- end inTheaters block -->
+								<!-- comingSoon block -->
+								<aside id="block_comingSoon" class="content">
+									<div class="tabs_slide_nav"><span>Click to view more films </span></div>
+									<div class="flexslider tabs_slider no-slide">
+										<ul class="slides">
+																							<li>
+													<a href="https://film.ca/trailer/where-the-crawdads-sing/">
+																												<img src="https://film.ca/wp-content/uploads/2022/06/crawdads-123x179.jpg" alt="Photo" class="wrap_me" >
+													</a>
+													<h4 class="title"><a href="https://film.ca/trailer/where-the-crawdads-sing/">Where the Crawdads Sing</a></h4>
+												</li>
+																							<li>
+													<a href="https://film.ca/trailer/paws-of-fury/">
+																												<img src="https://film.ca/wp-content/uploads/2022/05/pawsoffury-123x179.jpg" alt="Photo" class="wrap_me" >
+													</a>
+													<h4 class="title"><a href="https://film.ca/trailer/paws-of-fury/">Paws of Fury</a></h4>
+												</li>
+																							<li>
+													<a href="https://film.ca/trailer/dc-league-of-superpets/">
+																												<img src="https://film.ca/wp-content/uploads/2022/05/superpets-scaled-123x179.jpg" alt="Photo" class="wrap_me" >
+													</a>
+													<h4 class="title"><a href="https://film.ca/trailer/dc-league-of-superpets/">DC League of Superpets</a></h4>
+												</li>
+																					</ul>
+									</div>
+								</aside>
+								<!-- end comingSoon block -->
+								<!-- newOnDVD block -->
+								<aside id="block_newOnDVD" class="content">
+									<div class="tabs_slide_nav"><span>Click to view more films </span></div>
+									<div class="flexslider tabs_slider no-slide">
+										<ul class="slides">
+																					</ul>
+									</div>
+								</aside>
+								<!-- end newOnDVD block -->
+							</div>
+						</div>
+									</article>
+				<article class="node">
+											<div id="movie_reviews" class="grid_5 omega">
+														<h2 class="title_page">Last Call<a href="https://film.ca/trailer_category/last-call/" class="button button_small button_arrow">More posts</a></h2>
+							<ul class="clearfix">
+															</ul>
+	
+						</div>
+									</article>
+									<article class="node">
+												<div class="news grid_8 alpha omega">
+							<h2 class="title_page">Film.Ca News</h2>
+															<div class="news_item">
+																		<img class="wrap_me" width="90" height="90" src="https://film.ca/wp-content/uploads/2020/03/encore-90x90.jpg" alt="Image">
+									<a href="https://film.ca/our-history/" class="title">OUR HISTORY</a>
+									<ul class="details">
+										<li>
+											By <a href="https://film.ca/author/bryn/" title="Posts by Bryn Perras" rel="author">Bryn Perras</a>										</li>
+										<li>
+											<time datetime="2020-03-06T09:24">
+												March 6, 2020											</time>
+										</li>
+										<li>
+											<a href="https://film.ca/our-history/#respond" class="comments-link" >0 Comments</a>										</li>
+									</ul>
+									<div class="details_text">
+										Film.Ca Cinemas, formerly Encore Cinemas, opened our Oakville location on December 30, 2005. At the time, we also operated the Upper Canada Place...										<a href="https://film.ca/our-history/">Read more</a>
+									</div>
+								</div>
+															<div class="news_item">
+																		<img class="wrap_me" width="90" height="90" src="https://film.ca/wp-content/uploads/2022/06/Lightyear-colouring-90x90.png" alt="Image">
+									<a href="https://film.ca/lightyear-colouring-sheets/" class="title">LIGHTYEAR COLOURING SHEETS</a>
+									<ul class="details">
+										<li>
+											By <a href="https://film.ca/author/mboersfilm-ca/" title="Posts by Mackenzie Boers" rel="author">Mackenzie Boers</a>										</li>
+										<li>
+											<time datetime="2022-06-17T10:47">
+												June 17, 2022											</time>
+										</li>
+										<li>
+											<a href="https://film.ca/lightyear-colouring-sheets/#respond" class="comments-link" >0 Comments</a>										</li>
+									</ul>
+									<div class="details_text">
+										Lightyear opened Thursday at Film.Ca! Download these FREE Lightyear colouring sheets to entertain the kids after the movie is over. Get tickets: film.ca/trailer/lightyear...										<a href="https://film.ca/lightyear-colouring-sheets/">Read more</a>
+									</div>
+								</div>
+															<div class="news_item">
+																		<img class="wrap_me" width="90" height="90" src="https://film.ca/wp-content/uploads/2022/06/booknetic-booking-1-90x90.png" alt="Image">
+									<a href="https://film.ca/weve-updated-our-booking-process-for-cinema-7/" class="title">We&#8217;ve Updated our Booking Process for Cinema 7</a>
+									<ul class="details">
+										<li>
+											By <a href="https://film.ca/author/pierce/" title="Posts by Pierce Lang" rel="author">Pierce Lang</a>										</li>
+										<li>
+											<time datetime="2022-06-15T16:58">
+												June 15, 2022											</time>
+										</li>
+										<li>
+											<a href="https://film.ca/weve-updated-our-booking-process-for-cinema-7/#respond" class="comments-link" >0 Comments</a>										</li>
+									</ul>
+									<div class="details_text">
+										We&#8217;ve just made it easier for you to book Cinema 7, for your own private use. Our brand new private theatre is up...										<a href="https://film.ca/weve-updated-our-booking-process-for-cinema-7/">Read more</a>
+									</div>
+								</div>
+															<div class="news_item">
+																		<img class="wrap_me" width="90" height="90" src="https://film.ca/wp-content/uploads/2022/06/fathers-day-gift-ideas-90x90.png" alt="Image">
+									<a href="https://film.ca/ready-for-fathers-day/" class="title">Ready for Father&#8217;s Day?</a>
+									<ul class="details">
+										<li>
+											By <a href="https://film.ca/author/pierce/" title="Posts by Pierce Lang" rel="author">Pierce Lang</a>										</li>
+										<li>
+											<time datetime="2022-06-15T16:43">
+												June 15, 2022											</time>
+										</li>
+										<li>
+											<a href="https://film.ca/ready-for-fathers-day/#respond" class="comments-link" >0 Comments</a>										</li>
+									</ul>
+									<div class="details_text">
+										Father&#8217;s Day is coming up quickly! Have you figured out what to get dad yet? If there&#8217;s one thing that dads love &#8211;...										<a href="https://film.ca/ready-for-fathers-day/">Read more</a>
+									</div>
+								</div>
+															<div class="news_item">
+																		<img class="wrap_me" width="90" height="90" src="https://film.ca/wp-content/uploads/2022/06/marketing-canada-summer-jobs-90x90.png" alt="Image">
+									<a href="https://film.ca/were-hiring-2/" class="title">We&#8217;re Hiring!</a>
+									<ul class="details">
+										<li>
+											By <a href="https://film.ca/author/pierce/" title="Posts by Pierce Lang" rel="author">Pierce Lang</a>										</li>
+										<li>
+											<time datetime="2022-06-15T16:35">
+												June 15, 2022											</time>
+										</li>
+										<li>
+											<a href="https://film.ca/were-hiring-2/#respond" class="comments-link" >0 Comments</a>										</li>
+									</ul>
+									<div class="details_text">
+										Join our team! Positions funded by Government of Canada’s Summer Job Program. Responsible for&nbsp;assisting the Social Media and Communications Manager with writing copy,...										<a href="https://film.ca/were-hiring-2/">Read more</a>
+									</div>
+								</div>
+															<div class="news_item">
+																		<img class="wrap_me" width="90" height="90" src="https://film.ca/wp-content/uploads/2022/06/JOB_MakeAMovieCamp-90x90.png" alt="Image">
+									<a href="https://film.ca/hiring-summer-camp-leader-roles/" class="title">HIRING SUMMER CAMP LEADER ROLES</a>
+									<ul class="details">
+										<li>
+											By <a href="https://film.ca/author/christiane/" title="Posts by Christiane Harrikissoon" rel="author">Christiane Harrikissoon</a>										</li>
+										<li>
+											<time datetime="2022-06-04T12:13">
+												June 4, 2022											</time>
+										</li>
+										<li>
+											<a href="https://film.ca/hiring-summer-camp-leader-roles/#respond" class="comments-link" >0 Comments</a>										</li>
+									</ul>
+									<div class="details_text">
+										NOW HIRING: Camp Leaders for Summer 2022! Summer is just around the corner and we are looking to hire high-energy camp leaders who...										<a href="https://film.ca/hiring-summer-camp-leader-roles/">Read more</a>
+									</div>
+								</div>
+														<a href="https://film.ca/news/" class="button button_small button_arrow">More movie news</a>
+						</div>
+					</article>
+							</div><!-- #primary -->
+							<div class="grid_4" id="sidebar">
+					
+	<aside id="text-15" class="widget block widget_text"><h3 class="block_title">WE ARE OPEN</h3>			<div class="textwidget"><p>As of <strong>Monday, January 31st, </strong>we are open for screenings! Proof of vaccination is no longer required as of <strong>Tuesday, March 1st.</strong></p>
+<p>&nbsp;</p>
+<p>Find all safety policies at <a href="http://film.ca/welcomehome">film.ca/welcomehome</a></p>
+<p>&nbsp;</p>
+<p>Food and beverage can be enjoyed during your movie and we are continuing to <strong>offer takeout &amp; delivery</strong>. You can order food for pick-up <a href="http://film.ca/shop">here</a>, or order for delivery through DoorDash, SkipTheDishes, and UberEats.</p>
+</div>
+		</aside><aside id="text-14" class="widget block widget_text"><h3 class="block_title">ADMISSION PRICES</h3>			<div class="textwidget"><div align="center"></div>
+<div align="center">General Admission &#8211; $10.00<br />
+Seniors (65 &amp; over) &#8211; $7.50<br />
+Children (3-13 Years Old) &#8211; $7.50<br />
+All Seats Tuesday &#8211; $6.50</div>
+<hr align="center" noshade="noshade" size="5" />
+</div>
+		</aside><aside id="media_image-12" class="widget block widget_media_image"><a href="https://www.ucc.ca/2022/02/24/ukraine-humanitarian-appeal-update/"><img width="1200" height="700" src="https://film.ca/wp-content/uploads/2022/03/Stand-with-Ukraine.png" class="image wp-image-14859  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://film.ca/wp-content/uploads/2022/03/Stand-with-Ukraine.png 1200w, https://film.ca/wp-content/uploads/2022/03/Stand-with-Ukraine-300x175.png 300w, https://film.ca/wp-content/uploads/2022/03/Stand-with-Ukraine-1024x597.png 1024w, https://film.ca/wp-content/uploads/2022/03/Stand-with-Ukraine-768x448.png 768w, https://film.ca/wp-content/uploads/2022/03/Stand-with-Ukraine-219x128.png 219w, https://film.ca/wp-content/uploads/2022/03/Stand-with-Ukraine-600x350.png 600w" sizes="(max-width: 1200px) 100vw, 1200px" /></a></aside><aside id="custom_html-14" class="widget_text widget block widget_custom_html"><div class="textwidget custom-html-widget"><img src="https://film.ca/wp-content/uploads/2022/03/Knoll-Studios-Logo.jpg" alt="Knoll Studii Logo" width="200px;" class="center">
+<div align="center"><a href="https://www.knollstudios.com/" class="button" style="background-color:#e8e8e8;border:solid 1px #5b5b5b;color:#5b5b5b;display:inline-block;padding: 8px 10px;text-shadow:none;">Learn More</a></div></div></aside><aside id="media_image-18" class="widget block widget_media_image"><a href="https://film.ca/cinema7"><img width="1080" height="1080" src="https://film.ca/wp-content/uploads/2022/06/cinema7-directory.png" class="image wp-image-15201  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://film.ca/wp-content/uploads/2022/06/cinema7-directory.png 1080w, https://film.ca/wp-content/uploads/2022/06/cinema7-directory-300x300.png 300w, https://film.ca/wp-content/uploads/2022/06/cinema7-directory-1024x1024.png 1024w, https://film.ca/wp-content/uploads/2022/06/cinema7-directory-150x150.png 150w, https://film.ca/wp-content/uploads/2022/06/cinema7-directory-768x768.png 768w, https://film.ca/wp-content/uploads/2022/06/cinema7-directory-219x219.png 219w, https://film.ca/wp-content/uploads/2022/06/cinema7-directory-600x600.png 600w, https://film.ca/wp-content/uploads/2022/06/cinema7-directory-100x100.png 100w" sizes="(max-width: 1080px) 100vw, 1080px" /></a></aside><aside id="media_image-21" class="widget block widget_media_image"><a href="https://film.ca/dole-soft-serve-now-available/"><img width="2300" height="2300" src="https://film.ca/wp-content/uploads/2022/05/Dole-posts-05.png" class="image wp-image-15131  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://film.ca/wp-content/uploads/2022/05/Dole-posts-05.png 2300w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-300x300.png 300w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-1024x1024.png 1024w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-150x150.png 150w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-768x768.png 768w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-1536x1536.png 1536w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-2048x2048.png 2048w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-219x219.png 219w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-600x600.png 600w, https://film.ca/wp-content/uploads/2022/05/Dole-posts-05-100x100.png 100w" sizes="(max-width: 2300px) 100vw, 2300px" /></a></aside><aside id="media_image-20" class="widget block widget_media_image"><a href="http://www.oakparkfallfair.ca" target="_blank" rel="noopener"><img width="2655" height="2656" src="https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01.png" class="image wp-image-15079  attachment-full size-full" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01.png 2655w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-300x300.png 300w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-1024x1024.png 1024w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-150x150.png 150w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-768x768.png 768w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-1536x1536.png 1536w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-2048x2048.png 2048w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-219x219.png 219w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-600x600.png 600w, https://film.ca/wp-content/uploads/2022/05/oakpark22_savethedate-01-100x100.png 100w" sizes="(max-width: 2655px) 100vw, 2655px" /></a></aside><aside id="media_image-6" class="widget block widget_media_image"><img width="300" height="129" src="https://film.ca/wp-content/uploads/2020/07/Screen-Shot-2020-07-02-at-5.09.48-PM-e1593724293100-300x129.png" class="image wp-image-7185  attachment-medium size-medium" alt="" loading="lazy" style="max-width: 100%; height: auto;" srcset="https://film.ca/wp-content/uploads/2020/07/Screen-Shot-2020-07-02-at-5.09.48-PM-e1593724293100-300x129.png 300w, https://film.ca/wp-content/uploads/2020/07/Screen-Shot-2020-07-02-at-5.09.48-PM-e1593724293100-600x258.png 600w, https://film.ca/wp-content/uploads/2020/07/Screen-Shot-2020-07-02-at-5.09.48-PM-e1593724293100-1024x440.png 1024w, https://film.ca/wp-content/uploads/2020/07/Screen-Shot-2020-07-02-at-5.09.48-PM-e1593724293100-768x330.png 768w, https://film.ca/wp-content/uploads/2020/07/Screen-Shot-2020-07-02-at-5.09.48-PM-e1593724293100-219x94.png 219w, https://film.ca/wp-content/uploads/2020/07/Screen-Shot-2020-07-02-at-5.09.48-PM-e1593724293100.png 1318w" sizes="(max-width: 300px) 100vw, 300px" /></aside><aside id="custom_html-4" class="widget_text widget block widget_custom_html"><div class="textwidget custom-html-widget"><!-- BEGIN: Constant Contact Email List Form Button --><div align="center"><a href="https://visitor.r20.constantcontact.com/d.jsp?llr=5l846jcab&amp;p=oi&amp;m=1101992553854&amp;sit=r7cl8ibdb&amp;f=38294b9a-2b5b-4729-9186-0369306e4cd3" class="button" style="background-color:#e8e8e8;border:solid 1px #5b5b5b;color:#5b5b5b;display:inline-block;padding: 8px 10px;text-shadow:none;">Sign Up Now</a><!-- BEGIN: Email Marketing you can trust --><div id="ctct_button_footer" align="center" style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;margin-top: 10px;">For Email Newsletters you can trust.</div></div>
+            </div></aside>				</div>
+					</div><!-- #container -->
+<div id="footer-widgets">
+<div class="one_third ">
+		<div><h2 class="title">Location</h2>			<div class="textwidget">171 Speers Road<br />
+Unit 25<br />
+Oakville, ON  L6K 3W8<br />
+Tel: 905-338-6397<br />
+<p>&nbsp;</p>
+</div>
+		</div><div><div class="textwidget custom-html-widget"><div id="hcsd_search_widget" style="background-color: #f6f6f6; color: #373737; border: none; box-shadow: 2px 2px 4px 1px rgba(102,102,102,0.3); -webkit-box-shadow: 2px 2px 4px 1px rgba(102,102,102,0.3); -moz-box-shadow: 2px 2px 4px 1px rgba(102,102,102,0.3); border-radius: 4px; margin-top: 18px; margin-bottom: 18px; max-width: 400px; padding: 12px;">
+<form id="SearchForm" role="form" action="https://www.hipinfo.ca/results.asp" method="get" name="hcsd_search">
+<input type="hidden" name="utm_campaign" value="HCSDwidget">
+<input type="hidden" name="utm_source" value="keywordwidget">
+<input type="hidden" name="utm_medium" value="weblink">
+<div style="display: table;">
+<div style="display: table-cell;">
+<input id="hcsd_sterms" class="form-control" style="font-size: 14px; font-family: Helvetica,Arial,sans-serif; line-height: 1.35714; background-color: #ebf5f5; box-shadow: 0 3px 3px rgba(0,0,0,0.075) inset; margin-bottom: 15px; display: block; width: 100%; height: 32px; padding: 6px 12px; color: #555; border: 1px solid #00B19F; border-radius: 4px; margin: 0; box-sizing: border-box;" maxlength="255" name="STerms" size="50" type="text" placeholder="I'm looking for:">
+</div>
+<div style="display: table-cell; padding-left: 12px;">
+<button style="font-size: 14px; font-family: Helvetica,Arial,sans-serif; line-height: 1.35714; display: inline-block; text-align: center; user-select: none; vertical-align: middle; overflow: visible; background-color: #fff; background-image: linear-gradient(to bottom, #fff 0px, #e6e6e6 100%); border: 1px solid #d9d9d9; color: #222; box-sizing: border-box; border-radius: 4px; box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset, 0 1px 1px rgba(0,0,0,0.075); padding: 6px 12px; margin: 0;" type="submit">Search</button>
+</div>
+</div>
+</form>
+<div style="padding-top: 10px;"><a href="https://www.hipinfo.ca?utm_campaign=HCSDwidget&utm_source=keywordwidget&utm_medium=weblink"><img style="display: block; max-width: 100%; height: auto;" src="https://s3.amazonaws.com/cioc.halton/HCSD_widget.png" alt="Halton Community Services Directory"></a></div>
+</div>
+</div></div></div>
+<div class="one_third ">
+		<div><h2 class="title">2020 Traveller&#8217;s Choice</h2><div class="textwidget custom-html-widget"><div id="TA_certificateOfExcellence870" class="TA_certificateOfExcellence"><ul id="FLaVeaX" class="TA_links YTfetkyTl"><li id="vrFcQCEFxOnq" class="iDpDYobtpT4"><a target="_blank" href="https://www.tripadvisor.ca/Attraction_Review-g155002-d9585619-Reviews-Film_Ca_Cinemas-Oakville_Ontario.html" rel="noopener"><img src="https://www.tripadvisor.ca/img/cdsi/img2/awards/v2/tchotel_2020_LL-14348-2.png" alt="TripAdvisor" class="widCOEImg" id="CDSWIDCOELOGO"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=870&amp;locationId=9585619&amp;lang=en_CA&amp;year=2020&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script></div></div><div><h2 class="title">Member Affiliations</h2>			<div class="textwidget"><div style="max-width: 293px; text-align: center;"><a href="https://www.oakvillechamber.com/" target="_blank" rel="noopener"><img class="alignnone wp-image-448" src="https://film.ca/wp-content/uploads/2015/02/oakvillechamberofcommerce.jpg" alt="Oakville Chamber of Commerce" width="120" height="76" style="vertical-align:middle; margin:5px 0;" /></a> <a href="https://natoonline.org/" target="_blank" rel="noopener"><img class="alignnone size-full wp-image-449" src="https://film.ca/wp-content/uploads/2015/02/nato.png" alt="NATO Online" width="110" height="98" style="vertical-align:middle; margin:5px 0;" /></a> &nbsp;<a href="http://www.kerr-village.ca/" target="_blank" rel="noopener"><img class="alignnone size-full wp-image-450" src="https://film.ca/wp-content/uploads/2015/02/kerrvillage.png" alt="Kerr Village" width="72" height="94" style="vertical-align:middle; margin:5px;" /></a> &nbsp;<a href="https://www.academy.ca/" target="_blank" rel="noopener"><img class="alignnone size-full" src="https://film.ca/wp-content/uploads/2016/02/2016-Academy-ca.jpg" alt="Academy.ca" width="85" height="69" style="vertical-align:middle; margin:5px;" /></a></div></div>
+		</div></div>
+<div class="one_third last">
+		<div><div class="frm_form_widget"><h2 class="title">Contact Us</h2><div class="frm_forms  with_frm_style frm_style_formidable-style" id="frm_form_7_container" >
+<form enctype="multipart/form-data" method="post" class="frm-show-form  frm_pro_form " id="form_contact2"  >
+<div class="frm_form_fields ">
+<fieldset>
+
+<div class="frm_fields_container">
+<input type="hidden" name="frm_action" value="create" />
+<input type="hidden" name="form_id" value="7" />
+<input type="hidden" name="frm_hide_fields_7" id="frm_hide_fields_7" value="" />
+<input type="hidden" name="form_key" value="contact2" />
+<input type="hidden" name="item_meta[0]" value="" />
+<input type="hidden" id="frm_submit_entry_7" name="frm_submit_entry_7" value="f6fe9796a2" /><input type="hidden" name="_wp_http_referer" value="/" /><div id="frm_field_104_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_first_half">
+    <label for="field_qh4icy2" class="frm_primary_label">Name
+        <span class="frm_required">*</span>
+    </label>
+    <input type="text" id="field_qh4icy2" name="item_meta[104]" value=""  data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Name is invalid" aria-invalid="false"   aria-describedby="frm_desc_field_qh4icy2"/>
+    <div id="frm_desc_field_qh4icy2" class="frm_description">First</div>
+    
+</div>
+<div id="frm_field_105_container" class="frm_form_field form-field  frm_required_field frm_hidden_container frm_last_half">
+    <label for="field_ocfup12" class="frm_primary_label">Last
+        <span class="frm_required">*</span>
+    </label>
+    <input type="text" id="field_ocfup12" name="item_meta[105]" value=""  data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Last is invalid" aria-invalid="false"   aria-describedby="frm_desc_field_ocfup12"/>
+    <div id="frm_desc_field_ocfup12" class="frm_description">Last</div>
+    
+</div>
+<div id="frm_field_106_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_full">
+    <label for="field_29yf4d2" class="frm_primary_label">Email
+        <span class="frm_required">*</span>
+    </label>
+    <input type="email" id="field_29yf4d2" name="item_meta[106]" value=""  data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Please enter a valid email address" aria-invalid="false"  />
+    
+    
+</div>
+<div id="frm_field_108_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_full">
+    <label for="field_e6lis62" class="frm_primary_label">Subject
+        <span class="frm_required">*</span>
+    </label>
+    <input type="text" id="field_e6lis62" name="item_meta[108]" value=""  data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Subject is invalid" aria-invalid="false"  />
+    
+    
+</div>
+<div id="frm_field_109_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_full">
+    <label for="field_9jv0r12" class="frm_primary_label">Message
+        <span class="frm_required">*</span>
+    </label>
+    <textarea name="item_meta[109]" id="field_9jv0r12" rows="5"  data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Message is invalid" aria-invalid="false"  ></textarea>
+    
+    
+</div>
+<div id="frm_field_110_container" class="frm_form_field form-field  frm_none_container">
+    <label for="g-recaptcha-response" class="frm_primary_label">Captcha
+        <span class="frm_required"></span>
+    </label>
+    <div id="field_62n6q32" class="frm-g-recaptcha" data-sitekey="6LdfxAYTAAAAANDfAxq7r4lB6-nHWcgIHhpN58Xr" data-size="normal" data-theme="light"></div>
+    
+    
+</div>
+<input type="hidden" name="item_meta[694]" id="field_ycldx" value=""  data-invmsg="Hidden Field is invalid"   />
+<input type="hidden" name="item_meta[695]" id="field_vnv7t" value=""  data-invmsg="Hidden Field is invalid"   />
+<input type="hidden" name="item_meta[696]" id="field_swwcd" value="" data-frmval=""/>
+	<input type="hidden" name="item_key" value="" />
+				<div class="frm_verify" aria-hidden="true">
+				<label for="frm_email_7">
+					If you are human, leave this field blank.				</label>
+				<input type="text" class="frm_verify" id="frm_email_7" name="frm_verify" value=""  />
+			</div>
+		<input name="frm_state" type="hidden" value="N0JH2nuzq9BvK0QZl0WzBszp7pN8RefNW9SnY5Q7g7Y=" /><div class="frm_submit">
+
+<input type="submit" value="Submit"  class="frm_final_submit" formnovalidate="formnovalidate" />
+<img class="frm_ajax_loading" src="https://film.ca/wp-content/plugins/formidable/images/ajax_loader.gif" alt="Sending" style="visibility:hidden;" />
+
+</div></div>
+</fieldset>
+</div>
+</form>
+</div>
+</div></div></div>
+<div style="clear:both;"></div>
+</div>
+
+		<footer id="footer" class="container_12">
+			<div class="grid_7">
+									<nav id="block_footer_menu" class="block clearfix">
+						<div id="footer-menu" class="footer-menu"><ul>
+<li class="current_page_item"><a href="https://film.ca/">Home</a></li><li class="page_item page-item-3386"><a href="https://film.ca/48hr/">48hr Youth Film Challenge</a></li>
+<li class="page_item page-item-3580"><a href="https://film.ca/48hr-junior/">48hr Youth Film Challenge &#8211; Junior Edition</a></li>
+<li class="page_item page-item-3587"><a href="https://film.ca/48hr-senior/">48hr Youth Film Challenge &#8211; Senior Edition</a></li>
+<li class="page_item page-item-33"><a href="https://film.ca/advertising/">Advertising</a></li>
+<li class="page_item page-item-3013"><a href="https://film.ca/autismontario/">Autism Ontario</a></li>
+<li class="page_item page-item-355"><a href="https://film.ca/birthdays/">Birthday Parties</a></li>
+<li class="page_item page-item-9495"><a href="https://film.ca/business-non-profit-application/">Business/Non-Profit Application</a></li>
+<li class="page_item page-item-7082"><a href="https://film.ca/campcovidpolicies/">Camp Covid-19 Policies</a></li>
+<li class="page_item page-item-8909"><a href="https://film.ca/cart/">Cart</a></li>
+<li class="page_item page-item-9254"><a href="https://film.ca/checkyourbalance/">Check Your Balance</a></li>
+<li class="page_item page-item-8910"><a href="https://film.ca/checkout/">Checkout</a></li>
+<li class="page_item page-item-15182"><a href="https://film.ca/cinema7/">Cinema 7</a></li>
+<li class="page_item page-item-973"><a href="https://film.ca/cineview/">Cineview</a></li>
+<li class="page_item page-item-639"><a href="https://film.ca/community-partners/">Community Partners</a></li>
+<li class="page_item page-item-36"><a href="https://film.ca/contact-us/">Contact Us</a></li>
+<li class="page_item page-item-4956"><a href="https://film.ca/sweepstake-rules/">Contest Rules</a></li>
+<li class="page_item page-item-425"><a href="https://film.ca/corporate-film-cards/">Corporate Film Cards</a></li>
+<li class="page_item page-item-434"><a href="https://film.ca/corporate-events/">Corporate Meetings &#038; Events</a></li>
+<li class="page_item page-item-7159"><a href="https://film.ca/daily-covid-19-daily-screening-for-day-campers/">Daily COVID-19 Daily Screening for Day Campers</a></li>
+<li class="page_item page-item-4008"><a href="https://film.ca/dcp/">DCP Conversion</a></li>
+<li class="page_item page-item-11861"><a href="https://film.ca/foodbank/">DONATION DROP-OFF</a></li>
+<li class="page_item page-item-3166"><a href="https://film.ca/donation-requests/">Donation Requests</a></li>
+<li class="page_item page-item-39"><a href="https://film.ca/employment/">Employment</a></li>
+<li class="page_item page-item-3992"><a href="https://film.ca/end-of-shift-report/">End of shift report</a></li>
+<li class="page_item page-item-42"><a href="https://film.ca/filmcard/">Film Cards</a></li>
+<li class="page_item page-item-9774"><a href="https://film.ca/film-set-rentals/">Film Set Rentals</a></li>
+<li class="page_item page-item-6846"><a href="https://film.ca/athome/">FILM.CA @ HOME</a></li>
+<li class="page_item page-item-11276"><a href="https://film.ca/zuzuvod-privacy/">Film.Ca Cinemas Inc. operating as Zuzu Video on Demand &#8211; Privacy Policy</a></li>
+<li class="page_item page-item-3697"><a href="https://film.ca/en-francais/">Film.Ca En Français</a></li>
+<li class="page_item page-item-2136"><a href="https://film.ca/kids/">Film.Ca Kids</a></li>
+<li class="page_item page-item-11771"><a href="https://film.ca/cinema-app/">FILM.CA MOBILE APP</a></li>
+<li class="page_item page-item-9538"><a href="https://film.ca/store/">Film.Ca Online Store</a></li>
+<li class="page_item page-item-13620"><a href="https://film.ca/productions/">Film.Ca Productions</a></li>
+<li class="page_item page-item-11774"><a href="https://film.ca/web-app/">FILM.CA WEB APP</a></li>
+<li class="page_item page-item-5572"><a href="https://film.ca/filmmaker-in-class/">Filmmaker in the Classroom</a></li>
+<li class="page_item page-item-2663 page_item_has_children"><a href="https://film.ca/filmmakerschool/">Filmmaker School</a>
+<ul class='children'>
+	<li class="page_item page-item-6293"><a href="https://film.ca/filmmakerschool/junioractor/">JUNIOR ACTOR</a></li>
+	<li class="page_item page-item-6282"><a href="https://film.ca/filmmakerschool/junioreditor/">JUNIOR EDITOR</a></li>
+	<li class="page_item page-item-6263"><a href="https://film.ca/filmmakerschool/juniorfilmmaker/">JUNIOR FILMMAKER 1 &#038; 2</a></li>
+	<li class="page_item page-item-6278"><a href="https://film.ca/filmmakerschool/seniorfilmmaker/">SENIOR FILMMAKER</a></li>
+	<li class="page_item page-item-6285"><a href="https://film.ca/filmmakerschool/stopmotion/">STOP MOTION</a></li>
+	<li class="page_item page-item-6289"><a href="https://film.ca/filmmakerschool/youtubecreator/">YouTube Creator</a></li>
+</ul>
+</li>
+<li class="page_item page-item-3209"><a href="https://film.ca/forms/">Forms</a></li>
+<li class="page_item page-item-421"><a href="https://film.ca/fundraising/">Fundraising</a></li>
+<li class="page_item page-item-788"><a href="https://film.ca/halton-green-screens/">Halton Green Screens</a></li>
+<li class="page_item page-item-3224"><a href="https://film.ca/trunk/">junk</a></li>
+<li class="page_item page-item-3475"><a href="https://film.ca/kids-survey/">Kids Programming SURVEY</a></li>
+<li class="page_item page-item-5220"><a href="https://film.ca/kidzreviewcrew/">Kidz Review Crew</a></li>
+<li class="page_item page-item-2086"><a href="https://film.ca/makeamoviecamp/">Let&#8217;s Make a Movie Camp (old page &#8211; redirect)</a></li>
+<li class="page_item page-item-13510"><a href="https://film.ca/makeamoviecamp/">Lets Make a Movie Summer Camp</a></li>
+<li class="page_item page-item-7007"><a href="https://film.ca/makeafeature/">MAKE A FEATURE EXPERIENCE (GR. 6-12)</a></li>
+<li class="page_item page-item-6322"><a href="https://film.ca/makeamoviecamp/">MAKE A MOVIE CAMP</a></li>
+<li class="page_item page-item-6325"><a href="https://film.ca/lit/">Make a Movie: LIT Program</a></li>
+<li class="page_item page-item-2251"><a href="https://film.ca/menu-test/">Menu (test)</a></li>
+<li class="page_item page-item-4385"><a href="https://film.ca/movie-angel/">Movie Angel</a></li>
+<li class="page_item page-item-1686"><a href="https://film.ca/daycamp/">Movie Magic Day Camp</a></li>
+<li class="page_item page-item-2478"><a href="https://film.ca/moviesformommies/">Movies for Mommies</a></li>
+<li class="page_item page-item-8911"><a href="https://film.ca/my-account/">My account</a></li>
+<li class="page_item page-item-280"><a href="https://film.ca/news/">News</a></li>
+<li class="page_item page-item-2434"><a href="https://film.ca/offa/">Oakville Festivals of Film &#038; Art</a></li>
+<li class="page_item page-item-12637"><a href="https://film.ca/one-pandemic-day-2021/">ONE PANDEMIC DAY 2021</a></li>
+<li class="page_item page-item-6528"><a href="https://film.ca/one-pandemic-day/">One Pandemic Day Expression of Interest</a></li>
+<li class="page_item page-item-6531"><a href="https://film.ca/one-pandemic-day-expression-of-interest/">One Pandemic Day Expression of Interest</a></li>
+<li class="page_item page-item-10432"><a href="https://film.ca/takeout/">Order Takeout</a></li>
+<li class="page_item page-item-9025"><a href="https://film.ca/our-events/">OUR EVENTS</a></li>
+<li class="page_item page-item-1096"><a href="https://film.ca/outdoor-screen-rentals/">Outdoor Screen Rentals</a></li>
+<li class="page_item page-item-760"><a href="https://film.ca/packages-and-pricing/">Packages and Pricing</a></li>
+<li class="page_item page-item-14557"><a href="https://film.ca/pantomime-refund/">Pantomime Refund</a></li>
+<li class="page_item page-item-5651"><a href="https://film.ca/popcorn-club/">Popcorn Club!</a></li>
+<li class="page_item page-item-427"><a href="https://film.ca/private-parties/">Private Parties</a></li>
+<li class="page_item page-item-9066"><a href="https://film.ca/purchasecard/">Purchase a Gift Card</a></li>
+<li class="page_item page-item-9248"><a href="https://film.ca/register-a-loyalty-card/">Register a Loyalty Card</a></li>
+<li class="page_item page-item-615"><a href="https://film.ca/reviews/">Reviews</a></li>
+<li class="page_item page-item-14954"><a href="https://film.ca/rrr-refund/">RRR Refund</a></li>
+<li class="page_item page-item-423"><a href="https://film.ca/school-groups/">School &#038; Community Groups</a></li>
+<li class="page_item page-item-3457"><a href="https://film.ca/movie-outing/">School Movie Outing!</a></li>
+<li class="page_item page-item-8908"><a href="https://film.ca/shop/">Shop</a></li>
+<li class="page_item page-item-109"><a href="https://film.ca/show-times-by-date/">Show Times By Date</a></li>
+<li class="page_item page-item-14"><a href="/show-times-by-date/">Showtimes</a></li>
+<li class="page_item page-item-900"><a href="https://film.ca/cinemail/">Sign Up For Cin-e-Mail</a></li>
+<li class="page_item page-item-7123"><a href="https://film.ca/staff-check-in/">STAFF Check In</a></li>
+<li class="page_item page-item-5634"><a href="https://film.ca/teachersportal/">Teachers Portal</a></li>
+<li class="page_item page-item-9060"><a href="https://film.ca/thank-you-for-buying-a-seat/">Thank you for Buying a Seat</a></li>
+<li class="page_item page-item-294"><a href="https://film.ca/top-box-office/">Top Box Office</a></li>
+<li class="page_item page-item-432"><a href="https://film.ca/trade-and-independent-screenings/">Trade and Independent Screenings</a></li>
+<li class="page_item page-item-2630"><a href="https://www.eventbrite.ca/e/the-tragically-hip-a-national-celebration-filmca-cinemas-tickets-26667166212#new_tab">Tragically Hip</a></li>
+<li class="page_item page-item-9498"><a href="https://film.ca/trunk/">TRUNK SALE REGISTRATION</a></li>
+<li class="page_item page-item-10333"><a href="https://film.ca/video-games/">Video Game Private Rental</a></li>
+<li class="page_item page-item-7221"><a href="https://film.ca/welcomehome/">WELCOME HOME!</a></li>
+<li class="page_item page-item-11039"><a href="https://film.ca/xmasbingo/">Xmas Bingo Printable</a></li>
+<li class="page_item page-item-8639"><a href="https://film.ca/your-events/">YOUR EVENTS</a></li>
+<li class="page_item page-item-8859"><a href="https://film.ca/your-events-2/">Your events</a></li>
+<li class="page_item page-item-8991"><a href="https://film.ca/zoom-backgrounds/">ZOOM BACKGROUNDS</a></li>
+<li class="page_item page-item-11318"><a href="https://film.ca/zuzu-video-on-demand-terms-of-service/">Zuzu Video on Demand Terms of Service</a></li>
+<li class="page_item page-item-2560"><a href="https://film.ca/zuzus-pizza/">Zuzu&#8217;s Pizza</a></li>
+</ul></div>
+					</nav><!-- #site-navigation -->
+								<div id="block_copyright" class="block clearfix">
+					<p>
+
+© 2021 Film.Ca Cinemas Inc. All rights reserved.
+					</p>
+				</div>
+			</div>
+			<div class="grid_5">
+			
+				<div id="block_social_footer" class="block clearfix">
+					<ul>
+															<li style="display:none;">
+										<a href="https://plus.google.com/100531886290707557686/about" class="social_icons_24 gplus">Google Plus</a>
+									</li>
+																	<li style="display:none;">
+										<a href="https://www.facebook.com/Film.Ca" class="social_icons_24 facebook">Facebook</a>
+									</li>
+																	<li style="display:none;">
+										<a href="https://twitter.com/filmcacinemas" class="social_icons_24 twitter">Twitter</a>
+									</li>
+																	<li style="display:none;">
+										<a href="https://www.youtube.com/channel/UCjQBh7AB3zP3wmhZVDhIUdQ" class="social_icons_24 youtube">Youtube</a>
+									</li>
+														<li>
+							<a href="#" class="social_icons_24 scroll_to_top" id="scroll_to_top">Scroll To Top</a>
+						</li>
+					</ul>
+				</div>
+				<div style="text-align:right;"><style>.mg-wpsi{ list-style: none !important; min-height:10px; } .mg-wpsi li{ float: left !important; margin: 0px 5px !important; } .mg-wpsi li a{ text-decoration: none; } .mg-wpsi a i { color:#ffc600; font-size:27px !important; } .mg-wpsi a:hover i { color:#682566 }</style><ul class="mg-wpsi"><li><a href="https://www.facebook.com/Film.Ca" target="_blank"><i class="mgicon-facebook3"></i></a></li><li><a href="https://twitter.com/@filmcacinemas" target="_blank"><i class="mgicon-twitter3"></i></a></li><li><a href="http://instagram.com/filmca" target="_blank"><i class="mgicon-instagram"></i></a></li><li><a href="https://plus.google.com/100531886290707557686/about" target="_blank"><i class="mgicon-googleplus4"></i></a></li><li><a href="https://www.pinterest.com/filmca/" target="_blank"><i class="mgicon-pinterest2"></i></a></li><li><a href="https://www.youtube.com/channel/UCrnfZeMChpQdAyTW3F-usbw" target="_blank"><i class="mgicon-youtube"></i></a></li></ul></div>
+			</div>
+		
+			<div class="site-info">
+							</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+	
+
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://yyz.film.ca/analytics/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '5']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+
+
+																  
+				<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link rel='stylesheet' id='mg_wpsi_icons-css'  href='https://film.ca/wp-content/plugins/wp-social-icons/assets/icons/style.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='berocket_framework_tippy-css'  href='https://film.ca/wp-content/plugins/brands-for-woocommerce/berocket/libraries/../assets/tippy/tippy.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<link rel='stylesheet' id='berocket_framework_popup-animate-css'  href='https://film.ca/wp-content/plugins/brands-for-woocommerce/berocket/libraries/../assets/popup/animate.css?ver=d5409906268a4be6fab15ddfe09dcdcf' type='text/css' media='all' />
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/brands-for-woocommerce/berocket/libraries/../assets/tippy/tippy.min.js?ver=d5409906268a4be6fab15ddfe09dcdcf' id='berocket_framework_tippy-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/brands-for-woocommerce/js/front.js?ver=d5409906268a4be6fab15ddfe09dcdcf' id='berocket_front-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/vendor/lodash.min.js?ver=4.17.19' id='lodash-js'></script>
+<script type='text/javascript' id='lodash-js-after'>
+window.lodash = _.noConflict();
+</script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/vendor/react.min.js?ver=17.0.1' id='react-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/vendor/react-dom.min.js?ver=17.0.1' id='react-dom-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/escape-html.min.js?ver=00a5735837e9efe13da1d979f16a7105' id='wp-escape-html-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/element.min.js?ver=3dfdc75a0abf30f057df44e9a39abe5b' id='wp-element-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/hooks.min.js?ver=c6d64f2cb8f5c6bb49caca37f8828ce3' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/i18n.min.js?ver=ebee46757c6a411e38fd079a7ac71d94' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/url.min.js?ver=16385e4d69da65c7283790971de6b297' id='wp-url-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2022-05-19 10:22:49+0000","generator":"GlotPress\/4.0.0-alpha.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_CA"},"You are probably offline.":["You are probably offline."],"Media upload failed. If this is a photo or a large image, please scale it down and try again.":["Media upload failed. If this is a photo or a large image, please scale it down and try again."],"The response is not a valid JSON response.":["The response is not a valid JSON response."],"An unknown error occurred.":["An unknown error occurred."]}},"comment":{"reference":"wp-includes\/js\/dist\/api-fetch.js"}} );
+</script>
+<script type='text/javascript' src='https://film.ca/wp-includes/js/dist/api-fetch.min.js?ver=63050163caffa6aac54e9ebf21fe0472' id='wp-api-fetch-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-after'>
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://film.ca/wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "c3409c3bcb" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://film.ca/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woo-product-slider-block/dist/blocks.frontend.build.js?ver=1608239675' id='eedee-woo-product-slider-block-js-front-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.6.1' id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/film.ca\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.6.1' id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.6.1' id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.6.1' id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_a20869800ae1a43c671afacaa40a3134","fragment_name":"wc_fragments_a20869800ae1a43c671afacaa40a3134","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.6.1' id='wc-cart-fragments-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-after'>
+		jQuery( 'body' ).bind( 'wc_fragments_refreshed', function() {
+			var jetpackLazyImagesLoadEvent;
+			try {
+				jetpackLazyImagesLoadEvent = new Event( 'jetpack-lazy-images-load', {
+					bubbles: true,
+					cancelable: true
+				} );
+			} catch ( e ) {
+				jetpackLazyImagesLoadEvent = document.createEvent( 'Event' )
+				jetpackLazyImagesLoadEvent.initEvent( 'jetpack-lazy-images-load', true, true );
+			}
+			jQuery( 'body' ).get( 0 ).dispatchEvent( jetpackLazyImagesLoadEvent );
+		} );
+		
+</script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/navigation.js?ver=1.0' id='moviescope-navigation-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/jquery.superfish.js?ver=1.4.8' id='superfish-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/jquery-ui.selectmenu.js?ver=1.0' id='selectmenu-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/jquery.quicksand.js?ver=1.2.2' id='quicksand-js'></script>
+<script type='text/javascript' src='https://www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw&#038;ver=1.0' id='jsapi-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/jquery.script.js?ver=1.0' id='script-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/js/css3-mediaqueries.js?ver=0.9' id='css3-mediaqueries-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6' id='page-links-to-js'></script>
+<script type='text/javascript' id='post-ratings-js-extra'>
+/* <![CDATA[ */
+var post_ratings = {"blog_url":"https:\/\/film.ca\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://film.ca/wp-content/themes/moviescope/rating/post-ratings.js?ver=2.4' id='post-ratings-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js?ver=2.7.2-wc.6.6.1' id='flexslider-js'></script>
+<script type='text/javascript' id='formidable-js-extra'>
+/* <![CDATA[ */
+var frm_js = {"ajax_url":"https:\/\/film.ca\/wp-admin\/admin-ajax.php","images_url":"https:\/\/film.ca\/wp-content\/plugins\/formidable\/images","loading":"Loading\u2026","remove":"Remove","offset":"4","nonce":"2e2d052aa9","id":"ID","no_results":"No results match","file_spam":"That file looks like Spam.","calc_error":"There is an error in the calculation in the field with key","empty_fields":"Please complete the preceding required fields before uploading a file.","focus_first_error":"1","include_alert_role":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/formidable-pro/js/frm.min.js?ver=5.4' id='formidable-js'></script>
+<script type='text/javascript' defer="defer" async="async" src='https://www.google.com/recaptcha/api.js?onload=frmRecaptcha&#038;render=explicit&#038;hl=en&#038;ver=3' id='recaptcha-api-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/logo-slider/includes/js/lsp_jquery.cycle2.js?ver=2.1.2' id='jquery_cycle2-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/logo-slider/includes/js/lsp_jquery.cycle2.carousel.min.js?ver=1' id='jquery_cycle2_carousel_min-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/logo-slider/includes/js/lsp_jquery_shuffle.js?ver=1' id='jquery_cycle2_shuffle-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/logo-slider/includes/js/lsp_jquery.easing.js?ver=1' id='jquery_cycle2_easing-js'></script>
+<script type='text/javascript' src='https://film.ca/wp-content/plugins/logo-slider/includes/js/lsp_jquery_tile.js?ver=1' id='jquery_cycle2_tile-js'></script>
+<script>
+/*<![CDATA[*/
+/*]]>*/
+</script>
+<script src='https://stats.wp.com/e-202227.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:11.0',blog:'182949956',post:'119',tz:'-4',srv:'film.ca'} ]);
+	_stq.push([ 'clickTrackerInit', '182949956', '119' ]);
+</script>
+</body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 561/951 objects using disk
+Page Caching using disk: enhanced 
+Database Caching 3/152 queries in 0.060 seconds using disk (Request-wide modification query)
+
+Served from: film.ca @ 2022-07-09 00:57:30 by W3 Total Cache
+-->

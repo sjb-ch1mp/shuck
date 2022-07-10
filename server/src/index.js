@@ -21,6 +21,10 @@ const options = {
 //Utilities
 const url = require('url');
 const md5 = require('md5');
+const Dispatcher = require('./Dispatcher.js');
+const fetcher = require('./Fetcher.js');
+const tools = require('./CommonTools.js');
+const useragents = require('./CommonUserAgents.js');
 
 //ROUTING
 app.get('/', (request, response) => {
@@ -28,26 +32,55 @@ app.get('/', (request, response) => {
 });
 
 app.post('/api/url', (request, response) => {
-    
-    let artefacts = [];
+
+    let requests = [];
     for(let i=0; i<request.body.urls.length; i++){
-        let thisURL=new URL(request.body.urls[i]);
+        requests.push(fetcher.resolveURL(new URL(request.body.urls[i])));
+    }
 
-        artefacts.push({
-            'id':md5(request.body.urls[i]),
-            'name':thisURL.hostname,
-            'data':request.body.urls[i],
-            'type':'url',
-            'enrichment':{}
+    Promise.all(requests)
+    .then((resolvedURLs) => {
+        console.log(resolvedURLs);
+        let artefacts = resolvedURLs.map((result) => {
+            let enrichment = null;
+            if(result.success){
+                enrichment = {
+                    'axios':{
+                        'success':true,
+                        'status':result.response.status,
+                        'headers':result.response.headers,
+                        'body':result.response.data
+                    }
+                };
+            }else{
+                enrichment = {
+                    'axios':{
+                        'success':false,
+                        'error':result.error
+                    }
+                };
+            }
+
+            return {
+                'id':md5(result.url.href),
+                'name':result.url.hostname,
+                'data':result.url.href,
+                'type':'url',
+                'enrichment': enrichment
+            };
         });
-    }   
 
-    response.json({
-        'submission_id':request.body.submission_id,
-        'artefacts':artefacts
+        response.json({
+            'submission_id':request.body.submission_id,
+            'artefacts':artefacts
+        });
+
+        response.send();
+        
+    })
+    .catch((error) => {
+        console.log(error);
     });
-
-    response.send();
 });
 
 app.post('/api/file', (request, response) => {

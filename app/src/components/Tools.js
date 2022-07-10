@@ -6,6 +6,7 @@ function Tools () {
                 'author':'Philippe Lagadec',
                 'website':'http://decalage.info/python/oletools'
             },
+            'uri_first':false,
             'file_types':['OLE', 'OpenXML'],
             'tool_options':[
                 {'flag':'h','type':'boolean','selected':false, 'value':true},
@@ -35,6 +36,7 @@ function Tools () {
                 'author':'Didier Stevens',
                 'website':'https://DidierStevens.com'
             },
+            'uri_first':false,
             'file_types':['PDF'],
             'tool_options':[
                 {'flag':'version','type':'boolean','selected':false,'value':true},
@@ -51,6 +53,7 @@ function Tools () {
                 'author':'Didier Stevens',
                 'website':'https://DidierStevens.com'
             },
+            'uri_first':false,
             'file_types':['PDF'],
             'tool_options':[
                 {'flag':'version','type':'boolean','selected':false,'value':true},
