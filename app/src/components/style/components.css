@@ -216,6 +216,11 @@ img {
     border: 5px #310A3F solid !important;
 }
 
+.SelectableExtended {
+    padding: 5px;
+    font-weight: normal !important;
+}
+
 .Selectable {
     border: 1px #FF7585/*#A0CC82*/ solid;
     border-radius: 5px;

@@ -17,8 +17,7 @@ export class Results extends React.Component {
         let results = '';
         let numResults = this.props.results.length;
         if(numResults > 0){
-            results = `Current number of stored results: ${this.props.results.length}\n`;
-            results = results + `Latest results:\n\n${this.props.results[numResults - 1].result}`;
+            results = this.props.results[numResults - 1].result;
         }
         return results;
     }

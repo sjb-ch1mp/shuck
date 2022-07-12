@@ -7,7 +7,9 @@ function Tools () {
                 'website':'http://decalage.info/python/oletools'
             },
             'uri_first':false,
+            'long_flag_equals':false,
             'file_types':['OLE', 'OpenXML'],
+            'help_flag':'h',
             'tool_options':[
                 {'flag':'h','type':'boolean','selected':false, 'value':true},
                 {'flag':'r','type':'boolean','selected':false, 'value':true},
@@ -37,7 +39,9 @@ function Tools () {
                 'website':'https://DidierStevens.com'
             },
             'uri_first':false,
+            'long_flag_equals':false,
             'file_types':['PDF'],
+            'help_flag':'h',
             'tool_options':[
                 {'flag':'version','type':'boolean','selected':false,'value':true},
                 {'flag':'h','type':'boolean','selected':false,'value':true},
@@ -54,7 +58,9 @@ function Tools () {
                 'website':'https://DidierStevens.com'
             },
             'uri_first':false,
+            'long_flag_equals':false,
             'file_types':['PDF'],
+            'help_flag':'h',
             'tool_options':[
                 {'flag':'version','type':'boolean','selected':false,'value':true},
                 {'flag':'h','type':'boolean','selected':false,'value':true},

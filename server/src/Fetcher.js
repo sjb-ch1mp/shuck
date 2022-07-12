@@ -36,6 +36,3 @@ function resolveURL (url) {
 }
 
 module.exports.resolveURL = resolveURL;
-//UP TO HERE - Need to return a promise so that all the URLs can be fetched and then resolved in a Promise.all().
-//use the protocol to determine which type of request should be made (http or https)?
-//ignore certificates

@@ -25,7 +25,7 @@ export class ToolContainer extends React.Component {
     }
 
     prepareToolExtendedText(tool){
-        return `File Types: ${tool.file_types.join(', ')}`;
+        return tool.file_types.join(', ');
     }
 
     renderTools () {

@@ -23,8 +23,12 @@ export class ArtefactContainer extends React.Component {
         });
     }
 
-    prepareArtefactExtendedText(data){
-        return 'TEST HEADING: Test Value';
+    prepareArtefactExtendedText(artefact){
+        if(artefact.type === 'url'){
+            return `Status ${artefact.enrichment.info.status}`
+        }else{
+            return artefact.enrichment.info.file_type;
+        }
     }
 
     renderArtefacts () {

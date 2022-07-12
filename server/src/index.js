@@ -40,12 +40,11 @@ app.post('/api/url', (request, response) => {
 
     Promise.all(requests)
     .then((resolvedURLs) => {
-        console.log(resolvedURLs);
         let artefacts = resolvedURLs.map((result) => {
             let enrichment = null;
             if(result.success){
                 enrichment = {
-                    'axios':{
+                    'info':{
                         'success':true,
                         'status':result.response.status,
                         'headers':result.response.headers,
@@ -54,7 +53,7 @@ app.post('/api/url', (request, response) => {
                 };
             }else{
                 enrichment = {
-                    'axios':{
+                    'info':{
                         'success':false,
                         'error':result.error
                     }
@@ -80,44 +79,95 @@ app.post('/api/url', (request, response) => {
     })
     .catch((error) => {
         console.log(error);
+
+        response.send();
     });
 });
 
 app.post('/api/file', (request, response) => {
 
     let artefacts = [];
-    for(let i=0; i<request.body.files.length; i++){
+    for(let i in request.body.files){
         artefacts.push({
             'id':md5(request.body.files[i].content),
             'name':request.body.files[i].name,
             'data':request.body.files[i].content,
             'type':'file',
-            'enrichment':{'size':request.body.files[i].size}
+            'enrichment':{
+                'info':{
+                    'size':request.body.files[i].size,
+                    'file_type':null
+                }
+            }
         });
     }
 
-    response.json({
-        'submission_id':request.body.submission_id,
-        'artefacts':artefacts
-    });
+    let dispatchedJobs = [];
+    for(let i in artefacts){
+        let fileTool = tools.getToolByName('file');
+        dispatchedJobs.push(new Dispatcher(fileTool, artefacts[i]).dispatchJob());
+    }
 
-    response.send();
+    Promise.all(dispatchedJobs)
+    .then((results) => {
+        for(let i in results){
+            console.log(`Got result ${results[i].results} for artefact ${results[i].artefact.name}.`);
+            results[i].artefact.enrichment.info.file_type = results[i].results.replace(/^[^:]+:\s+/g, "");
+        }
+        artefacts = results.map((result) => {return result.artefact});
+
+
+        response.json({
+            'submission_id':request.body.submission_id,
+            'artefacts':artefacts
+        });
+
+        response.send();
+    })
+    .catch((err) => {
+        console.log(err);
+
+        response.send();
+    });
 });
 
 app.post('/api/shuck', (request, response) => {
 
     let tool = request.body.tool;
-    let artefact = request.body.artefact;
+    if(request.body.help){
+        
+        let help = new Dispatcher(tool, null).getToolHelp();
 
-    console.log(`Running ${tool.name} on ${artefact.type} ${artefact.name}`);
+        response.json({
+            'tool':tool.name,
+            'artefact':null,
+            'result':help.output[1].toString('utf-8')
+        });
 
-    response.json({
-        'tool':tool.name,
-        'artefact':artefact.id,
-        'result':`Tool: ${tool.name}\nArtefact: ${artefact.name} (${artefact.type})\nResults: Success!`
-    });
+    }else{
+        let artefact = request.body.artefact;
 
-    response.send();
+        new Dispatcher(tool, artefact).dispatchJob()
+        .then((stdout) => {
+            response.json({
+                'tool':tool.name,
+                'artefact':artefact.id,
+                'result':stdout.results,
+                'success':stdout.success
+            });
+        })
+        .catch((stderr) => {
+            response.json({
+                'tool':tool.name,
+                'artefact':artefact.id,
+                'result':stderr.results,
+                'success':stderr.success
+            });
+        })
+        .finally(() => {
+            response.send();
+        });
+    }
 });
 
 //START 

@@ -62,7 +62,7 @@ export class Workspace extends React.Component{
       'Shuck will take a list of URLs or a set of files and allow you to analyse them with a collection of open source static analysis tools.\n\n' + 
       'To submit URLs, paste them into this INPUT portal. Shuck will automatically parse any text entered into this portal and extract valid URLs for you.\n\n' + 
       'To submit files, simply drag and drop them into this INPUT portal.\n\n' + 
-      'Please note that Shuck will only accept up to 20 URLs at a time, and up to 35MB worth of files.';
+      'Please note that Shuck will only accept up to 10 URLs at a time, and up to 35MB worth of files.';
     }
 
     updateSelectedToolOption(flag, changeType, value) {
@@ -320,10 +320,22 @@ export class Workspace extends React.Component{
 
     getShuckin(){
 
-      //Check if a tool and an artefact is selected. If so - shuck it.
-      if(this.state.selectedArtefact && this.state.selectedTool){
-        this.shuckIt();
-        return;
+      //Check if a tool is selected with the 'h' option
+      if(this.state.selectedTool){
+        let helpFlag = this.getToolByName(this.state.selectedTool).help_flag;
+        let options = this.getToolByName(this.state.selectedTool).tool_options.map((option) => {
+          if(option.selected){
+            return option.flag;
+          }
+        });
+        if(options.includes(helpFlag)){
+          this.shuckIt(true);
+          return;
+        }else if(this.state.selectedArtefact){
+          //Check if a tool and an artefact is selected. If so - shuck it.
+          this.shuckIt(false);
+          return;
+        }
       }
 
       //Toggle view if portal is in artefact mode, or if it's in input mode and there's no pending submissions
@@ -336,8 +348,8 @@ export class Workspace extends React.Component{
       if(this.state.submissionType == null){
         this.toggleNotification('Nothing to submit.', 'error');
         return;
-      }else if(this.state.submissionType === 'url_multiple' && this.state.submittedURLs.length > 20){
-        this.toggleNotification("Please submit only 20 URLs at a time.", 'error');
+      }else if(this.state.submissionType === 'url_multiple' && this.state.submittedURLs.length > 10){
+        this.toggleNotification("Please submit only 10 URLs at a time.", 'error');
         return;
       }
 
@@ -424,10 +436,11 @@ export class Workspace extends React.Component{
         });
     }
 
-    shuckIt(){
+    shuckIt(help){
       let data = {
         'artefact':this.getArtefactById(this.state.selectedArtefact),
-        'tool':this.getToolByName(this.state.selectedTool)
+        'tool':this.getToolByName(this.state.selectedTool),
+        'help':help
       };
 
       this.setState({'waitingForSubmission':true});
@@ -445,7 +458,8 @@ export class Workspace extends React.Component{
           'timestamp':Date.now(),
           'tool':response.data.tool,
           'artefact':response.data.artefact,
-          'result':response.data.result
+          'result':response.data.result,
+          'success':response.data.success
         });
 
         this.setState({'results':results}, () => {console.log(results)});        
