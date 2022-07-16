@@ -131,6 +131,12 @@ img {
     cursor: pointer;
 }
 
+input {
+    border-radius: 5px;
+    padding: 2px;
+    margin-top: 5px;
+}
+
 .Workspace {
     background-color: black;
     display: flex;
@@ -211,29 +217,38 @@ img {
     writing-mode:vertical-lr;
 }
 
-.SubTitle {
-    background-color: #310A3F !important;
-    border: 5px #310A3F solid !important;
+.ToolOptionTitle {
+    background-color: #FF7585/*#310A3F*/ !important;
+    border: 1px /*#310A3F*/#FF7585 solid !important;
+    border-radius: 0px 2px 2px 0px !important;
+    color: black !important;
+    font-weight: bolder;
 }
 
 .SelectableExtended {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-weight: normal !important;
+    font-weight: normal;
 }
 
 .SelectableExtendedChild {
     padding-top: 10px; 
+    font-size: 12px;
+}
+
+.SelectableExtendedChildTitle {
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .Selectable {
     border: 1px #FF7585/*#A0CC82*/ solid;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px;
-    font-size: 18px !important;
-    text-align: center;
+    margin: 5px 15px 5px 5px;
+    font-size: 18px;
+    text-align: left;
     font-weight: bold;
     font-family: 'Ubuntu Mono';
     color: #FF7585/*#A0CC82*/;
@@ -252,8 +267,8 @@ img {
     padding: 10px;
     margin: 5px;
     font-weight: bold;
-    font-size: 18px !important;
-    text-align: center;
+    font-size: 18px;
+    text-align: left;
     cursor: pointer;
     background-color: #FF7585/*#A0CC82*/;
     font-family: 'Ubuntu Mono';
@@ -273,56 +288,62 @@ img {
     width: 100%;
 }
 
+.SelectableTool {
+    width: 100% !important;
+    padding-right: 0px !important;
+    margin-right: 0px !important;
+}
+
 .ToolOptions {
     display:flex;
     flex-direction:column;
     justify-content:center;
-    border: 2px #310A3F solid;
-    border-radius: 2px 0px 0px 0px;
-    background-color: #310A3F;
+    border: 2px /*#310A3F*/#FF7585 solid;
+    background-color: /*#310A3F*/#FF7585;
     padding-top: 25px;
     padding-left: 2px;
     padding-right: 2px;
     padding-bottom: 25px;
-    width: 80%;
+    margin-left: -20px;
+    width: 75%;
     height: 100%;
 }
 
 .ToolOption {
-    border: 1px #00B0F0 solid;
+    border: 2px /*#00B0F0*/black solid;
     border-radius: 5px;
-    padding: 2px; 
+    padding: 5px; 
     margin: 5px;
-    color: #00B0F0;
+    color: /*#00B0F0*/ black;
     font-family: 'Ubuntu Mono';
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
+    
 }
 
 .ToolOption:hover {
-    border-color: #81DEFF;
-    color: #81DEFF/*#A0CC82*/;
+    border-color: /*#81DEFF*/#C80554;
+    color: #C80554/*#81DEFF/*#A0CC82*/;
 }
 
 .ToolOption-selected {
-    border: 1px #00B0F0 solid;
+    border: 2px /*#00B0F0*/#310A3F solid;
     border-radius: 5px;
-    padding: 2px; 
+    padding: 3px; 
     margin: 5px;
-    background-color: #00B0F0;
-    color: black;
+    background-color: /*#00B0F0*/ #310A3F;
+    color: /*black*/#FF7585;
     font-family: 'Ubuntu Mono';
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .ToolOption-selected:hover {
-    border-color: #00698E;
-    color: #00698E/*#A0CC82*/;
+    border-color: /*#81DEFF*/#C80554;
+    color: #C80554/*#81DEFF/*#A0CC82*/;
 }
 
 .ToolOptionValue {

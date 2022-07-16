@@ -55,6 +55,7 @@ app.post('/api/url', (request, response) => {
                 enrichment = {
                     'info':{
                         'success':false,
+                        'status':'Failed',
                         'error':result.error
                     }
                 };
@@ -86,8 +87,10 @@ app.post('/api/url', (request, response) => {
                     'data':error.url.href,
                     'type':'url',
                     'enrichment':{
-                        'success':false,
-                        'status':error.error.code
+                        'info':{
+                            'success':false,
+                            'status':error.error.code
+                        }
                     }
                 }
             ]

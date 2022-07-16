@@ -159,14 +159,14 @@ function Tools () {
                 {'flag':'hexdumpall','type':'boolean','selected':false,'value':true},
                 {'flag':'asciidump','type':'boolean','selected':false,'value':true},
                 {'flag':'asciidumpall','type':'boolean','selected':false,'value':true},
-                {'flag':'translate','type':'string','selected':false,'value':true},
+                {'flag':'translate','type':'string','selected':false,'value':null},
                 {'flag':'extended','type':'boolean','selected':false,'value':true},
                 {'flag':'password','type':'string','selected':false,'value':null},
                 {'flag':'verbose','type':'boolean','selected':false,'value':true},
                 {'flag':'regular','type':'boolean','selected':false,'value':true},
                 {'flag':'zipfilename','type':'boolean','selected':false,'value':true},
                 {'flag':'jsonoutput','type':'boolean','selected':false,'value':true},
-                {'flag':'find','type':'string','selected':false,'value':true},
+                {'flag':'find','type':'string','selected':false,'value':null},
                 {'flag':'info','type':'boolean','selected':false,'value':true}
             ],
             'locked_tool_options':null
@@ -242,7 +242,7 @@ function Tools () {
             'name':'flarestrings',
             'attribution':{
                 'author':'FireEye Inc.',
-                'website':'https://github.com/freeye/stringsifter'
+                'website':'https://github.com/fireeye/stringsifter'
             },
             'uri_first':false,
             'long_flag_equals':false,

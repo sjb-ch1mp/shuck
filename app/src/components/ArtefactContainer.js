@@ -27,16 +27,38 @@ export class ArtefactContainer extends React.Component {
         let extendedText = null;
         if(artefact.type === 'url'){
             extendedText = <div className='SelectableExtended'>
-                                <div className='SelectableExtendedChild'>{ `Status: ${artefact.enrichment.info.status}` }</div>
-                                
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'IP: '}</span>
+                                    Not Yet.
+                                </div>
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'Status: '}</span>
+                                    { artefact.enrichment.info.status }
+                                </div>
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'Mime Type: '}</span>
+                                    Not Yet.
+                                </div>
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'ShuckID: '}</span>
+                                    { artefact.id }
+                                </div>
                             </div>
-                            //IP: 
-                            //File Type:
         }else{
             extendedText = <div className='SelectableExtended'>
-                                <div className='SelectableExtendedChild'>{ `File Type: ${artefact.enrichment.info.file_type}` }</div>
-                                <div className='SelectableExtendedChild'>{ `Shuck ID: ${artefact.id}`}</div>
-                                {artefact.enrichment.info.created_by ? <div className='SelectableExtendedChild'>{`Created By: ${artefact.enrichment.info.created_by}`}</div> : ''}
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'File Type: '}</span>
+                                    { artefact.enrichment.info.file_type }
+                                </div>
+                                {artefact.enrichment.info.created_by ? 
+                                    <div className='SelectableExtendedChild'>
+                                        <span className='SelectableExtendedChildTitle'>{'Created By: '}</span>
+                                        { artefact.enrichment.info.created_by}
+                                    </div> : 
+                                ''}
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'ShuckID: '}</span>
+                                    { artefact.id }</div>
                             </div>
         }
         return extendedText;

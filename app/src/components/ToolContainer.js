@@ -29,8 +29,14 @@ export class ToolContainer extends React.Component {
 
     prepareToolExtendedText(tool){
         let extendedText = <div className='SelectableExtended'>
-                                <div className='SelectableExtendedChild'>{tool.file_types.join(', ')}</div>
-                                <div className='SelectableExtendedChild'><a href={ tool.attribution.website } target='_blank'>{tool.attribution.author}</a></div>
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'File Types: '}</span>
+                                    {tool.file_types.join(', ')}
+                                </div>
+                                <div className='SelectableExtendedChild'>
+                                    <span className='SelectableExtendedChildTitle'>{'Author: '}</span>
+                                    <a href={ tool.attribution.website } target='_blank'>{tool.attribution.author}</a>
+                                </div>
                             </div>
         return extendedText;
     }
@@ -43,11 +49,12 @@ export class ToolContainer extends React.Component {
             renderedTools.push(
                 <Selectable 
                     selectableKey={ tool.name } 
-                    selectableTitle={ tool.name } 
+                    selectableTitle={ `> ${tool.name}` } 
                     selected={ (this.state.selected === tool.name) ? true : false }
                     toggleSelected={ this.props.toggleSelected }
                     highlightSelected={ this.highlightSelectedTool }
                     selectableExtended={ this.prepareToolExtendedText(tool) }
+                    selectableOverrideClass={ 'SelectableTool' }
                 />
             );
         }
