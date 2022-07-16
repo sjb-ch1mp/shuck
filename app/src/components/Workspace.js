@@ -289,7 +289,14 @@ export class Workspace extends React.Component{
       }
     }
 
-    updateArtefactPackage(newArtefacts){
+    updateArtefactPackage(newArtefacts, areCreatedArtefacts){
+
+      //add null check for 'created_artefacts'
+      if(!newArtefacts){
+        console.log(`No artefacts detected. Returning...`);
+        return this.state.artefactPackage;
+      }
+
       let artefactPackage = this.state.artefactPackage;
       let previouslySubmittedIds = artefactPackage.artefacts.map((artefact) => {
         return artefact.id;
@@ -309,10 +316,13 @@ export class Workspace extends React.Component{
           duplicates = duplicates + 1;
         }
       }
-      artefactPackage.submission_ids.push(newArtefacts.submission_id);
+
+      if(!areCreatedArtefacts){
+        artefactPackage.submission_ids.push(newArtefacts.submission_id);
+      }
 
       if(duplicates > 0){
-        this.toggleNotification(`${(duplicates > 1) ? `${duplicates} duplicate artefacts were `: '1 duplicate artefact was '}ignored.`, 'info');
+        this.toggleNotification(`${(duplicates > 1) ? `${areCreatedArtefacts ? 'New artefacts were created. ' : '' }${duplicates} duplicate artefacts were `: '1 duplicate artefact was '}ignored.`, 'info');
       }
 
       return artefactPackage;
@@ -374,7 +384,7 @@ export class Workspace extends React.Component{
           this.toggleNotification();
 
           //Add all new artefacts to the artefact package
-          let updatedArtefactPackage = this.updateArtefactPackage(resp.data);
+          let updatedArtefactPackage = this.updateArtefactPackage(resp.data, false);
 
           //And save it
           this.setState({'artefactPackage':updatedArtefactPackage}, () => {this.reset(true); this.toggleView()});
@@ -402,7 +412,7 @@ export class Workspace extends React.Component{
             this.toggleNotification();
 
             //Add all new artefacts to the artefact package
-            let updatedArtefactPackage = this.updateArtefactPackage(resp.data);
+            let updatedArtefactPackage = this.updateArtefactPackage(resp.data, false);
 
             //And save it
             this.setState({'artefactPackage':updatedArtefactPackage}, () => {this.reset(true); this.toggleView()});
@@ -454,15 +464,22 @@ export class Workspace extends React.Component{
           results.shift();
         }
 
+        let updatedArtefactPackage = this.updateArtefactPackage(response.data.created_artefacts, true);
+        console.log(`updatedArtefactPackage`);
+        console.log(updatedArtefactPackage);
+
         results.push({
           'timestamp':Date.now(),
           'tool':response.data.tool,
-          'artefact':response.data.artefact,
+          'artefact':response.data.artefact ? `${this.getArtefactById(response.data.artefact).name} (${response.data.artefact})` : null,
           'result':response.data.result,
           'success':response.data.success
         });
 
-        this.setState({'results':results}, () => {console.log(results)});        
+        this.setState({'results':results, 'artefactPackage':updatedArtefactPackage}, () => {
+          console.log(`this.state.artefactPackage has been set to:`);
+          console.log(this.state.artefactPackage);
+        });
       }).catch((error) => {
         console.log(error);
         this.toggleNotification("Something went wrong. Please try again.", 'error');

@@ -70,16 +70,37 @@ app.post('/api/url', (request, response) => {
         });
 
         response.json({
+            'success':true,
             'submission_id':request.body.submission_id,
             'artefacts':artefacts
         });
-
-        response.send();
-        
     })
     .catch((error) => {
-        console.log(error);
 
+        let artefacts = null;
+        if(error.url){
+            artefacts = [
+                {
+                    'id':md5(error.url.href),
+                    'name':error.url.hostname,
+                    'data':error.url.href,
+                    'type':'url',
+                    'enrichment':{
+                        'success':false,
+                        'status':error.error.code
+                    }
+                }
+            ]
+        }
+
+        response.json({
+            'success':false,
+            'submission_id':request.body.submission_id,
+            'error':error,
+            'artefacts':artefacts
+        });
+    })
+    .finally(() => {
         response.send();
     });
 });
@@ -111,22 +132,24 @@ app.post('/api/file', (request, response) => {
     Promise.all(dispatchedJobs)
     .then((results) => {
         for(let i in results){
-            console.log(`Got result ${results[i].results} for artefact ${results[i].artefact.name}.`);
             results[i].artefact.enrichment.info.file_type = results[i].results.replace(/^[^:]+:\s+/g, "");
         }
         artefacts = results.map((result) => {return result.artefact});
 
-
         response.json({
             'submission_id':request.body.submission_id,
-            'artefacts':artefacts
+            'artefacts':artefacts,
+            'success':true
         });
-
-        response.send();
     })
     .catch((err) => {
         console.log(err);
-
+        response.json({
+            'success':false,
+            'submission_id':request.body.submission_id,
+            'err':err
+        });
+    }).finally(() => {
         response.send();
     });
 });
@@ -149,12 +172,53 @@ app.post('/api/shuck', (request, response) => {
 
         new Dispatcher(tool, artefact).dispatchJob()
         .then((stdout) => {
-            response.json({
-                'tool':tool.name,
-                'artefact':artefact.id,
-                'result':stdout.results,
-                'success':stdout.success
-            });
+
+            if(stdout.created_artefacts){
+                let fileTool = tools.getToolByName('file');
+                let promisedEnrichedCreatedArtefacts = [];
+                for(let i in stdout.created_artefacts){
+                    promisedEnrichedCreatedArtefacts.push(
+                        new Dispatcher(fileTool, stdout.created_artefacts[i]).dispatchJob()
+                    );
+                }
+                Promise.all(promisedEnrichedCreatedArtefacts)
+                .then((results) => {
+                    for(let i in results){
+                        results[i].artefact.enrichment.info.file_type = results[i].results.replace(/^[^:]+:\s+/g, "");
+                        results[i].artefact.enrichment.info.created_by = tool.name;
+                    }
+                    let createdArtefacts = results.map((result) => {return result.artefact});
+                    response.json({
+                        'tool':tool.name,
+                        'artefact':artefact.id,
+                        'result':stdout.results,
+                        'success':stdout.success,
+                        'created_artefacts':{
+                            'artefacts':createdArtefacts
+                        }
+                    });
+                    response.send();
+                })
+                .catch((error) => {
+                    response.json({
+                        'tool':tool.name,
+                        'artefact':artefact.id,
+                        'result':error,
+                        'success':false,
+                        'created_artefacts':null
+                    });
+                    response.send();
+                });
+            }else{
+                response.json({
+                    'tool':tool.name,
+                    'artefact':artefact.id,
+                    'result':stdout.results,
+                    'success':stdout.success,
+                    'created_artefacts':null
+                });
+                response.send();
+            }
         })
         .catch((stderr) => {
             response.json({
@@ -163,8 +227,6 @@ app.post('/api/shuck', (request, response) => {
                 'result':stderr.results,
                 'success':stderr.success
             });
-        })
-        .finally(() => {
             response.send();
         });
     }

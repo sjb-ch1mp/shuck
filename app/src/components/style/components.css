@@ -217,8 +217,14 @@ img {
 }
 
 .SelectableExtended {
-    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-weight: normal !important;
+}
+
+.SelectableExtendedChild {
+    padding-top: 10px; 
 }
 
 .Selectable {

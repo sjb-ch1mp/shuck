@@ -1,5 +1,8 @@
 import React from "react";
 
+//Style
+import './style/components.css';
+
 //Components
 import Selectable from "./Selectable";
 
@@ -25,7 +28,11 @@ export class ToolContainer extends React.Component {
     }
 
     prepareToolExtendedText(tool){
-        return tool.file_types.join(', ');
+        let extendedText = <div className='SelectableExtended'>
+                                <div className='SelectableExtendedChild'>{tool.file_types.join(', ')}</div>
+                                <div className='SelectableExtendedChild'><a href={ tool.attribution.website } target='_blank'>{tool.attribution.author}</a></div>
+                            </div>
+        return extendedText;
     }
 
     renderTools () {

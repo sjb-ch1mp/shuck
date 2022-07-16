@@ -13,7 +13,7 @@ export default class Selectable extends React.Component {
                     onClick={ () => { this.props.highlightSelected(this.props.selectableKey); this.props.toggleSelected(this.props.selectableKey) } }
                 >
                 { this.props.selectableTitle }
-                    <div className={`${(this.props.selected) ? 'SelectableExtended' : 'hidden'}`}>{ this.props.selectableExtended }</div>
+                    <div className={`${(this.props.selected) ? '' : 'hidden'}`}>{ this.props.selectableExtended }</div>
                 </div>;
     }
 

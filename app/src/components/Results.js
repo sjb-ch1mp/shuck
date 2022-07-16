@@ -17,7 +17,10 @@ export class Results extends React.Component {
         let results = '';
         let numResults = this.props.results.length;
         if(numResults > 0){
-            results = this.props.results[numResults - 1].result;
+            for(let i in this.props.results){
+                results = results + `>> shuck: ${this.props.results[i].timestamp} Results for tool ${this.props.results[i].tool} on ${this.props.results[i].artefact}:\n\n`;
+                results = results + `${this.props.results[i].result}\n\n`;
+            }
         }
         return results;
     }

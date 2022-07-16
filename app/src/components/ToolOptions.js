@@ -26,7 +26,7 @@ export class ToolOptions extends React.Component {
                     onClick={ (e) => {if(e.target.id==='tool_option_input'){return;} this.props.updateSelectedToolOption(option.flag, 'toggle')} }
                 >
                 { option.flag }
-                { (option.type !== 'boolean' && option.selected) ? <input
+                { (!/^(boolean|static)/.test(option.type) && option.selected) ? <input
                     id='tool_option_input'
                     type='text' 
                     className={`ToolOptionValue boxed-in`}

@@ -24,11 +24,22 @@ export class ArtefactContainer extends React.Component {
     }
 
     prepareArtefactExtendedText(artefact){
+        let extendedText = null;
         if(artefact.type === 'url'){
-            return `Status ${artefact.enrichment.info.status}`
+            extendedText = <div className='SelectableExtended'>
+                                <div className='SelectableExtendedChild'>{ `Status: ${artefact.enrichment.info.status}` }</div>
+                                
+                            </div>
+                            //IP: 
+                            //File Type:
         }else{
-            return artefact.enrichment.info.file_type;
+            extendedText = <div className='SelectableExtended'>
+                                <div className='SelectableExtendedChild'>{ `File Type: ${artefact.enrichment.info.file_type}` }</div>
+                                <div className='SelectableExtendedChild'>{ `Shuck ID: ${artefact.id}`}</div>
+                                {artefact.enrichment.info.created_by ? <div className='SelectableExtendedChild'>{`Created By: ${artefact.enrichment.info.created_by}`}</div> : ''}
+                            </div>
         }
+        return extendedText;
     }
 
     renderArtefacts () {
