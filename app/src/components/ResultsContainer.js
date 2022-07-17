@@ -9,6 +9,10 @@ import { decode } from 'base64-arraybuffer';
 //Components
 import Selectable from './Selectable.js';
 
+//Resources
+import download from '../img/download.png';
+import download_hover from '../img/download_hover.png'
+
 export class ResultsContainer extends React.Component {
 
     constructor(props){
@@ -16,7 +20,8 @@ export class ResultsContainer extends React.Component {
         this.props = props;
 
         this.state = {
-            'selected':this.props.selectedOnRender
+            'selected':this.props.selectedOnRender,
+            'download_img':download
         }
 
         this.highlightSelectedResults = this.highlightSelectedResults.bind(this);
@@ -38,47 +43,55 @@ export class ResultsContainer extends React.Component {
     }
 
     renderResultsExtended(result){
-
+        return <div className={ 'SelectableExtended' }>
+            <div className='SelectableExtendedChild'>
+                <div className='SelectableExtendedChildTitle'>{ `> Results` }</div>
+                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                            disabled={ true }
+                            value={ result }
+                        />
+            </div>
+        </div>; 
     }
 
     renderArtefactDetails(artefact){
         if(artefact.type === 'url'){
             return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'ShuckID: '}</span>
+                    <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
                     { artefact.id }
                 </div>
                 <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'Hostname: '}</span>
+                    <span className='SelectableExtendedChildTitle'>{'> Hostname: '}</span>
                     { artefact.name }
                 </div>
                 <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'Status: '}</span>
+                    <span className='SelectableExtendedChildTitle'>{'> Status: '}</span>
                     { artefact.enrichment.info.status }
                 </div>
                 <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'Mime Type: '}</span>
+                    <span className='SelectableExtendedChildTitle'>{'> Mime Type: '}</span>
                     { artefact.enrichment.info.file_type }        
                 </div>
                 <div className='SelectableExtendedChild'>
-                    <div className='SelectableExtendedChildTitle'>{ `Headers` }</div>
-                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font hold-dimensions'}
+                    <div className='SelectableExtendedChildTitle'>{ `> Headers` }</div>
+                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
                         disabled={ true }
                         value={ artefact.enrichment.info.headers }
                     />
                 </div>
                 <div className='SelectableExtendedChild'>
-                    <div className='SelectableExtendedChildTitle'>{ `Body (Raw)` }</div>
-                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font hold-dimensions'}
+                    <div className='SelectableExtendedChildTitle'>{ `> Body` }</div>
+                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
                         disabled={ true }
-                        value={ decode(artefact.enrichment.info.body) }
+                        value={ artefact.enrichment.info.body_raw }
                     />
                 </div>
                 <div className='SelectableExtendedChild'>
                     <button 
-                        className={ 'ResultsDownload' }
+                        className={ 'ResultsDownloadButton' }
                         onClick={ () => { this.downloadArtefactContent() } }
-                    >Download Artefact</button>
+                    >Download</button>
                 </div>
             </div>;
         }else{
@@ -90,7 +103,7 @@ export class ResultsContainer extends React.Component {
         let fileName = this.props.selectedArtefact.id;
         let content = [
             (this.props.selectedArtefact.type === 'url') ? 
-            decode(this.props.selectedArtefact.enrichment.info.body) : 
+            this.props.selectedArtefact.enrichment.info.body_raw : 
             decode(this.props.selectedArtefact.data)
         ];
         let blob = new Blob(content, {'type':'application/octet-stream'});
@@ -107,17 +120,6 @@ export class ResultsContainer extends React.Component {
     }
 
     renderResults(){
-        /*Selectable.props = {
-                selected 
-                selectableOverrideClass
-                waitingForSubmission
-                selectableTitle
-                selectableExtended
-                selectableKey
-                highlightSelected()
-                toggleSelected()
-            }  
-        */
         if(!this.props.selectedArtefact){
             return null;
         }
@@ -126,37 +128,10 @@ export class ResultsContainer extends React.Component {
         let renderedResults = [];
 
         //First add artefact.enrichment.info to the results
-        /* URL
-            'id':md5(result.url.href),
-                'name':result.url.hostname,
-                'data':result.url.href,
-                'type':'url',
-                'enrichment': 'info':{
-                        'success':true,
-                        'status':result.response.status,
-                        'headers':result.response.headers,
-                        'body':result.response.data
-                    },
-        */
-
-        /* FILE
-            'id':md5(request.body.files[i].content),
-            'name':request.body.files[i].name,
-            'data':request.body.files[i].content,
-            'type':'file',
-            'enrichment':{
-                'info':{
-                    'size':request.body.files[i].size,
-                    'file_type':null
-                },
-                'results':[]
-            }    
-        
-        */
         renderedResults.push(
             <Selectable
                 selected={ this.state.selected == artefact.id }
-                selectableOverrideClass={ 'SelectableResult' }
+                overrideClass={ 'SelectableResult' }
                 waitingForSubmission={ this.props.waitingForSubmission }
                 selectableTitle={ artefact.type == 'url' ? artefact.data : artefact.name }
                 selectableExtended={ this.renderArtefactDetails(artefact) }
@@ -167,14 +142,21 @@ export class ResultsContainer extends React.Component {
         );
 
         //Then add all results (DECREMENTING - LAST PRESENTED AT TOP!!)
-        /* Each result has this: 
-        {
-            'timestamp':Date.now(),
-            'tool':response.data.tool,
-            'result':response.data.result,
-            'success':response.data.success
-          }
-        */
+       for(let i=artefact.enrichment.results.length - 1; i > -1; i--){
+           let result = artefact.enrichment.results[i];
+           renderedResults.push(
+               <Selectable
+                selected={ this.state.selected == result.id }
+                overrideClass={ 'SelectableResult' }
+                waitingForSubmission={ this.props.waitingForSubmission }
+                selectableTitle={ `[${new Date(result.timestamp * 1000).toLocaleString()}] ${result.tool}` }
+                selectableExtended={ this.renderResultsExtended(result.result) }
+                selectableKey={ result.id }
+                highlightSelected={ this.highlightSelectedResults }
+                toggleSelected={ this.toggleSelected }
+               />
+           );
+       }
        
         return renderedResults;
     }

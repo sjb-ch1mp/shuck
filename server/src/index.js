@@ -1,3 +1,5 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 //Core
 const express = require('express');
 const app = express();
@@ -26,6 +28,7 @@ const fetcher = require('./Fetcher.js');
 const tools = require('./CommonTools.js');
 const useragents = require('./CommonUserAgents.js');
 const base64decoder = require('base64-arraybuffer');
+const str2ab = require('string-to-arraybuffer');
 
 //ROUTING
 app.get('/', (request, response) => {
@@ -44,12 +47,22 @@ app.post('/api/url', (request, response) => {
         let artefacts = resolvedURLs.map((result) => {
             let enrichment = null;
             if(result.success){
+
+                let headers = '';
+                for(let i in result.response.headers){
+                    let header = result.response.headers[i];
+                    headers = headers + `${i}: ${typeof header == 'object' ? JSON.stringify(header): header}\n\n`;
+                }
+
+                let body = base64decoder.encode(str2ab(result.response.data));
+
                 enrichment = {
                     'info':{
                         'success':true,
                         'status':result.response.status,
-                        'headers':result.response.headers,
-                        'body':base64decoder.encode(result.response.data),
+                        'headers':headers,
+                        'body_encoded':body,
+                        'body_raw':result.response.data,
                         'file_type':null
                     },
                     'results':[]
@@ -77,7 +90,6 @@ app.post('/api/url', (request, response) => {
         let promisedEnrichedArtefacts = [];
         let file = tools.getToolByName('file');
         file = tools.updateToolOption(file, 'i', true, true);
-        file = tools.updateToolOption(file, 'k', true, true);
         for(let i in artefacts){
             promisedEnrichedArtefacts.push(new Dispatcher(file, artefacts[i]).dispatchJob());
         }
@@ -206,8 +218,9 @@ app.post('/api/shuck', (request, response) => {
 
         new Dispatcher(tool, artefact).dispatchJob()
         .then((stdout) => {
-
+            console.log('Success.');
             if(stdout.created_artefacts){
+                console.log('Created artefacts.');
                 let fileTool = tools.getToolByName('file');
                 let promisedEnrichedCreatedArtefacts = [];
                 for(let i in stdout.created_artefacts){
@@ -237,6 +250,7 @@ app.post('/api/shuck', (request, response) => {
                     response.send();
                 })
                 .catch((error) => {
+                    console.log('Failed to create artefacts.');
                     let now = Date.now();
                     response.json({
                         'id':md5(`${now}-${tool.name}-${artefact.id}`),
@@ -250,6 +264,7 @@ app.post('/api/shuck', (request, response) => {
                     response.send();
                 });
             }else{
+                console.log('No created artefacts.');
                 let now = Date.now();
                 response.json({
                     'id':md5(`${now}-${tool.name}-${artefact.id}`),

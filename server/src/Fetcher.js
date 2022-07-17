@@ -6,17 +6,17 @@ function resolveURL (url) {
         let options = {
             'headers':{
                 'User-Agent':commonUserAgents.getRandomUserAgent()
-            }
+            },
+            'maxRedirects':0
         };
         if(/https/.test(url.protocol)){
             //Treat as HTTPs
-            options['rejectUnauthorized'] = false;
             options['port'] = url.port ? url.port : 443;
         }else{
             //Treat as HTTP
             options['port'] = url.port ? url.port : 80;
         }
-
+        
         axios.get(url.href, options)
         .then((response) => {
             resolve({
@@ -26,11 +26,19 @@ function resolveURL (url) {
             });
         })
         .catch((error) => {
-            reject({
-                'url':url,
-                'success':false,
-                'error':error
-            })
+            if(/^[0-9]{3}$/.test(error.response.status)){
+                resolve({
+                    'url':url,
+                    'success':true,
+                    'response':error.response
+                });
+            }else{
+                reject({
+                    'url':url,
+                    'success':false,
+                    'error':error
+                })
+            }
         });
     });
 }

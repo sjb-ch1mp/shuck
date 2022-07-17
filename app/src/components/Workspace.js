@@ -332,12 +332,12 @@ export class Workspace extends React.Component{
     }
 
     addResultsToArtefact(artefactPackage, result){
+      console.log(`Adding result ${result.id} to artefact ${result.artefact}`);
       for(let i in artefactPackage){
         if(artefactPackage[i].id === result.artefact){
-          let now = Date.now();
           artefactPackage[i].enrichment.results.push({
             'id':result.id,
-            'timestamp':result.timestampe,
+            'timestamp':result.timestamp,
             'tool':result.tool,
             'result':result.result,
             'success':result.success
@@ -358,10 +358,12 @@ export class Workspace extends React.Component{
           }
         });
         if(options.includes(helpFlag)){
+          this.toggleNotification(`Showing help for ${ this.state.selectedTool }.`, 'info');
           this.shuckIt(true);
           return;
         }else if(this.state.selectedArtefact){
           //Check if a tool and an artefact is selected. If so - shuck it.
+          this.toggleNotification(`Shucking artefact with ${ this.state.selectedTool }.`, 'info');
           this.shuckIt(false);
           return;
         }
@@ -479,13 +481,18 @@ export class Workspace extends React.Component{
 
         //If isShowHelp, dump to Results textarea - otherwise append to the results of the current selectedArtefact
         if(response.data.isHelp){
+          if(this.state.selectedArtefact){
+            this.toggleSelectedArtefact(this.state.selectedArtefact);
+          }
           this.setState({'results':response.data.result, 'showHelp':true});
         }else{
+          console.log('Got result on client');
           //Update artefactPackage with any new artefacts
           let updatedArtefactPackage = this.updateArtefactPackage(response.data.created_artefacts, true);
 
           //Add the results to the appropriate artefact (by id)
           this.addResultsToArtefact(updatedArtefactPackage, response.data);
+          console.log('Updated results in artefact');
 
           //Save the artefactPackage
           this.setState({'artefactPackage':updatedArtefactPackage,'selectedResults':response.data.id,'showHelp':false});

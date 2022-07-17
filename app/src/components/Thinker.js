@@ -32,7 +32,6 @@ export class Thinker extends React.Component {
     think() {
         this.setState({'img':thinker_thinking, 'animate':'thinker-thinking'});
     }
-
     render () {
 
         return <div className={'Thinker'}>
@@ -42,7 +41,7 @@ export class Thinker extends React.Component {
                 className={ (this.props.waitingForSubmission) ? 'thinker-thinking' : (['thinker-mouseover','thinker-mouseleave'].includes(this.state.animate) ? this.state.animate : 'thinker') /*this.state.animate*/ }
                 onMouseOver={ () => { (!this.props.waitingForSubmission) ? this.wakeUp() : this.think() }}
                 onMouseLeave={ () => { (!this.props.waitingForSubmission) ? this.goBackToSleep() : this.think() }}
-                onClick={ () => {(!this.props.waitingForSubmission) ? this.props.getShuckin() : this.think()} }
+                onClick={ () => { (!this.props.waitingForSubmission) ? this.props.getShuckin() : this.think(); } }
             />
         </div>;
     }

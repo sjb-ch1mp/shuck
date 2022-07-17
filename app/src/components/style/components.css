@@ -234,12 +234,12 @@ input {
 
 .SelectableExtendedChild {
     padding-top: 10px; 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .SelectableExtendedChildTitle {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .Selectable {
@@ -354,9 +354,46 @@ input {
 }
 
 .ResultsTextArea {
-    background-image: url("../../img/terminal_50p.png");
-    background-size: 100vw 100vh;
-    font-size: 14px;
-    border-radius: 5px;
+    background-color: transparent;
+    font-size: 13px;
     margin-top: 10px; 
+    border-left: 1px #A0CC82 double;
+    min-height: 250px;
+}
+
+.ResultsDownloadButton {
+    font-size: 20px;
+    font-family: 'VT323';
+    background-color: #FF7585;
+    color: black;
+    cursor: pointer;
+    border: 2px black solid;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.SelectableResult {
+    border: 1px #FF7585/*#A0CC82*/ solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 15px 5px 5px;
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Ubuntu Mono';
+    color: #FF7585/*#A0CC82*/;
+    background-color: transparent;
+}
+
+.SelectableResult-selected {
+    border: 1px #FF7585/*#A0CC82*/ solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 15px 5px 5px;
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Ubuntu Mono';
+    color: #FF7585/*#A0CC82*/;
+    background-color: transparent;
 }

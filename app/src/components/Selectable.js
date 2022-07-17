@@ -22,7 +22,7 @@ export default class Selectable extends React.Component {
 
     render () {
         return <div 
-                    className= {`Selectable${(this.props.selected) ? '-selected': ''} ${this.props.selected ? this.props.selectableOverrideClass : ''}`}     
+                    className= {`${this.props.overrideClass ? this.props.overrideClass : 'Selectable'}${(this.props.selected) ? '-selected': ''} ${this.props.selected ? this.props.selectableOverrideClass : ''}`}     
                 >
                     <div 
                         className={'SelectableTitle'} 

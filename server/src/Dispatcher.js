@@ -93,10 +93,9 @@ let Dispatcher = class{
             if(option){
                 if(/^(string|static)/.test(option.type)){
                     let value = null;
-                    if(/^__FILEOUT$/.test(option.value)){
-                        let fileoutName = option.value.replace(/^__FILEOUT::/g, '');
-                        if(!(/__FILEOUT/.test(fileoutName))){
-                            value = path.join(this.createdArtefacts, fileoutName);
+                    if(/^__FILEOUT/.test(option.value)){
+                        if(/::/.test(option.value)){
+                            value = path.join(this.createdArtefacts, option.value.split(/::/)[1]);
                         }else{
                             value = this.createdArtefacts;
                         }
@@ -146,7 +145,8 @@ let Dispatcher = class{
                 file = new DataView(base64decoder.decode(this.artefact.data));
             }else{
                 //artefact is a URL - use the axios results
-                file = new DataView(base64decoder.decode(this.artefact.enrichment.info.body));
+                console.log(base64decoder.decode(this.artefact.enrichment.info.body_encoded));
+                file = new DataView(base64decoder.decode(this.artefact.enrichment.info.body_encoded));
             }
 
             fs.writeFile(this.artefactOnDisc, file, 'utf8', (error) => {
@@ -162,6 +162,9 @@ let Dispatcher = class{
                         this.deleteArtefact(this.artefactOnDisc);
 
                         if(error){
+                            console.log('There was an error executing the file');
+                            console.log(error);
+                            console.log(stderr.toString('utf-8'));
                             reject({
                                 'success':false, 
                                 'results':stderr.toString('utf-8'),

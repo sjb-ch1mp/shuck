@@ -27,9 +27,6 @@ export class ArtefactContainer extends React.Component {
         let extendedText = null;
         if(artefact.type === 'url'){
             extendedText = <div className='SelectableExtended'>
-                                <div className='SelectableExtendedChild'>
-                                    { artefact.id }
-                                </div>
                             </div>
         }else{
             extendedText = <div className='SelectableExtended'>
