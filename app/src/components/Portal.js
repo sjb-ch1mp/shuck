@@ -25,6 +25,7 @@ export class Portal extends React.Component {
                             toggleSelectedArtefact={ this.props.toggleSelectedArtefact }
                             submitFiles={ this.props.submitFiles }
                             submitURLs={ this.props.submitURLs }
+                            waitingForSubmission={ this.props.waitingForSubmission }
                         />
                         <textarea
                             id='portal'
@@ -34,6 +35,7 @@ export class Portal extends React.Component {
                             value={ this.props.message }
                             onPaste={ e => { this.props.submitURLs(e); } }
                             onChange={ this.props.updateSubmission }
+                            disabled={ this.props.waitingForSubmission }
                         />
                         <Notifier notify={ this.props.notify } toggleNotification={ this.props.toggleNotification }/>
                     </div>

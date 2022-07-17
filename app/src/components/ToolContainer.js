@@ -55,6 +55,7 @@ export class ToolContainer extends React.Component {
                     highlightSelected={ this.highlightSelectedTool }
                     selectableExtended={ this.prepareToolExtendedText(tool) }
                     selectableOverrideClass={ 'SelectableTool' }
+                    waitingForSubmission={ this.props.waitingForSubmission }
                 />
             );
         }

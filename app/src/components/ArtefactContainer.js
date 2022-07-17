@@ -73,6 +73,7 @@ export class ArtefactContainer extends React.Component {
                     toggleSelected={ this.props.toggleSelectedArtefact }
                     highlightSelected={ this.highlightSelectedArtefact }
                     selectableExtended={ extendedText }
+                    waitingForSubmission={ this.props.waitingForSubmission }
                 />
             );
         }

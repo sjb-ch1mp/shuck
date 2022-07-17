@@ -16,8 +16,16 @@ export class Toolbox extends React.Component {
     render () {
         return <div className='Toolbox default-margins container-frame titled boxed-in'>
                     <Title rotated={ true } title='TOOLBOX'/>
-                    <ToolContainer toggleSelected={ this.props.toggleSelected } tools={ this.props.tools }/>
-                    <ToolOptions toolOptions={ this.props.toolOptions } updateSelectedToolOption={ this.props.updateSelectedToolOption }/>
+                    <ToolContainer 
+                        toggleSelected={ this.props.toggleSelected } 
+                        tools={ this.props.tools }
+                        waitingForSubmission={ this.props.waitingForSubmission }
+                    />
+                    <ToolOptions 
+                        toolOptions={ this.props.toolOptions } 
+                        updateSelectedToolOption={ this.props.updateSelectedToolOption }
+                        waitingForSubmission={ this.props.waitingForSubmission }
+                    />
                     <Title customClasses={'ToolOptionTitle'} hidden={(this.props.toolOptions.length > 0) ? false : true} title={ 'OPTIONS' } ></Title>
                 </div>;
     }

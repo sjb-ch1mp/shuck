@@ -23,7 +23,10 @@ export class ToolOptions extends React.Component {
             renderedOptions.push(
                 <div
                     className={ `ToolOption${ (option.selected) ? '-selected' : '' } boxed-in` } 
-                    onClick={ (e) => {if(e.target.id==='tool_option_input'){return;} this.props.updateSelectedToolOption(option.flag, 'toggle')} }
+                    onClick={ (e) => {
+                        if(e.target.id==='tool_option_input' || this.props.waitingForSubmission ){return;} 
+                        this.props.updateSelectedToolOption(option.flag, 'toggle')
+                    } }
                 >
                 { option.flag }
                 { (!/^(boolean|static)/.test(option.type) && option.selected) ? <input
@@ -32,6 +35,7 @@ export class ToolOptions extends React.Component {
                     className={`ToolOptionValue boxed-in`}
                     onChange={ (e) => this.props.updateSelectedToolOption(option.flag, 'change_value', e.target.value) }
                     value={ option.value }
+                    disabled={ this.props.waitingForSubmission }
                 /> : '' }
                 </div>
             );

@@ -506,6 +506,7 @@ export class Workspace extends React.Component{
               tools={ this.state.tools }
               toolOptions={ (this.state.selectedTool) ? this.getToolByName(this.state.selectedTool).tool_options : [] } 
               updateSelectedToolOption={ this.updateSelectedToolOption }
+              waitingForSubmission={ this.state.waitingForSubmission }
             />
             <Results
               selectedArtefact={ this.getArtefactById(this.state.selectedArtefact) }
