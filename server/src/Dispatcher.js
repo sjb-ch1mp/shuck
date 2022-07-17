@@ -146,7 +146,7 @@ let Dispatcher = class{
                 file = new DataView(base64decoder.decode(this.artefact.data));
             }else{
                 //artefact is a URL - use the axios results
-                file = this.artefact.enrichment.info.body;
+                file = new DataView(base64decoder.decode(this.artefact.enrichment.info.body));
             }
 
             fs.writeFile(this.artefactOnDisc, file, 'utf8', (error) => {

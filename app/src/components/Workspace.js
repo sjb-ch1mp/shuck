@@ -13,9 +13,6 @@ import { Results }      from "./Results.js";
 import { Toolbox }      from "./Toolbox.js";
 import Tools            from "./Tools";
 
-//Resources
-import thinker          from '../img/thinking_still.png';
-
 export class Workspace extends React.Component{
 
     constructor(props){
@@ -36,7 +33,9 @@ export class Workspace extends React.Component{
             'selectedArtefact':null,
             'selectedTool':null,
             'tools':Tools(),
-            'results':[]
+            'results':'',
+            'selectedResults':'',
+            'showHelp':false
         };
 
         this.reset = this.reset.bind(this);
@@ -58,6 +57,7 @@ export class Workspace extends React.Component{
         this.getArtefactById = this.getArtefactById.bind(this);
         this.updateSelectedToolOption = this.updateSelectedToolOption.bind(this);
         this.shuckIt = this.shuckIt.bind(this);
+        this.addResultsToArtefact = this.addResultsToArtefact.bind(this);
     }
 
     welcomeMessage(){
@@ -128,10 +128,10 @@ export class Workspace extends React.Component{
     toggleSelectedArtefact(id){
       let clickedArtefact = this.getArtefactById(id);
 
-      if(this.state.selectedArtefact && this.state.selectedArtefact === clickedArtefact.id){ 
-        this.setState({'selectedArtefact':null});
+      if(this.state.selectedArtefact && this.state.selectedArtefact === clickedArtefact.id){
+        this.setState({'selectedArtefact':null, 'selectedResults':id, 'showHelp':false});
       }else{
-        this.setState({'selectedArtefact':clickedArtefact.id});
+        this.setState({'selectedArtefact':clickedArtefact.id, 'selectedResults':clickedArtefact.id, 'showHelp':false});
       }
     }
 
@@ -331,6 +331,22 @@ export class Workspace extends React.Component{
       return artefactPackage;
     }
 
+    addResultsToArtefact(artefactPackage, result){
+      for(let i in artefactPackage){
+        if(artefactPackage[i].id === result.artefact){
+          let now = Date.now();
+          artefactPackage[i].enrichment.results.push({
+            'id':result.id,
+            'timestamp':result.timestampe,
+            'tool':result.tool,
+            'result':result.result,
+            'success':result.success
+          });
+        }
+      }
+      return artefactPackage;
+    }
+
     getShuckin(){
 
       //Check if a tool is selected with the 'h' option
@@ -460,24 +476,20 @@ export class Workspace extends React.Component{
       axios.post(
         '/api/shuck', data
       ).then((response) => {
-        let results = this.state.results;
 
-        //Keep only the last 50 results as a navigable history for the analyst
-        if(results.length === 50){
-          results.shift();
+        //If isShowHelp, dump to Results textarea - otherwise append to the results of the current selectedArtefact
+        if(response.data.isHelp){
+          this.setState({'results':response.data.result, 'showHelp':true});
+        }else{
+          //Update artefactPackage with any new artefacts
+          let updatedArtefactPackage = this.updateArtefactPackage(response.data.created_artefacts, true);
+
+          //Add the results to the appropriate artefact (by id)
+          this.addResultsToArtefact(updatedArtefactPackage, response.data);
+
+          //Save the artefactPackage
+          this.setState({'artefactPackage':updatedArtefactPackage,'selectedResults':response.data.id,'showHelp':false});
         }
-
-        let updatedArtefactPackage = this.updateArtefactPackage(response.data.created_artefacts, true);
-
-        results.push({          
-          'timestamp':Date.now(),
-          'tool':response.data.tool,
-          'artefact':response.data.artefact ? `${this.getArtefactById(response.data.artefact).name} (${response.data.artefact})` : null,
-          'result':response.data.result,
-          'success':response.data.success
-        });
-
-        this.setState({'results':results, 'artefactPackage':updatedArtefactPackage});
       }).catch((error) => {
         console.log(error);
         this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -511,6 +523,8 @@ export class Workspace extends React.Component{
             <Results
               selectedArtefact={ this.getArtefactById(this.state.selectedArtefact) }
               results={ this.state.results }
+              selectedOnRender={ this.state.selectedResults }
+              showHelp={ this.state.showHelp }
             />
         </div>;
     }

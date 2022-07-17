@@ -252,11 +252,14 @@ input {
     font-weight: bold;
     font-family: 'Ubuntu Mono';
     color: #FF7585/*#A0CC82*/;
-    cursor: pointer;
     background-color: transparent;
 }
 
-.Selectable:hover {
+.SelectableTitle {
+    cursor: pointer;
+}
+
+.SelectableTitle:hover {
     border-color: #C80554;
     color: #C80554/*#A0CC82*/;
 }
@@ -273,10 +276,6 @@ input {
     background-color: #FF7585/*#A0CC82*/;
     font-family: 'Ubuntu Mono';
     color: black;
-}
-
-.Selectable-selected:hover {
-    color: #C80554;
 }
 
 .SelectableContainer {
@@ -310,17 +309,17 @@ input {
 }
 
 .ToolOption {
-    border: 2px /*#00B0F0*/black solid;
+    border: 2px #FF7585 solid;
     border-radius: 5px;
     padding: 5px; 
     margin: 5px;
-    color: /*#00B0F0*/ black;
+    color: #FF7585;
     font-family: 'Ubuntu Mono';
     font-size: 14px;
     font-weight: bold;
     text-align: left;
     cursor: pointer;
-    
+    background-color: black;
 }
 
 .ToolOption:hover {
@@ -329,12 +328,12 @@ input {
 }
 
 .ToolOption-selected {
-    border: 2px /*#00B0F0*/#310A3F solid;
+    border: 2px black solid;
     border-radius: 5px;
     padding: 3px; 
     margin: 5px;
-    background-color: /*#00B0F0*/ #310A3F;
-    color: /*black*/#FF7585;
+    background-color: #FF7585;
+    color: black;
     font-family: 'Ubuntu Mono';
     font-size: 16px;
     text-align: left;
@@ -352,4 +351,12 @@ input {
     font-family: 'Ubuntu Mono';
     font-size: 16px;
     font-weight: bold;
+}
+
+.ResultsTextArea {
+    background-image: url("../../img/terminal_50p.png");
+    background-size: 100vw 100vh;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px; 
 }

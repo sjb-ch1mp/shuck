@@ -29,18 +29,18 @@ export class Results extends React.Component {
     }*/
 
     render () {
-        
         return <div className={'Results default-margins container-frame titled'}>
                 <Title title='RESULTS'/>
                 {
-                    this.props.selectedArtefact ? 
-                    <ResultsContainer
-                        results={ this.props.selectedArtefact }
-                    /> : 
+                    this.props.showHelp ? 
                     <textarea 
                         className={'scrollable boxed-in terminal-font'} 
                         spellCheck={ false }
-                        value={ /*this.renderResults()*/this.props.results.length > 0 ? this.props.results[this.props.results.length - 1].result : ''}    
+                        value={ this.props.results }    
+                    /> : 
+                    <ResultsContainer
+                        selectedArtefact={ this.props.selectedArtefact }
+                        selectedOnRender={ this.props.selectedOnRender }
                     />
                 }
                 </div>;

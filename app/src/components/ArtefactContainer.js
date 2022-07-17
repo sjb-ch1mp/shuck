@@ -10,7 +10,7 @@ export class ArtefactContainer extends React.Component {
         this.props = props;
 
         this.state = {
-            'selected':null
+            'selected':this.props.selected
         };
 
         this.renderArtefacts = this.renderArtefacts.bind(this);
@@ -28,15 +28,6 @@ export class ArtefactContainer extends React.Component {
         if(artefact.type === 'url'){
             extendedText = <div className='SelectableExtended'>
                                 <div className='SelectableExtendedChild'>
-                                    <span className='SelectableExtendedChildTitle'>{'Status: '}</span>
-                                    { artefact.enrichment.info.status }
-                                </div>
-                                <div className='SelectableExtendedChild'>
-                                    <span className='SelectableExtendedChildTitle'>{'Mime Type: '}</span>
-                                    Not Yet.
-                                </div>
-                                <div className='SelectableExtendedChild'>
-                                    <span className='SelectableExtendedChildTitle'>{'ShuckID: '}</span>
                                     { artefact.id }
                                 </div>
                             </div>
@@ -83,8 +74,16 @@ export class ArtefactContainer extends React.Component {
     render () {
         return <div 
                     className={ `SelectableContainer boxed-in scrollable ${ this.props.hidden }` } 
-                    onDrop={ (e) => this.props.submitFiles(e) }
-                    onPaste={ (e) => this.props.submitURLs(e) }
+                    onDrop={ (e) => {
+                        if(!this.props.waitingForSubmission){
+                            this.props.submitFiles(e)
+                        } 
+                    }}
+                    onPaste={ (e) => {
+                        if(!this.props.waitingForSubmission){
+                            this.props.submitURLs(e) 
+                        }
+                    }}
                 >{ this.renderArtefacts() }</div>;
     }
 }

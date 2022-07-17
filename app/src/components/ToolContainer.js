@@ -50,7 +50,7 @@ export class ToolContainer extends React.Component {
                 <Selectable 
                     selectableKey={ tool.name } 
                     selectableTitle={ `> ${tool.name}` } 
-                    selected={ (this.state.selected === tool.name) ? true : false }
+                    selected={ this.state.selected == tool.name }
                     toggleSelected={ this.props.toggleSelected }
                     highlightSelected={ this.highlightSelectedTool }
                     selectableExtended={ this.prepareToolExtendedText(tool) }

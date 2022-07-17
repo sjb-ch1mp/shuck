@@ -25,6 +25,7 @@ const Dispatcher = require('./Dispatcher.js');
 const fetcher = require('./Fetcher.js');
 const tools = require('./CommonTools.js');
 const useragents = require('./CommonUserAgents.js');
+const base64decoder = require('base64-arraybuffer');
 
 //ROUTING
 app.get('/', (request, response) => {
@@ -48,8 +49,10 @@ app.post('/api/url', (request, response) => {
                         'success':true,
                         'status':result.response.status,
                         'headers':result.response.headers,
-                        'body':result.response.data
-                    }
+                        'body':base64decoder.encode(result.response.data),
+                        'file_type':null
+                    },
+                    'results':[]
                 };
             }else{
                 enrichment = {
@@ -62,7 +65,7 @@ app.post('/api/url', (request, response) => {
             }
 
             return {
-                'id':md5(result.url.href),
+                'id':md5(result.response.data),
                 'name':result.url.hostname,
                 'data':result.url.href,
                 'type':'url',
@@ -70,11 +73,38 @@ app.post('/api/url', (request, response) => {
             };
         });
 
-        response.json({
-            'success':true,
-            'submission_id':request.body.submission_id,
-            'artefacts':artefacts
-        });
+        //enrich url responses - get mime type of response
+        let promisedEnrichedArtefacts = [];
+        let file = tools.getToolByName('file');
+        file = tools.updateToolOption(file, 'i', true, true);
+        file = tools.updateToolOption(file, 'k', true, true);
+        for(let i in artefacts){
+            promisedEnrichedArtefacts.push(new Dispatcher(file, artefacts[i]).dispatchJob());
+        }
+
+        Promise.all(promisedEnrichedArtefacts)
+        .then((enrichedArtefacts) => {
+            let urlsWithMimeType = enrichedArtefacts.map((result) => {
+                result.artefact.enrichment.info.file_type = result.results.replace(/^[^:]+:\s+/g, "");
+                return result.artefact;
+            });
+
+            response.json({
+                'success':true,
+                'submission_id':request.body.submission_id,
+                'artefacts':urlsWithMimeType
+            });
+            response.send();
+        })
+        .catch((err) => {
+            console.log(err);
+            response.json({
+                'success':true,
+                'submission_id':request.body.submission_id,
+                'artefacts':artefacts
+            });
+            response.send();
+        });        
     })
     .catch((error) => {
 
@@ -90,7 +120,8 @@ app.post('/api/url', (request, response) => {
                         'info':{
                             'success':false,
                             'status':error.error.code
-                        }
+                        },
+                        'results':[]
                     }
                 }
             ]
@@ -102,8 +133,6 @@ app.post('/api/url', (request, response) => {
             'error':error,
             'artefacts':artefacts
         });
-    })
-    .finally(() => {
         response.send();
     });
 });
@@ -121,7 +150,8 @@ app.post('/api/file', (request, response) => {
                 'info':{
                     'size':request.body.files[i].size,
                     'file_type':null
-                }
+                },
+                'results':[]
             }
         });
     }
@@ -144,6 +174,7 @@ app.post('/api/file', (request, response) => {
             'artefacts':artefacts,
             'success':true
         });
+        response.send();
     })
     .catch((err) => {
         console.log(err);
@@ -152,7 +183,6 @@ app.post('/api/file', (request, response) => {
             'submission_id':request.body.submission_id,
             'err':err
         });
-    }).finally(() => {
         response.send();
     });
 });
@@ -167,7 +197,8 @@ app.post('/api/shuck', (request, response) => {
         response.json({
             'tool':tool.name,
             'artefact':null,
-            'result':help.output[1].toString('utf-8')
+            'result':help.output[1].toString('utf-8'),
+            'isHelp':true
         });
 
     }else{
@@ -191,7 +222,10 @@ app.post('/api/shuck', (request, response) => {
                         results[i].artefact.enrichment.info.created_by = tool.name;
                     }
                     let createdArtefacts = results.map((result) => {return result.artefact});
+                    let now = Date.now();
                     response.json({
+                        'id':md5(`${now}-${tool.name}-${artefact.id}`),
+                        'timestamp':now,
                         'tool':tool.name,
                         'artefact':artefact.id,
                         'result':stdout.results,
@@ -203,7 +237,10 @@ app.post('/api/shuck', (request, response) => {
                     response.send();
                 })
                 .catch((error) => {
+                    let now = Date.now();
                     response.json({
+                        'id':md5(`${now}-${tool.name}-${artefact.id}`),
+                        'timestamp':now,
                         'tool':tool.name,
                         'artefact':artefact.id,
                         'result':error,
@@ -213,7 +250,10 @@ app.post('/api/shuck', (request, response) => {
                     response.send();
                 });
             }else{
+                let now = Date.now();
                 response.json({
+                    'id':md5(`${now}-${tool.name}-${artefact.id}`),
+                    'timestamp':now,
                     'tool':tool.name,
                     'artefact':artefact.id,
                     'result':stdout.results,

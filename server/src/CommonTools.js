@@ -2,7 +2,8 @@ const commonTools = [
     {
         'name':'file',
         'tool_options':[
-            {'flag':'i','type':'boolean','selected':false, 'value':true}
+            {'flag':'i','type':'boolean','selected':false, 'value':true},
+            {'flag':'k','type':'boolean','selected':false, 'value':true}
         ]
     }
 ];
@@ -16,10 +17,11 @@ function getToolByName(name){
     return null;
 }
 
-function updateToolOption(tool, flag, newValue){
+function updateToolOption(tool, flag, newValue, selected){
     for(let i in tool.tool_options){
         if(tool.tool_options[i].flag === flag){
             tool.tool_options[i].value = newValue;
+            tool.tool_options[i].selected = selected;
         }
     }
     return tool;
