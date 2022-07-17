@@ -28,10 +28,6 @@ export class ArtefactContainer extends React.Component {
         if(artefact.type === 'url'){
             extendedText = <div className='SelectableExtended'>
                                 <div className='SelectableExtendedChild'>
-                                    <span className='SelectableExtendedChildTitle'>{'IP: '}</span>
-                                    Not Yet.
-                                </div>
-                                <div className='SelectableExtendedChild'>
                                     <span className='SelectableExtendedChildTitle'>{'Status: '}</span>
                                     { artefact.enrichment.info.status }
                                 </div>

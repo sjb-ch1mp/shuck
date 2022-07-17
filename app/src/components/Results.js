@@ -2,7 +2,10 @@ import React from 'react';
 
 //Style
 import './style/components.css';
+
+//Components
 import { Title } from './Title';
+import { ResultsContainer } from './ResultsContainer';
 
 export class Results extends React.Component {
 
@@ -10,9 +13,9 @@ export class Results extends React.Component {
         super(props);
         this.props = props;
 
-        this.renderResults = this.renderResults.bind(this);
+        //this.renderResults = this.renderResults.bind(this);
     }
-
+    /*
     renderResults(){
         let results = '';
         let numResults = this.props.results.length;
@@ -23,16 +26,23 @@ export class Results extends React.Component {
             }
         }
         return results;
-    }
+    }*/
 
     render () {
+        
         return <div className={'Results default-margins container-frame titled'}>
                 <Title title='RESULTS'/>
-                <textarea 
-                    className={'scrollable boxed-in terminal-font'} 
-                    spellCheck={ false }
-                    value={ this.renderResults() }    
-                />   
+                {
+                    this.props.selectedArtefact ? 
+                    <ResultsContainer
+                        results={ this.props.selectedArtefact }
+                    /> : 
+                    <textarea 
+                        className={'scrollable boxed-in terminal-font'} 
+                        spellCheck={ false }
+                        value={ /*this.renderResults()*/this.props.results.length > 0 ? this.props.results[this.props.results.length - 1].result : ''}    
+                    />
+                }
                 </div>;
     }
 }

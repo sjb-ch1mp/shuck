@@ -38,8 +38,8 @@ export class Thinker extends React.Component {
         return <div className={'Thinker'}>
             <img 
                 id='thinker' 
-                src={ (this.props.waitingForSubmission) ? thinker_thinking : this.state.img } 
-                className={ (this.props.waitingForSubmission) ? 'thinker-thinking' : this.state.animate }
+                src={ (this.props.waitingForSubmission) ? thinker_thinking : ([thinker_mouseover].includes(this.state.img) ? this.state.img : thinker)/*this.state.img*/ } 
+                className={ (this.props.waitingForSubmission) ? 'thinker-thinking' : (['thinker-mouseover','thinker-mouseleave'].includes(this.state.animate) ? this.state.animate : 'thinker') /*this.state.animate*/ }
                 onMouseOver={ () => { (!this.props.waitingForSubmission) ? this.wakeUp() : this.think() }}
                 onMouseLeave={ () => { (!this.props.waitingForSubmission) ? this.goBackToSleep() : this.think() }}
                 onClick={ () => {(!this.props.waitingForSubmission) ? this.props.getShuckin() : this.think()} }

@@ -13,6 +13,9 @@ import { Results }      from "./Results.js";
 import { Toolbox }      from "./Toolbox.js";
 import Tools            from "./Tools";
 
+//Resources
+import thinker          from '../img/thinking_still.png';
+
 export class Workspace extends React.Component{
 
     constructor(props){
@@ -465,10 +468,8 @@ export class Workspace extends React.Component{
         }
 
         let updatedArtefactPackage = this.updateArtefactPackage(response.data.created_artefacts, true);
-        console.log(`updatedArtefactPackage`);
-        console.log(updatedArtefactPackage);
 
-        results.push({
+        results.push({          
           'timestamp':Date.now(),
           'tool':response.data.tool,
           'artefact':response.data.artefact ? `${this.getArtefactById(response.data.artefact).name} (${response.data.artefact})` : null,
@@ -476,10 +477,7 @@ export class Workspace extends React.Component{
           'success':response.data.success
         });
 
-        this.setState({'results':results, 'artefactPackage':updatedArtefactPackage}, () => {
-          console.log(`this.state.artefactPackage has been set to:`);
-          console.log(this.state.artefactPackage);
-        });
+        this.setState({'results':results, 'artefactPackage':updatedArtefactPackage});
       }).catch((error) => {
         console.log(error);
         this.toggleNotification("Something went wrong. Please try again.", 'error');
@@ -510,6 +508,7 @@ export class Workspace extends React.Component{
               updateSelectedToolOption={ this.updateSelectedToolOption }
             />
             <Results
+              selectedArtefact={ this.getArtefactById(this.state.selectedArtefact) }
               results={ this.state.results }
             />
         </div>;
