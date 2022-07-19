@@ -210,8 +210,11 @@ export class ResultsContainer extends React.Component {
         );
 
         //Then add all results (DECREMENTING - LAST PRESENTED AT TOP!!)
+        console.log(`Artefact has ${artefact.enrichment.results.length} results. Rendering...`);
        for(let i=artefact.enrichment.results.length - 1; i > -1; i--){
            let result = artefact.enrichment.results[i];
+           console.log(`Current result:`);
+           console.log(result);
            renderedResults.push(
                <Selectable
                 selected={ this.state.selected == result.id }
