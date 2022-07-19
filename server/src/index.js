@@ -91,7 +91,6 @@ app.post('/api/url', (request, response) => {
         //enrich url responses - get mime type of response
         let promisedEnrichedArtefacts = [];
         let file = tools.getToolByName('file');
-        file = tools.updateToolOption(file, 'i', true, true);
         for(let i in artefacts){
             promisedEnrichedArtefacts.push(new Dispatcher(file, artefacts[i]).dispatchJob());
         }

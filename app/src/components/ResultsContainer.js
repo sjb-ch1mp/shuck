@@ -72,7 +72,7 @@ export class ResultsContainer extends React.Component {
                 {
                     (artefact.enrichment.info.file_type) ? 
                     <div className='SelectableExtendedChild'>
-                        <span className='SelectableExtendedChildTitle'>{'> Mime Type: '}</span>
+                        <span className='SelectableExtendedChildTitle'>{'> File Type: '}</span>
                         { artefact.enrichment.info.file_type }        
                     </div>
                     : null
