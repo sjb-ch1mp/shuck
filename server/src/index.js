@@ -54,18 +54,14 @@ app.post('/api/url', (request, response) => {
                     headers = headers + `${i}: ${typeof header == 'object' ? JSON.stringify(header): header}\n\n`;
                 }
 
-                console.log(result.response.data.constructor.name);
-                console.log(`Response.data is ${typeof result.response.data}`);
-
-                let body = base64decoder.encode(str2ab(result.response.data));
+                let body = base64decoder.encode(result.response.data);
 
                 enrichment = {
                     'info':{
                         'success':true,
                         'status':result.response.status,
                         'headers':headers,
-                        'body_encoded':body,
-                        'body_raw':result.response.data,
+                        'body':body,
                         'file_type':null
                     },
                     'results':[]
