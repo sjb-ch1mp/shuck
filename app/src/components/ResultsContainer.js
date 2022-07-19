@@ -102,8 +102,8 @@ export class ResultsContainer extends React.Component {
                     <div className='SelectableExtendedChild'>
                         <div className='SelectableExtendedChildTitle'>{ `> Body:` }</div>
                         <div className='ResultsMiniButtonContainer'>
-                            <button className="ResultsMiniButton">UTF8</button>
-                            <button className="ResultsMiniButton">BASE64</button>
+                            <button className="ResultsMiniButton" onClick={() => {this.setState({'encoding':'utf8'})}}>UTF8</button>
+                            <button className="ResultsMiniButton" onClick={() => {this.setState({'encoding':'base64'})}}>BASE64</button>
                         </div>
                         <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
