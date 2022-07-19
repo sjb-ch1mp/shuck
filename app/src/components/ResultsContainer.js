@@ -144,8 +144,14 @@ export class ResultsContainer extends React.Component {
                     <div className='SelectableExtendedChildTitle'>{ `> Data:` }</div>
                     <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
                         disabled={ true }
-                        value={ artefact.data }
+                        value={ decode(artefact.data) }
                     />
+                </div>
+                <div className='SelectableExtendedChild'>
+                    <button 
+                        className={ 'ResultsDownloadButton' }
+                        onClick={ () => { this.downloadArtefactContent() } }
+                    >Download</button>
                 </div>
             </div>;
         }

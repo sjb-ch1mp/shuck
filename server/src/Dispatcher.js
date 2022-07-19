@@ -159,7 +159,7 @@ let Dispatcher = class{
                     const executeTool = exec(`${this.exe} ${options.join(" ")}`, (error, stdout, stderr) => {
 
                         //After execution - delete the temporary file
-                        this.deleteArtefact(this.artefactOnDisc);
+                        //this.deleteArtefact(this.artefactOnDisc); //FIXME!!!!!!
 
                         if(error){
                             console.log('There was an error executing the file');
