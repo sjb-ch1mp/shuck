@@ -69,33 +69,85 @@ export class ResultsContainer extends React.Component {
                     <span className='SelectableExtendedChildTitle'>{'> Status: '}</span>
                     { artefact.enrichment.info.status }
                 </div>
-                <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'> Mime Type: '}</span>
-                    { artefact.enrichment.info.file_type }        
-                </div>
-                <div className='SelectableExtendedChild'>
-                    <div className='SelectableExtendedChildTitle'>{ `> Headers` }</div>
-                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
-                        disabled={ true }
-                        value={ artefact.enrichment.info.headers }
-                    />
-                </div>
-                <div className='SelectableExtendedChild'>
-                    <div className='SelectableExtendedChildTitle'>{ `> Body` }</div>
-                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
-                        disabled={ true }
-                        value={ artefact.enrichment.info.body_raw }
-                    />
-                </div>
-                <div className='SelectableExtendedChild'>
-                    <button 
-                        className={ 'ResultsDownloadButton' }
-                        onClick={ () => { this.downloadArtefactContent() } }
-                    >Download</button>
-                </div>
+                {
+                    (artefact.enrichment.info.file_type) ? 
+                    <div className='SelectableExtendedChild'>
+                        <span className='SelectableExtendedChildTitle'>{'> Mime Type: '}</span>
+                        { artefact.enrichment.info.file_type }        
+                    </div>
+                    : null
+                }
+                {
+                    (artefact.enrichment.info.body_raw) ? 
+                    <div className='SelectableExtendedChild'>
+                        <span className='SelectableExtendedChildTitle'>{'> Size: '}</span>
+                        { artefact.enrichment.info.body_raw.length }        
+                    </div>
+                    : null
+                }
+                {
+                    (artefact.enrichment.info.headers) ? 
+                    <div className='SelectableExtendedChild'>
+                        <div className='SelectableExtendedChildTitle'>{ `> Headers:` }</div>
+                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                            disabled={ true }
+                            value={ artefact.enrichment.info.headers }
+                        />
+                    </div>
+                    : null
+                }
+                {
+                    (artefact.enrichment.info.body_raw) ? 
+                    <div className='SelectableExtendedChild'>
+                        <div className='SelectableExtendedChildTitle'>{ `> Body:` }</div>
+                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                            disabled={ true }
+                            value={ artefact.enrichment.info.body_raw }
+                        />
+                    </div>    
+                    : (artefact.enrichment.info.error) ? 
+                    <div className='SelectableExtendedChild'>
+                        <div className='SelectableExtendedChildTitle'>{ `> Error:` }</div>
+                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                            disabled={ true }
+                            value={ artefact.enrichment.info.error }
+                        />
+                    </div>    
+                    : null
+                }
+                {
+                    (artefact.enrichment.info.body_raw) ? 
+                    <div className='SelectableExtendedChild'>
+                        <button 
+                            className={ 'ResultsDownloadButton' }
+                            onClick={ () => { this.downloadArtefactContent() } }
+                        >Download</button>
+                    </div>
+                    : null
+                }
             </div>;
         }else{
-
+            return <div className={ 'SelectableExtended' }>
+                <div className='SelectableExtendedChild'>
+                    <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
+                    { artefact.id }
+                </div>
+                <div className='SelectableExtendedChild'>
+                    <span className='SelectableExtendedChildTitle'>{'> File Type: '}</span>
+                    { artefact.enrichment.info.file_type }
+                </div>
+                <div className='SelectableExtendedChild'>
+                    <span className='SelectableExtendedChildTitle'>{'> File Size: '}</span>
+                    { artefact.enrichment.info.size }
+                </div>
+                <div className='SelectableExtendedChild'>
+                    <div className='SelectableExtendedChildTitle'>{ `> Data:` }</div>
+                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                        disabled={ true }
+                        value={ artefact.data }
+                    />
+                </div>
+            </div>;
         }
     }
 
