@@ -149,7 +149,7 @@ let Dispatcher = class{
                 file = new DataView(base64decoder.decode(this.artefact.enrichment.info.body_encoded));
             }
 
-            fs.writeFile(this.artefactOnDisc, file, 'utf8', (error) => {
+            fs.writeFile(this.artefactOnDisc, file, (error) => {
                 if(error){
                     console.log(`There was an error when saving the file: ${error}`);
                 }else{
