@@ -165,7 +165,7 @@ export class Workspace extends React.Component{
 
     parseAndSaveURLs(raw){
         //Regex adapted from: https://regexr.com/39nr7
-        let urls = raw.match(/http(s)?:\/\/(www\.)?[a-zA-Z0-9@:%\._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+\.~#?&\/=]*)/g);
+        let urls = raw.match(/http(s)?:\/\/(www\.)?[a-zA-Z0-9@:%\._\+~#=-]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+\.~#?&\/=]*)/g);
         let unique_urls = [];
         for(let i in urls){
           if(!(unique_urls.includes(urls[i]))){
