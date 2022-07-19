@@ -333,9 +333,9 @@ export class Workspace extends React.Component{
 
     addResultsToArtefact(artefactPackage, result){
       console.log(`Adding result ${result.id} to artefact ${result.artefact}`);
-      for(let i in artefactPackage){
-        if(artefactPackage[i].id === result.artefact){
-          artefactPackage[i].enrichment.results.push({
+      for(let i in artefactPackage.artefacts){
+        if(artefactPackage.artefacts[i].id === result.artefact){
+          artefactPackage.artefacts[i].enrichment.results.push({
             'id':result.id,
             'timestamp':result.timestamp,
             'tool':result.tool,
