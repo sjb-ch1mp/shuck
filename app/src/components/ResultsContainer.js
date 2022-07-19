@@ -97,12 +97,12 @@ export class ResultsContainer extends React.Component {
                     : null
                 }
                 {
-                    (artefact.enrichment.info.body_raw) ? 
+                    (artefact.enrichment.info.body) ? 
                     <div className='SelectableExtendedChild'>
                         <div className='SelectableExtendedChildTitle'>{ `> Body:` }</div>
                         <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
-                            value={ artefact.enrichment.info.body_raw }
+                            value={ decode(artefact.enrichment.info.body) }
                         />
                     </div>    
                     : (artefact.enrichment.info.error) ? 
@@ -116,7 +116,7 @@ export class ResultsContainer extends React.Component {
                     : null
                 }
                 {
-                    (artefact.enrichment.info.body_raw) ? 
+                    (artefact.enrichment.info.body) ? 
                     <div className='SelectableExtendedChild'>
                         <button 
                             className={ 'ResultsDownloadButton' }
@@ -161,7 +161,7 @@ export class ResultsContainer extends React.Component {
         let fileName = this.props.selectedArtefact.id;
         let content = [
             (this.props.selectedArtefact.type === 'url') ? 
-            this.props.selectedArtefact.enrichment.info.body_raw : 
+            decode(this.props.selectedArtefact.enrichment.info.body) : 
             decode(this.props.selectedArtefact.data)
         ];
         let blob = new Blob(content, {'type':'application/octet-stream'});
