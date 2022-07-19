@@ -60,12 +60,8 @@ export class ResultsContainer extends React.Component {
         if(artefact.type === 'url'){
             return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
-                    { artefact.id }
-                </div>
-                <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'> Hostname: '}</span>
-                    { artefact.name }
+                    <span className='SelectableExtendedChildTitle'>{'> HREF: '}</span>
+                    { artefact.data }
                 </div>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> Status: '}</span>
@@ -135,13 +131,13 @@ export class ResultsContainer extends React.Component {
                     </div>
                     : null
                 }
-            </div>;
-        }else{
-            return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
                     { artefact.id }
                 </div>
+            </div>;
+        }else{
+            return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> File Type: '}</span>
                     { artefact.enrichment.info.file_type }
@@ -152,9 +148,17 @@ export class ResultsContainer extends React.Component {
                 </div>
                 <div className='SelectableExtendedChild'>
                     <div className='SelectableExtendedChildTitle'>{ `> Data:` }</div>
+                    <div className='ResultsMiniButtonContainer'>
+                        <button className="ResultsMiniButton" onClick={() => {this.setState({'encoding':'utf8'})}}>UTF8</button>
+                        <button className="ResultsMiniButton" onClick={() => {this.setState({'encoding':'base64'})}}>BASE64</button>
+                    </div>
                     <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                         disabled={ true }
-                        value={ decode(artefact.data) }
+                        value={ 
+                                (this.state.encoding == 'utf8') ? 
+                                new TextDecoder('utf-8').decode(decode(artefact.data)) :
+                                artefact.data
+                            }
                     />
                 </div>
                 <div className='SelectableExtendedChild'>
@@ -162,6 +166,10 @@ export class ResultsContainer extends React.Component {
                         className={ 'ResultsDownloadButton' }
                         onClick={ () => { this.downloadArtefactContent() } }
                     >Download</button>
+                </div>
+                <div className='SelectableExtendedChild'>
+                    <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
+                    { artefact.id }
                 </div>
             </div>;
         }
@@ -201,7 +209,7 @@ export class ResultsContainer extends React.Component {
                 selected={ this.state.selected == artefact.id }
                 overrideClass={ 'SelectableResult' }
                 waitingForSubmission={ this.props.waitingForSubmission }
-                selectableTitle={ artefact.type == 'url' ? artefact.data : artefact.name }
+                selectableTitle={ `[DETAILS] ${artefact.name}` }
                 selectableExtended={ this.renderArtefactDetails(artefact) }
                 selectableKey={ artefact.id }
                 highlightSelected={ this.highlightSelectedResults}
