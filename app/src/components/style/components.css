@@ -378,6 +378,16 @@ input {
     padding: 10px;
 }
 
+.ResultsMiniButton {
+    font-size:10px;
+    font-family: 'VT323';
+    background-color: #FF7585;
+    color: black;
+    cursor: pointer;
+    border: 2px black solid;
+    border-radius: 1px;
+}
+
 .SelectableResult {
     border: 1px #FF7585/*#A0CC82*/ solid;
     border-radius: 5px;

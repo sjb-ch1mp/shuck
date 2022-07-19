@@ -21,7 +21,8 @@ export class ResultsContainer extends React.Component {
 
         this.state = {
             'selected':this.props.selectedOnRender,
-            'download_img':download
+            'download_img':download,
+            'encoding':'utf8'
         }
 
         this.highlightSelectedResults = this.highlightSelectedResults.bind(this);
@@ -99,10 +100,17 @@ export class ResultsContainer extends React.Component {
                 {
                     (artefact.enrichment.info.body) ? 
                     <div className='SelectableExtendedChild'>
-                        <div className='SelectableExtendedChildTitle'>{ `> Body:` }</div>
+                        <div className='SelectableExtendedChildTitle'>{ `> Body:` }
+                            <button className="ResultsMiniButton">UTF8</button>
+                            <button className="ResultsMiniButton">BASE64</button>
+                        </div>
                         <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
-                            value={ decode(artefact.enrichment.info.body).toString('utf-8') }
+                            value={ 
+                                (this.state.encoding == 'utf8') ? 
+                                new TextDecoder('utf-8').decode(decode(artefact.enrichment.info.body)) :
+                                artefact.enrichment.info.body
+                            }
                         />
                     </div>    
                     : (artefact.enrichment.info.error) ? 
