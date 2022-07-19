@@ -8,7 +8,8 @@ function resolveURL (url) {
             'headers':{
                 'User-Agent':commonUserAgents.getRandomUserAgent()
             },
-            'maxRedirects':0
+            'maxRedirects':0,
+            'responseType':'arraybuffer'
         };
         if(/https/.test(url.protocol)){
             //Treat as HTTPs

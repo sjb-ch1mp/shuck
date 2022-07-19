@@ -55,6 +55,7 @@ app.post('/api/url', (request, response) => {
                 }
 
                 console.log(result.response.data.constructor.name);
+                console.log(`Response.data is ${typeof result.response.data}`);
 
                 let body = base64decoder.encode(str2ab(result.response.data));
 
