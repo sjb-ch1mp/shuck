@@ -57,7 +57,8 @@ function createArtefactsFromFiles(currentPath, fileNames){
                                                 'info':{
                                                     'size':data.length,
                                                     'file_type':null
-                                                }
+                                                },
+                                                'results':[]
                                             }
                                         }
                                     );
