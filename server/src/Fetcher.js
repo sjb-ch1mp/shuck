@@ -4,10 +4,12 @@ const commonUserAgents = require('./CommonUserAgents.js');
 function resolveURL (url) {
     return new Promise((resolve, reject) => {
         let options = {
+            'method':'get',
             'headers':{
                 'User-Agent':commonUserAgents.getRandomUserAgent()
             },
-            'maxRedirects':0
+            'maxRedirects':0,
+            'responseType':'stream'
         };
         if(/https/.test(url.protocol)){
             //Treat as HTTPs
