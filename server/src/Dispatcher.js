@@ -49,7 +49,7 @@ let Dispatcher = class{
             this.artefact = artefact;   
         }
 
-        this.saveTempFile = this.saveTempFile.bind(this);
+        //this.saveTempFile = this.saveTempFile.bind(this);
         this.dispatchJob = this.dispatchJob.bind(this);
         this.deleteArtefact = this.deleteArtefact.bind(this);
         this.cleanOptionValue = this.cleanOptionValue.bind(this);
@@ -57,7 +57,7 @@ let Dispatcher = class{
         this.getToolHelp = this.getToolHelp.bind(this);
         this.prepareOptions = this.prepareOptions.bind(this);
     }
-
+    /*
     saveTempFile(){
         let file = null;
         if(this.artefact.type === 'file'){
@@ -75,6 +75,7 @@ let Dispatcher = class{
             
         });
     }
+    */
 
     getToolHelp(){
         let exeResults = spawnSync(this.exe, [`${(this.helpFlag.length > 1) ? '--' : '-'}${this.helpFlag}`]);
@@ -145,7 +146,7 @@ let Dispatcher = class{
                 file = new DataView(base64decoder.decode(this.artefact.data));
             }else{
                 //artefact is a URL - use the axios results
-                file = this.artefact.enrichment.info.body_raw;
+                file = new DataView(base64decoder.decode(this.artefact.enrichment.info.body));
             }
 
             fs.writeFile(this.artefactOnDisc, file, (error) => {
