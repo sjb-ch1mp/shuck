@@ -84,6 +84,10 @@
   -ms-overflow-style: none;*/
 }
 
+.resizable {
+    resize: vertical !important;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     cursor: pointer;
@@ -357,7 +361,7 @@ input {
     background-color: transparent;
     font-size: 13px;
     margin-top: 10px; 
-    border-left: 3px #A0CC82 double;
+    border-left: 5px #A0CC82 double;
     min-height: 250px;
 }
 

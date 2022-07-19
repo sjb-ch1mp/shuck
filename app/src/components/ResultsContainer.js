@@ -89,7 +89,7 @@ export class ResultsContainer extends React.Component {
                     (artefact.enrichment.info.headers) ? 
                     <div className='SelectableExtendedChild'>
                         <div className='SelectableExtendedChildTitle'>{ `> Headers:` }</div>
-                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                        <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
                             value={ artefact.enrichment.info.headers }
                         />
@@ -100,7 +100,7 @@ export class ResultsContainer extends React.Component {
                     (artefact.enrichment.info.body_raw) ? 
                     <div className='SelectableExtendedChild'>
                         <div className='SelectableExtendedChildTitle'>{ `> Body:` }</div>
-                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                        <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
                             value={ artefact.enrichment.info.body_raw }
                         />
@@ -108,7 +108,7 @@ export class ResultsContainer extends React.Component {
                     : (artefact.enrichment.info.error) ? 
                     <div className='SelectableExtendedChild'>
                         <div className='SelectableExtendedChildTitle'>{ `> Error:` }</div>
-                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                        <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
                             value={ artefact.enrichment.info.error }
                         />
@@ -142,7 +142,7 @@ export class ResultsContainer extends React.Component {
                 </div>
                 <div className='SelectableExtendedChild'>
                     <div className='SelectableExtendedChildTitle'>{ `> Data:` }</div>
-                    <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                    <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                         disabled={ true }
                         value={ decode(artefact.data) }
                     />
