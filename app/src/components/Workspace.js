@@ -35,7 +35,8 @@ export class Workspace extends React.Component{
             'tools':Tools(),
             'results':'',
             'selectedResults':'',
-            'showHelp':false
+            'showHelp':false,
+            'newResult':null
         };
 
         this.reset = this.reset.bind(this);
@@ -58,6 +59,7 @@ export class Workspace extends React.Component{
         this.updateSelectedToolOption = this.updateSelectedToolOption.bind(this);
         this.shuckIt = this.shuckIt.bind(this);
         this.addResultsToArtefact = this.addResultsToArtefact.bind(this);
+        this.toggleSelectedResult = this.toggleSelectedResult.bind(this);
     }
 
     welcomeMessage(){
@@ -66,6 +68,10 @@ export class Workspace extends React.Component{
       'To submit URLs, paste them into this INPUT portal. Shuck will automatically parse any text entered into this portal and extract valid URLs for you.\n\n' + 
       'To submit files, simply drag and drop them into this INPUT portal.\n\n' + 
       'Please note that Shuck will only accept up to 10 URLs at a time, and up to 35MB worth of files.';
+    }
+
+    toggleSelectedResult(){
+      this.setState({'newResult':null});
     }
 
     updateSelectedToolOption(flag, changeType, value) {
@@ -496,7 +502,7 @@ export class Workspace extends React.Component{
           console.log(updatedArtefactPackage);
 
           //Save the artefactPackage
-          this.setState({'artefactPackage':updatedArtefactPackage,'selectedResults':response.data.id,'showHelp':false});
+          this.setState({'artefactPackage':updatedArtefactPackage,'selectedResults':response.data.id, 'newResult':response.data.id, 'showHelp':false});
         }
       }).catch((error) => {
         console.log(error);
@@ -533,6 +539,8 @@ export class Workspace extends React.Component{
               results={ this.state.results }
               selectedOnRender={ this.state.selectedResults }
               showHelp={ this.state.showHelp }
+              toggleSelectedResult={ this.toggleSelectedResult }
+              newResult={ this.state.newResult }
             />
         </div>;
     }

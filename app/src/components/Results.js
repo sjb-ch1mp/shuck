@@ -27,6 +27,8 @@ export class Results extends React.Component {
                     <ResultsContainer
                         selectedArtefact={ this.props.selectedArtefact }
                         selectedOnRender={ this.props.selectedOnRender }
+                        toggleSelectedResult={ this.props.toggleSelectedResult }
+                        newResult={ this.props.newResult }
                     />
                 }
                 </div>;
