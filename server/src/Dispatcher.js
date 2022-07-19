@@ -146,7 +146,7 @@ let Dispatcher = class{
             }else{
                 //artefact is a URL - use the axios results
                 console.log(base64decoder.decode(this.artefact.enrichment.info.body_encoded));
-                file = new DataView(base64decoder.decode(this.artefact.enrichment.info.body_encoded));
+                file = new DataView(base64decoder.decode(this.artefact.enrichment.info.body_raw));
             }
 
             fs.writeFile(this.artefactOnDisc, file, (error) => {
@@ -159,7 +159,7 @@ let Dispatcher = class{
                     const executeTool = exec(`${this.exe} ${options.join(" ")}`, (error, stdout, stderr) => {
 
                         //After execution - delete the temporary file
-                        //this.deleteArtefact(this.artefactOnDisc); //FIXME!!!!!!
+                        this.deleteArtefact(this.artefactOnDisc);
 
                         if(error){
                             console.log('There was an error executing the file');
