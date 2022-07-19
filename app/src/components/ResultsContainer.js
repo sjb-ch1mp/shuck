@@ -60,6 +60,10 @@ export class ResultsContainer extends React.Component {
         if(artefact.type === 'url'){
             return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
+                    <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
+                    { artefact.id }
+                </div>
+                <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> HREF: '}</span>
                     { artefact.data }
                 </div>
@@ -131,13 +135,13 @@ export class ResultsContainer extends React.Component {
                     </div>
                     : null
                 }
+            </div>;
+        }else{
+            return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
                     { artefact.id }
                 </div>
-            </div>;
-        }else{
-            return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> File Type: '}</span>
                     { artefact.enrichment.info.file_type }
@@ -166,10 +170,6 @@ export class ResultsContainer extends React.Component {
                         className={ 'ResultsDownloadButton' }
                         onClick={ () => { this.downloadArtefactContent() } }
                     >Download</button>
-                </div>
-                <div className='SelectableExtendedChild'>
-                    <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
-                    { artefact.id }
                 </div>
             </div>;
         }

@@ -213,6 +213,7 @@ app.post('/api/shuck', (request, response) => {
 
     }else{
         let artefact = request.body.artefact;
+        let timestamp = Date.now();
 
         new Dispatcher(tool, artefact).dispatchJob()
         .then((stdout) => {
@@ -233,10 +234,9 @@ app.post('/api/shuck', (request, response) => {
                         results[i].artefact.enrichment.info.created_by = tool.name;
                     }
                     let createdArtefacts = results.map((result) => {return result.artefact});
-                    let now = Date.now();
                     response.json({
-                        'id':md5(`${now}-${tool.name}-${artefact.id}`),
-                        'timestamp':now,
+                        'id':md5(`${timestamp}-${tool.name}-${artefact.id}`),
+                        'timestamp':timestamp,
                         'tool':tool.name,
                         'artefact':artefact.id,
                         'result':stdout.results,
@@ -249,10 +249,9 @@ app.post('/api/shuck', (request, response) => {
                 })
                 .catch((error) => {
                     console.log('Failed to create artefacts.');
-                    let now = Date.now();
                     response.json({
-                        'id':md5(`${now}-${tool.name}-${artefact.id}`),
-                        'timestamp':now,
+                        'id':md5(`${timestamp}-${tool.name}-${artefact.id}`),
+                        'timestamp':timestamp,
                         'tool':tool.name,
                         'artefact':artefact.id,
                         'result':error,
@@ -263,10 +262,10 @@ app.post('/api/shuck', (request, response) => {
                 });
             }else{
                 console.log('No created artefacts.');
-                let now = Date.now();
+                
                 response.json({
-                    'id':md5(`${now}-${tool.name}-${artefact.id}`),
-                    'timestamp':now,
+                    'id':md5(`${timestamp}-${tool.name}-${artefact.id}`),
+                    'timestamp':timestamp,
                     'tool':tool.name,
                     'artefact':artefact.id,
                     'result':stdout.results,
@@ -278,6 +277,8 @@ app.post('/api/shuck', (request, response) => {
         })
         .catch((stderr) => {
             response.json({
+                'id':md5(`${timestamp}-${tool.name}-${artefact.id}`),
+                'timestamp':timestamp,
                 'tool':tool.name,
                 'artefact':artefact.id,
                 'result':stderr.results,

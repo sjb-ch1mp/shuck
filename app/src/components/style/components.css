@@ -395,7 +395,7 @@ input {
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
-    padding: 5px;
+    padding-top: 10px;
 }
 
 .SelectableResult {
