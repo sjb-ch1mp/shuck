@@ -102,7 +102,7 @@ export class ResultsContainer extends React.Component {
                         <div className='SelectableExtendedChildTitle'>{ `> Body:` }</div>
                         <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
-                            value={ decode(artefact.enrichment.info.body) }
+                            value={ decode(artefact.enrichment.info.body).toString('utf-8') }
                         />
                     </div>    
                     : (artefact.enrichment.info.error) ? 
