@@ -61,21 +61,21 @@ export class ResultsContainer extends React.Component {
             return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
-                    { artefact.id }
+                    <span className='terminal-font'>{ artefact.id }</span>
                 </div>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> HREF: '}</span>
-                    { artefact.data }
+                    <span className='terminal-font'>{ artefact.data }</span>
                 </div>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> Status: '}</span>
-                    { artefact.enrichment.info.status }
+                    <span className='terminal-font'>{ artefact.enrichment.info.status }</span>
                 </div>
                 {
                     (artefact.enrichment.info.file_type) ? 
                     <div className='SelectableExtendedChild'>
                         <span className='SelectableExtendedChildTitle'>{'> File Type: '}</span>
-                        { artefact.enrichment.info.file_type }        
+                        <span className='terminal-font'>{ artefact.enrichment.info.file_type }</span>
                     </div>
                     : null
                 }
@@ -83,7 +83,7 @@ export class ResultsContainer extends React.Component {
                     (artefact.enrichment.info.body_raw) ? 
                     <div className='SelectableExtendedChild'>
                         <span className='SelectableExtendedChildTitle'>{'> Size: '}</span>
-                        { artefact.enrichment.info.body_raw.length }        
+                        <span className='terminal-font'>{ artefact.enrichment.info.body_raw.length }</span>
                     </div>
                     : null
                 }
@@ -140,15 +140,15 @@ export class ResultsContainer extends React.Component {
             return <div className={ 'SelectableExtended' }>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> ShuckID: '}</span>
-                    { artefact.id }
+                    <span className='terminal-font'>{ artefact.id }</span>
                 </div>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> File Type: '}</span>
-                    { artefact.enrichment.info.file_type }
+                    <span className='terminal-font'>{ artefact.enrichment.info.file_type }</span>
                 </div>
                 <div className='SelectableExtendedChild'>
                     <span className='SelectableExtendedChildTitle'>{'> File Size: '}</span>
-                    { artefact.enrichment.info.size }
+                    <span className='terminal-font'>{ artefact.enrichment.info.size }</span>
                 </div>
                 <div className='SelectableExtendedChild'>
                     <div className='SelectableExtendedChildTitle'>{ `> Data:` }</div>
