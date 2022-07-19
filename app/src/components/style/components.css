@@ -361,8 +361,10 @@ input {
     background-color: transparent;
     font-size: 13px;
     margin-top: 10px; 
-    border-left: 5px #A0CC82 double;
+    border-left: 8px #A0CC82 double;
     border-bottom: 2px #A0CC82 solid;
+    border-right: 2px #A0CC82 solid;
+    border-top: 2px #A0CC82 solid;
     min-height: 100px;
 
 }

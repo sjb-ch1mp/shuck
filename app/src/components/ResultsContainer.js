@@ -44,10 +44,11 @@ export class ResultsContainer extends React.Component {
     }
 
     renderResultsExtended(result){
+        console.log(`rendering result: ${result}`);
         return <div className={ 'SelectableExtended' }>
             <div className='SelectableExtendedChild'>
                 <div className='SelectableExtendedChildTitle'>{ `> Results` }</div>
-                        <textarea className={'ResultsTextArea boxed-in scrollable terminal-font'}
+                        <textarea className={'ResultsTextArea boxed-in scrollable resizable terminal-font'}
                             disabled={ true }
                             value={ result }
                         />
