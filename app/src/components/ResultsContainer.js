@@ -220,7 +220,7 @@ export class ResultsContainer extends React.Component {
                 selected={ this.state.selected == result.id }
                 overrideClass={ 'SelectableResult' }
                 waitingForSubmission={ this.props.waitingForSubmission }
-                selectableTitle={ `[${new Date(result.timestamp * 1000).toLocaleString()}] ${result.tool}` }
+                selectableTitle={ `[${result.timestamp}] ${result.tool}` }
                 selectableExtended={ this.renderResultsExtended(result.result) }
                 selectableKey={ result.id }
                 highlightSelected={ this.highlightSelectedResults }
