@@ -100,7 +100,8 @@ export class ResultsContainer extends React.Component {
                 {
                     (artefact.enrichment.info.body) ? 
                     <div className='SelectableExtendedChild'>
-                        <div className='SelectableExtendedChildTitle'>{ `> Body:` }
+                        <div className='SelectableExtendedChildTitle'>{ `> Body:` }</div>
+                        <div className='ResultsMiniButtonContainer'>
                             <button className="ResultsMiniButton">UTF8</button>
                             <button className="ResultsMiniButton">BASE64</button>
                         </div>

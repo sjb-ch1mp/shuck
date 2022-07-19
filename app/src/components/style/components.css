@@ -379,13 +379,20 @@ input {
 }
 
 .ResultsMiniButton {
-    font-size:10px;
+    font-size: 14px;
     font-family: 'VT323';
     background-color: #FF7585;
     color: black;
     cursor: pointer;
     border: 2px black solid;
-    border-radius: 1px;
+    border-radius: 2px;
+    margin-left: 10px;
+}
+
+.ResultsMiniButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
 }
 
 .SelectableResult {
