@@ -26,7 +26,7 @@ function resolveURL (url) {
             });
         })
         .catch((error) => {
-            if(/^[0-9]{3}$/.test(error.response.status)){
+            if(error.response && error.response.status && /^[0-9]{3}$/.test(error.response.status)){
                 resolve({
                     'url':url,
                     'success':true,
