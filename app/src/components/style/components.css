@@ -362,7 +362,9 @@ input {
     font-size: 13px;
     margin-top: 10px; 
     border-left: 5px #A0CC82 double;
-    min-height: 250px;
+    border-bottom: 2px #A0CC82 solid;
+    min-height: 100px;
+
 }
 
 .ResultsDownloadButton {
