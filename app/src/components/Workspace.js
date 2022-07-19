@@ -493,6 +493,7 @@ export class Workspace extends React.Component{
           //Add the results to the appropriate artefact (by id)
           this.addResultsToArtefact(updatedArtefactPackage, response.data);
           console.log('Updated results in artefact');
+          console.log(updatedArtefactPackage);
 
           //Save the artefactPackage
           this.setState({'artefactPackage':updatedArtefactPackage,'selectedResults':response.data.id,'showHelp':false});
