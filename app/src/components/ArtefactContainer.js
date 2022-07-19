@@ -30,19 +30,12 @@ export class ArtefactContainer extends React.Component {
                             </div>
         }else{
             extendedText = <div className='SelectableExtended'>
-                                <div className='SelectableExtendedChild'>
-                                    <span className='SelectableExtendedChildTitle'>{'File Type: '}</span>
-                                    { artefact.enrichment.info.file_type }
-                                </div>
                                 {artefact.enrichment.info.created_by ? 
                                     <div className='SelectableExtendedChild'>
                                         <span className='SelectableExtendedChildTitle'>{'Created By: '}</span>
                                         { artefact.enrichment.info.created_by}
                                     </div> : 
                                 ''}
-                                <div className='SelectableExtendedChild'>
-                                    <span className='SelectableExtendedChildTitle'>{'ShuckID: '}</span>
-                                    { artefact.id }</div>
                             </div>
         }
         return extendedText;
