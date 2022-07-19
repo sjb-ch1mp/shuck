@@ -20,7 +20,7 @@ export class ResultsContainer extends React.Component {
         this.props = props;
 
         this.state = {
-            'selected':this.props.selectedOnRender,
+            'selected':null,
             'download_img':download,
             'encoding':'utf8'
         }
@@ -206,7 +206,7 @@ export class ResultsContainer extends React.Component {
         //First add artefact.enrichment.info to the results
         renderedResults.push(
             <Selectable
-                selected={ this.state.selected == artefact.id }
+                selected={ (this.state.selected) ? this.state.selected == artefact.id : this.props.selectedOnRender == artefact.id }
                 overrideClass={ 'SelectableResult' }
                 waitingForSubmission={ this.props.waitingForSubmission }
                 selectableTitle={ `[DETAILS] ${artefact.name}` }
@@ -225,7 +225,7 @@ export class ResultsContainer extends React.Component {
            console.log(result);
            renderedResults.push(
                <Selectable
-                selected={ this.state.selected == result.id }
+                selected={ (this.state.selected) ? this.state.selected == result.id : this.props.selectedOnRender == result.id }
                 overrideClass={ 'SelectableResult' }
                 waitingForSubmission={ this.props.waitingForSubmission }
                 selectableTitle={ `[${result.timestamp}] ${result.tool}` }

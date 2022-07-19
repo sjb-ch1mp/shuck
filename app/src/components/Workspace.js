@@ -129,7 +129,7 @@ export class Workspace extends React.Component{
       let clickedArtefact = this.getArtefactById(id);
 
       if(this.state.selectedArtefact && this.state.selectedArtefact === clickedArtefact.id){
-        this.setState({'selectedArtefact':null, 'selectedResults':id, 'showHelp':false});
+        this.setState({'selectedArtefact':null, 'selectedResults':null, 'showHelp':false});
       }else{
         this.setState({'selectedArtefact':clickedArtefact.id, 'selectedResults':clickedArtefact.id, 'showHelp':false});
       }

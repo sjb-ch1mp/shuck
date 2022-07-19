@@ -21,6 +21,12 @@
     font-size: 18px;
 }
 
+.mini-terminal-font {
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    color: #A0CC82;
+    font-size: 13px;
+}
+
 .notifier-font {
     font-family: 'Ubuntu Mono', 'Courier New', monospace;
     /*color: transparent;*/
