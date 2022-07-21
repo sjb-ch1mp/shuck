@@ -186,6 +186,33 @@ input {
     cursor:pointer;
 }
 
+.NotifierButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+.NotifierPositiveButton {
+    background-color: transparent;
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    color: #A0CC82;
+    font-size: 18px;
+    border: 5px #A0CC82 double;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.NotifierNegativeButton {
+    background-color: transparent;
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    color: red;
+    font-size: 18px;
+    border: 5px red double;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .Portal {
     height: 50%;
     width: 100%;

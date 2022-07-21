@@ -1,4 +1,4 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 //Core
 const express = require('express');
@@ -36,12 +36,12 @@ app.get('/', (request, response) => {
 });
 
 app.post('/api/url', (request, response) => {
-
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
     let requests = [];
     for(let i=0; i<request.body.urls.length; i++){
         requests.push(fetcher.resolveURL(new URL(request.body.urls[i])));
     }
-
+    
     Promise.all(requests)
     .then((resolvedURLs) => {
         let artefacts = resolvedURLs.map((result) => {
@@ -113,6 +113,7 @@ app.post('/api/url', (request, response) => {
                 'submission_id':request.body.submission_id,
                 'artefacts':artefacts
             });
+            process.env.NODE_TLS_REJECT_UNAUTHORIZED = '1';
             response.send();
         });        
     })
@@ -143,6 +144,7 @@ app.post('/api/url', (request, response) => {
             'error':error,
             'artefacts':artefacts
         });
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = '1';
         response.send();
     });
 });

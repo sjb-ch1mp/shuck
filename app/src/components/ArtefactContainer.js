@@ -71,7 +71,7 @@ export class ArtefactContainer extends React.Component {
                     }}
                     onPaste={ (e) => {
                         if(!this.props.waitingForSubmission){
-                            this.props.submitURLs(e) 
+                            this.props.submitText(e) 
                         }
                     }}
                 >{ this.renderArtefacts() }</div>;

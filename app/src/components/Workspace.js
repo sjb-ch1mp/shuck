@@ -13,6 +13,8 @@ import { Results }      from "./Results.js";
 import { Toolbox }      from "./Toolbox.js";
 import Tools            from "./Tools";
 
+const Buffer = require('buffer').Buffer;
+
 export class Workspace extends React.Component{
 
     constructor(props){
@@ -21,6 +23,7 @@ export class Workspace extends React.Component{
 
 
         this.state = {
+            'clipboard':null,
             'message':this.welcomeMessage(),
             'submissionId':null,
             'submissionType':null,
@@ -40,7 +43,7 @@ export class Workspace extends React.Component{
         };
 
         this.reset = this.reset.bind(this);
-        this.submitURLs = this.submitURLs.bind(this);
+        //this.submitURLs = this.submitURLs.bind(this);
         this.submitFiles = this.submitFiles.bind(this);
         this.reportCurrentFiles = this.reportCurrentFiles.bind(this);
         this.getTotalSubmissionSize = this.getTotalSubmissionSize.bind(this);
@@ -60,6 +63,9 @@ export class Workspace extends React.Component{
         this.shuckIt = this.shuckIt.bind(this);
         this.addResultsToArtefact = this.addResultsToArtefact.bind(this);
         this.toggleSelectedResult = this.toggleSelectedResult.bind(this);
+        this.submitTextAsURL = this.submitTextAsURL.bind(this);
+        this.submitTextAsSnippet = this.submitTextAsSnippet.bind(this);
+        this.submitText = this.submitText.bind(this);
     }
 
     welcomeMessage(){
@@ -156,6 +162,45 @@ export class Workspace extends React.Component{
             'message':(full) ? '' : this.state.message
         });
     };   
+
+    submitText(e){
+      e.preventDefault();
+      this.setState({'clipboard':e.clipboardData.getData('text')}, () => {
+        this.toggleNotification(
+          'Submit text as...',
+          'info',
+          {
+            'text':'URL',
+            'callback':this.submitTextAsURL
+          },
+          {
+            'text':'Snippet',
+            'callback':this.submitTextAsSnippet
+          }
+        );
+      });
+    }
+
+    submitTextAsSnippet(){
+      console.log(`called submitTextAsSnippet`);
+      let snippet = [{
+        'name':`${Date.now()}.snippet`,
+        'size':this.state.clipboard.length,
+        'content':Buffer.from(this.state.clipboard).toString('base64')
+      }];
+      this.setState({'submissionType':'snippet','submittedFiles':snippet}, () => {
+        this.reportCurrentFiles(this.state.submittedFiles)
+      });
+    }
+
+    submitTextAsURL(){
+      console.log(`called submitTextAsURL`);
+      if(this.state.artefactView){
+        this.toggleView();
+      }
+
+      this.parseAndSaveURLs(this.state.clipboard);
+    }
     
     submitURLs(e){
         e.preventDefault();
@@ -236,7 +281,11 @@ export class Workspace extends React.Component{
           'message': `${fileList.join('\n')}`,
           'submissionId':md5(`${fileList.join(':').toUpperCase()}::${totalSize}`)
         });
-        this.toggleNotification(`Got ${(files.length > 1) ? `${files.length} files`: '1 file'}. Total size is ${totalSize} bytes.`, 'info');
+        if(/^snippet/.test(this.state.submissionType)){
+          this.toggleNotification(`Got a snippet. Total size is ${totalSize} bytes.`, 'info');
+        }else{
+          this.toggleNotification(`Got ${(files.length > 1) ? `${files.length} files`: '1 file'}. Total size is ${totalSize} bytes.`, 'info');
+        }
     }
 
     getTotalSubmissionSize(files){
@@ -247,13 +296,15 @@ export class Workspace extends React.Component{
         return totalSize;
     }
 
-    toggleNotification(message, type){
+    toggleNotification(message, type, positiveResponse, negativeResponse){
       if(message){
         this.setState({
           'notify':{
             'active':true,
             'message':message,
-            'type':type
+            'type':type,
+            'positiveResponse':positiveResponse,
+            'negativeResponse':negativeResponse
           }
         });
       }else{
@@ -401,6 +452,8 @@ export class Workspace extends React.Component{
 
       //Submit URLs
       if(/^url/.test(this.state.submissionType)){
+        this.postToServer('/api/url', this.state.submittedURLs);
+        /*
         axios.post(
           '/api/url',
           {
@@ -421,14 +474,16 @@ export class Workspace extends React.Component{
         }).finally(() => {
           this.setState({'waitingForSubmission':false});
         });
-      }else{
-      
+        */
+      }else if(/^file/.test(this.state.submissionType)){
         //Submit Files
         let filesToEncode = [];
         for(let i in this.state.submittedFiles){
           filesToEncode.push(this.encodeFile(this.state.submittedFiles[i]));
         }
         Promise.all(filesToEncode).then((encodedFiles) => {
+          this.postToServer('/api/file', encodedFiles);
+          /*
           axios.post(
               '/api/file',
             {
@@ -449,8 +504,35 @@ export class Workspace extends React.Component{
           }).finally(() => {
             this.setState({'waitingForSubmission':false});
           });
+          */
         });
+      }else{
+        //Submit snippet (as file)
+        this.postToServer('/api/file', this.state.submittedFiles);
       }
+    }
+
+    postToServer(url, data){
+      axios.post(
+        url,
+      {
+        'submission_id':this.state.submissionId,
+        'files':data
+      }
+      ).then((resp) => {
+        this.toggleNotification();
+
+        //Add all new artefacts to the artefact package
+        let updatedArtefactPackage = this.updateArtefactPackage(resp.data, false);
+
+        //And save it
+        this.setState({'artefactPackage':updatedArtefactPackage}, () => {this.reset(true); this.toggleView()});
+      }).catch((error) => {
+          console.log(error);
+          this.toggleNotification("Something went wrong. Please try again.", 'error');
+      }).finally(() => {
+        this.setState({'waitingForSubmission':false});
+      });
     }
 
     encodeFile(file){
@@ -516,7 +598,8 @@ export class Workspace extends React.Component{
         return <div className={'Workspace not-scrollable terminal'}>
             <Sidebar
                 artefactView={ this.state.artefactView }
-                submitURLs={ this.submitURLs }
+                submitText={ this.submitText }
+                //submitURLs={ this.submitURLs }
                 submitFiles={ this.submitFiles }
                 updateSubmission={ this.updateSubmission }
                 toggleNotification={ this.toggleNotification }

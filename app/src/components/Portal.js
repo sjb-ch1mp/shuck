@@ -24,7 +24,8 @@ export class Portal extends React.Component {
                             artefacts={ this.props.artefacts }
                             toggleSelectedArtefact={ this.props.toggleSelectedArtefact }
                             submitFiles={ this.props.submitFiles }
-                            submitURLs={ this.props.submitURLs }
+                            submitText={ this.props.submitText }
+                            //submitURLs={ this.props.submitURLs }
                             waitingForSubmission={ this.props.waitingForSubmission }
                         />
                         <textarea
@@ -33,7 +34,8 @@ export class Portal extends React.Component {
                             spellCheck={ false }
                             onDrop={ e => { this.props.submitFiles(e); } }
                             value={ this.props.message }
-                            onPaste={ e => { this.props.submitURLs(e); } }
+                            onPaste={ (e) => { this.props.submitText(e); }}
+                            //onPaste={ e => { this.props.submitURLs(e); } }
                             onChange={ this.props.updateSubmission }
                             disabled={ this.props.waitingForSubmission }
                         />

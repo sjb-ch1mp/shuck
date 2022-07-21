@@ -20,7 +20,8 @@ export class Sidebar extends React.Component{
             <Banner/>
             <Portal 
               artefactView={ this.props.artefactView } 
-              submitURLs={ this.props.submitURLs } 
+              submitText={ this.props.submitText }
+              //submitURLs={ this.props.submitURLs } 
               submitFiles={ this.props.submitFiles } 
               updateSubmission={ this.props.updateSubmission } 
               toggleNotification={ this.props.toggleNotification }
