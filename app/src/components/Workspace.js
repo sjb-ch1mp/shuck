@@ -512,13 +512,14 @@ export class Workspace extends React.Component{
       }
     }
 
-    postToServer(url, data){
+    postToServer(api, data){
+      console.log(`Posting: ${data}`);
       axios.post(
-        url,
-      {
-        'submission_id':this.state.submissionId,
-        'files':data
-      }
+        api,
+        {
+          'submission_id':this.state.submissionId,
+          'files':data
+        }
       ).then((resp) => {
         this.toggleNotification();
 
