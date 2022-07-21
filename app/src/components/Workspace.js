@@ -43,7 +43,6 @@ export class Workspace extends React.Component{
         };
 
         this.reset = this.reset.bind(this);
-        //this.submitURLs = this.submitURLs.bind(this);
         this.submitFiles = this.submitFiles.bind(this);
         this.reportCurrentFiles = this.reportCurrentFiles.bind(this);
         this.getTotalSubmissionSize = this.getTotalSubmissionSize.bind(this);
@@ -66,6 +65,7 @@ export class Workspace extends React.Component{
         this.submitTextAsURL = this.submitTextAsURL.bind(this);
         this.submitTextAsSnippet = this.submitTextAsSnippet.bind(this);
         this.submitText = this.submitText.bind(this);
+        this.postToServer = this.postToServer.bind(this);
     }
 
     welcomeMessage(){
@@ -198,18 +198,6 @@ export class Workspace extends React.Component{
       }
 
       this.parseAndSaveURLs(this.state.clipboard);
-    }
-    
-    submitURLs(e){
-        e.preventDefault();
-        this.toggleNotification();
-        let raw = e.clipboardData.getData('text');
-
-        if(this.state.artefactView){
-          this.toggleView();
-        }
-
-        this.parseAndSaveURLs(raw);
     }
 
     parseAndSaveURLs(raw){
@@ -457,28 +445,6 @@ export class Workspace extends React.Component{
       //Submit URLs
       if(/^url/.test(this.state.submissionType)){
         this.postToServer('/api/url', this.state.submittedURLs);
-        /*
-        axios.post(
-          '/api/url',
-          {
-            'submission_id':this.state.submissionId,
-            'urls':this.state.submittedURLs
-          }
-        ).then((resp) => {
-          this.toggleNotification();
-
-          //Add all new artefacts to the artefact package
-          let updatedArtefactPackage = this.updateArtefactPackage(resp.data, false);
-
-          //And save it
-          this.setState({'artefactPackage':updatedArtefactPackage}, () => {this.reset(true); this.toggleView()});
-        }).catch((error) => {
-          console.log(error);
-          this.toggleNotification("Something went wrong. Please try again.", 'error');
-        }).finally(() => {
-          this.setState({'waitingForSubmission':false});
-        });
-        */
       }else if(/^file/.test(this.state.submissionType)){
         //Submit Files
         let filesToEncode = [];
@@ -487,28 +453,6 @@ export class Workspace extends React.Component{
         }
         Promise.all(filesToEncode).then((encodedFiles) => {
           this.postToServer('/api/file', encodedFiles);
-          /*
-          axios.post(
-              '/api/file',
-            {
-              'submission_id':this.state.submissionId,
-              'files':encodedFiles
-            }
-          ).then((resp) => {
-            this.toggleNotification();
-
-            //Add all new artefacts to the artefact package
-            let updatedArtefactPackage = this.updateArtefactPackage(resp.data, false);
-
-            //And save it
-            this.setState({'artefactPackage':updatedArtefactPackage}, () => {this.reset(true); this.toggleView()});
-          }).catch((error) => {
-              console.log(error);
-              this.toggleNotification("Something went wrong. Please try again.", 'error');
-          }).finally(() => {
-            this.setState({'waitingForSubmission':false});
-          });
-          */
         });
       }else{
         //Submit snippet (as file)
@@ -604,7 +548,6 @@ export class Workspace extends React.Component{
             <Sidebar
                 artefactView={ this.state.artefactView }
                 submitText={ this.submitText }
-                //submitURLs={ this.submitURLs }
                 submitFiles={ this.submitFiles }
                 updateSubmission={ this.updateSubmission }
                 toggleNotification={ this.toggleNotification }
