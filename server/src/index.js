@@ -38,8 +38,8 @@ app.get('/', (request, response) => {
 app.post('/api/url', (request, response) => {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
     let requests = [];
-    for(let i=0; i<request.body.urls.length; i++){
-        requests.push(fetcher.resolveURL(new URL(request.body.urls[i])));
+    for(let i=0; i<request.body.submission.length; i++){
+        requests.push(fetcher.resolveURL(new URL(request.body.submission[i])));
     }
     
     Promise.all(requests)
@@ -152,15 +152,15 @@ app.post('/api/url', (request, response) => {
 app.post('/api/file', (request, response) => {
 
     let artefacts = [];
-    for(let i in request.body.files){
+    for(let i in request.body.submission){
         artefacts.push({
-            'id':md5(request.body.files[i].content),
-            'name':request.body.files[i].name,
-            'data':request.body.files[i].content,
+            'id':md5(request.body.submission[i].content),
+            'name':request.body.submission[i].name,
+            'data':request.body.submission[i].content,
             'type':'file',
             'enrichment':{
                 'info':{
-                    'size':request.body.files[i].size,
+                    'size':request.body.submission[i].size,
                     'file_type':null
                 },
                 'results':[]

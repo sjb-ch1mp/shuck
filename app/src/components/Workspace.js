@@ -522,7 +522,7 @@ export class Workspace extends React.Component{
         api,
         {
           'submission_id':this.state.submissionId,
-          'files':data
+          'submission':data
         }
       ).then((resp) => {
         this.toggleNotification();
