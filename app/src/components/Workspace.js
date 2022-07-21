@@ -182,7 +182,6 @@ export class Workspace extends React.Component{
     }
 
     submitTextAsSnippet(){
-      console.log(`called submitTextAsSnippet`);
       let snippet = [{
         'name':`${Date.now()}.snippet`,
         'size':this.state.clipboard.length,
@@ -194,7 +193,6 @@ export class Workspace extends React.Component{
     }
 
     submitTextAsURL(){
-      console.log(`called submitTextAsURL`);
       if(this.state.artefactView){
         this.toggleView();
       }
@@ -231,7 +229,7 @@ export class Workspace extends React.Component{
               'submissionType':(unique_urls.length > 1) ? 'url_multiple' : 'url_single',
               'submittedURLs':unique_urls,
               'submissionId':md5(unique_urls.join(':').toUpperCase())
-          });
+          }, () => {console.log(this.state.submittedURLs);});
           this.setState({'message':`${unique_urls.join("\n")}`});
           this.toggleNotification(`Found ${unique_urls.length} valid URLs.`, 'info');
         }else{
@@ -346,6 +344,12 @@ export class Workspace extends React.Component{
           this.setState({'submittedFiles':modifiedFiles});
           this.reportCurrentFiles(modifiedFiles);
         }
+      }else{
+        //Snippet
+        let modifiedText = document.getElementById('portal').value;
+        this.setState({'clipboard':modifiedText}, () => {
+          this.submitTextAsSnippet();
+        });
       }
     }
 
