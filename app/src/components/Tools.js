@@ -316,7 +316,9 @@ function Tools () {
     ];
 
 
-    return tools.sort((a, b) => {a.name.localeCompare(b.name)});
+    return tools.sort((a, b) => {
+        return a.name.localeCompare(b.name)
+    });
 }
 
 export default Tools;
