@@ -293,6 +293,25 @@ function Tools () {
             'locked_tool_options':[
                 {'flag':'output-dir','type':'string','selected':false,'value':'__FILEOUT'}
             ]
+        },
+        {
+            'name':'base64',
+            'attribution':{
+                'author':'Simon Josefsson',
+                'website':'https://www.gnu.org/software/coreutils/base64'
+            },
+            'uri_first':false,
+            'long_flag_equals':true,
+            'file_types':['Text'],
+            'help_flag':'help',
+            'tool_options':[
+                {'flag':'help','type':'boolean','selected':false,'value':true},
+                {'flag':'version','type':'boolean','selected':false,'value':true},
+                {'flag':'decode','type':'boolean','selected':false,'value':true},
+                {'flag':'ignore-garbage','type':'boolean','selected':false,'value':true},
+                {'flag':'wrap','type':'string','selected':false,'value':null}
+            ],
+            'locked_tool_options':null
         }
     ];
 
