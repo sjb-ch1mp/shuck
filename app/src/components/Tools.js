@@ -254,6 +254,45 @@ function Tools () {
                 {'flag':'min-len','type':'string','selected':false,'value':null}
             ],
             'locked_tool_options':null
+        },
+        {
+            'name':'box-js',
+            'attribution':{
+                'author':'CapacitorSet',
+                'website':'https://github.com/CapacitorSet/box-js'
+            },
+            'uri_first':false,
+            'long_flag_equals':true,
+            'file_types':['JavaScript'],
+            'help_flag':'help',
+            'tool_options':[
+                {'flag':'help','type':'boolean','selected':false,'value':true},
+                {'flag':'version','type':'boolean','selected':false,'value':true},
+                {'flag':'license','type':'boolean','selected':false,'value':true},
+                {'flag':'debug','type':'boolean','selected':false,'value':true},
+                {'flag':'loglevel','type':'string','selected':false,'value':null},
+                {'flag':'download','type':'boolean','selected':false,'value':true},
+                {'flag':'encoding','type':'string','selected':false,'value':null},
+                {'flag':'timeout','type':'string','selected':false,'value':null},
+                {'flag':'preprocess','type':'boolean','selected':false,'value':true},
+                {'flag':'unsafe-preprocess','type':'boolean','selected':false,'value':true},
+                {'flag':'no-echo','type':'boolean','selected':false,'value':true},
+                {'flag':'no-rewrite','type':'boolean','selected':false,'value':true},
+                {'flag':'no-catch-rewrite','type':'boolean','selected':false,'value':true},
+                {'flag':'no-cc_on-rewrite','type':'boolean','selected':false,'value':true},
+                {'flag':'no-eval-rewrite','type':'boolean','selected':false,'value':true},
+                {'flag':'no-file-exists','type':'boolean','selected':false,'value':true},
+                {'flag':'no-folder-exists','type':'boolean','selected':false,'value':true},
+                {'flag':'function-rewrite','type':'boolean','selected':false,'value':true},
+                {'flag':'no-rewrite-prototype','type':'boolean','selected':false,'value':true},
+                {'flag':'no-hoist-prototype','type':'boolean','selected':false,'value':true},
+                {'flag':'no-shell-error','type':'boolean','selected':false,'value':true},
+                {'flag':'no-typeof-rewrite','type':'boolean','selected':false,'value':true},
+                {'flag':'windows-xp','type':'boolean','selected':false,'value':true}
+            ],
+            'locked_tool_options':[
+                {'flag':'output-dir','type':'string','selected':false,'value':'__FILEOUT'}
+            ]
         }
     ];
 
